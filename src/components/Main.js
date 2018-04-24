@@ -1,24 +1,34 @@
 import React from 'react'
 
-// export default class Main extends Component {
-//   render() {
-//     return(
-//       <div className="main">
-//         This is the main div
-//       </div>
-//     )
-//   }
-// }
+// import NameLogo from '../assets/NameLogo'
+import Socials from './Socials'
+import epCover from '../assets/epCover.png';
+import buildingsCover from '../assets/buildingsCover.png';
+
+const epCoverStyle = {
+  background: 'url(' + epCover + ') #262355',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+}
+
+const buildingsBackgroundStyle = {
+  background: 'url(' + buildingsCover + ') #262355',
+  backgroundPosition: 'left',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+}
 
 const Main = (props) => {
   return (
     <div className="main">
-      <div className="background">
-        building background
+      <div className="background" style={buildingsBackgroundStyle}>
+        {/* <NameLogo /> */}
+        
       </div>
-      <div id="too-big-to-fail">
-        album cover
-      </div>
+      <div className="too-big-to-fail" style={epCoverStyle}></div>
+
+      <Socials />
     </div>
   )
 }

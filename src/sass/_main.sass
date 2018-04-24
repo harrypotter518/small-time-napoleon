@@ -1,14 +1,38 @@
 .main
-  background: orange
-  width: 100vw
-  height: 375px
   position: relative
+  .background
+    background: orange
+    height: 375px
+    margin-top: 37.5px
+    margin-bottom: 75px
+    text-align: center
+    #name-logo
+      width: 337.5px
+      height: auto 
+      margin-top: 37.5px
 
-  #too-big-to-fail
+  .too-big-to-fail
     background: yellow
     width: 300px
     height: 300px
-    position: fixed
+    border-radius: 5px
+    position: absolute
     left: 50%
     margin-left: -150px
     top: 150px
+
+  .socials
+    // background: pink
+    height: 150px
+    width: 300px
+    margin: 0 auto
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-around
+    svg
+      height: 37.5px
+      width: 37.5px
+      border-radius: 5px
+      *
+        fill: orange

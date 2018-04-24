@@ -1,0 +1,37 @@
+.nav
+  background: rgba(255,255,255,.5)
+  position: fixed
+  z-index: 100
+  height: 37.5px
+  top: 0
+  left: 0
+  right: 0
+
+  .nav-bar
+    width: 90vw
+    margin: 0 auto
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+
+    #blimp-icon, #hamburger
+      width: 37.5px
+      height: 37.5px
+      *
+        fill: black
+
+    &.open
+      #blimp-icon, #hamburger
+        *
+          fill: white
+
+  
+  .nav-buttons
+    background: black
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+
+    button
+      color: white
+    
