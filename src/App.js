@@ -9,8 +9,11 @@ export default class App extends Component {
     super(props)
     this.state = {
       nav: false,
+      quote: 1,
     }
     this.toggleNav = this.toggleNav.bind(this)
+    this.increaseQuote = this.increaseQuote.bind(this)
+    this.decreaseQuote = this.decreaseQuote.bind(this)
   }
 
   toggleNav() {
@@ -19,15 +22,44 @@ export default class App extends Component {
     })
   }
 
+  increaseQuote() {
+    if (this.state.quote < 3) {
+      const newQuote = this.state.quote + 1
+      this.setState({
+        quote: newQuote,
+      })
+    } else {
+      this.setState({
+        quote: 1,
+      })
+    }
+  }
+  decreaseQuote() {
+    if (this.state.quote > 1) {
+      const newQuote = this.state.quote - 1
+      this.setState({
+        quote: newQuote,
+      })
+    } else {
+      this.setState({
+        quote: 3,
+      })
+    }
+  }
+
+
   render() {
-    const { nav } = this.state
+    const { nav, quote } = this.state
 
     return (
       <div className="App">
         <Nav 
           nav={nav} 
           toggleNav={this.toggleNav} />
-        <Main />
+        <Main
+          quote={quote}
+          increaseQuote={this.increaseQuote}
+          decreaseQuote={this.decreaseQuote} />
       </div>
     );
   }

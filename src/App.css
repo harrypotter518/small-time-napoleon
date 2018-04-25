@@ -1,11 +1,20 @@
 body {
-  min-height: 200vh; }
+  min-height: 200vh;
+  font-family: 'Taviraj', serif; }
 
 button {
   background: none;
   border: none;
   padding: 0;
   margin: 0; }
+
+.body-text {
+  width: 85vw;
+  min-height: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
 
 .hide {
   display: none; }
@@ -20,6 +29,7 @@ button {
   right: 0; }
   .nav .nav-bar {
     width: 90vw;
+    height: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
@@ -28,38 +38,50 @@ button {
       width: 37.5px;
       height: 37.5px; }
       .nav .nav-bar #blimp-icon *, .nav .nav-bar #hamburger * {
-        fill: black; }
-    .nav .nav-bar.open #blimp-icon *, .nav .nav-bar.open #hamburger * {
-      fill: white; }
+        fill: #262355; }
   .nav .nav-buttons {
-    background: black;
     display: flex;
     flex-direction: column;
     justify-content: space-around; }
     .nav .nav-buttons button {
-      color: white; }
+      color: white;
+      margin: 15px;
+      font-size: 1.5em;
+      background: black; }
 
 .main {
   position: relative; }
+  .main .hero-image {
+    width: 100vw;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    position: relative; }
+    .main .hero-image .darken {
+      position: absolute;
+      background: rgba(38, 35, 85, 0.75);
+      width: 100%;
+      height: 100%; }
+    .main .hero-image #name-logo {
+      width: 90vw;
+      height: auto;
+      z-index: 2; }
+      .main .hero-image #name-logo * {
+        fill: white; }
   .main .background {
     background: orange;
-    height: 375px;
-    margin-top: 37.5px;
+    height: 300px;
     margin-bottom: 75px;
-    text-align: center; }
-    .main .background #name-logo {
-      width: 337.5px;
-      height: auto;
-      margin-top: 37.5px; }
+    text-align: center;
+    position: relative; }
   .main .too-big-to-fail {
-    background: yellow;
+    position: absolute;
     width: 300px;
     height: 300px;
     border-radius: 5px;
-    position: absolute;
     left: 50%;
-    margin-left: -150px;
-    top: 150px; }
+    transform: translateX(-50%);
+    top: 75px; }
   .main .socials {
     height: 150px;
     width: 300px;
@@ -73,4 +95,14 @@ button {
       width: 37.5px;
       border-radius: 5px; }
       .main .socials svg * {
-        fill: orange; }
+        fill: #262355; }
+
+.quote {
+  width: 90%; }
+
+.author {
+  align-self: flex-end;
+  width: 75%;
+  text-align: right;
+  font-weight: bold;
+  font-size: .75em; }
