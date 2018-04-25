@@ -1,9 +1,57 @@
-.quote
-    width: 90%
+.quotes-container
 
-.author
-  align-self: flex-end
-  width: 75%
-  text-align: right
-  font-weight: bold
-  font-size: .75em
+  .quotes
+    display: flex
+    flex-direction: row
+    align-items: center
+    min-height: 300px
+
+    .quote
+      margin: 0 auto
+      display: flex
+      flex-direction: column
+      justify-content: center
+
+      .testiment
+        width: 90%
+
+      .author
+        align-self: flex-end
+        width: 75%
+        text-align: right
+        font-weight: bold
+        font-size: .75em
+
+    .arrow-button
+      margin: 15px
+
+      &.left
+        width: 0
+        height: 0
+        border-top: 10px solid transparent
+        border-right: 10px solid $darkblue
+        border-bottom: 10px solid transparent
+      &.right
+        width: 0
+        height: 0
+        border-top: 10px solid transparent
+        border-left: 10px solid $darkblue
+        border-bottom: 10px solid transparent
+  
+  .dots
+    display: flex
+    flex-direction: row
+    // background: pink
+    justify-content: space-around
+    width: 25vw
+    margin: 0 auto
+    margin-top: -20px
+
+    .dot
+      width: 10px
+      height: 10px
+      border: 1px solid $darkblue
+      border-radius: 50%
+      
+      &.full
+        background: $darkblue
