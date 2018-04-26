@@ -12,8 +12,14 @@ button {
 .hide {
   display: none; }
 
+.darken {
+  position: absolute;
+  background: rgba(38, 35, 85, 0.75);
+  width: 100%;
+  height: 100%; }
+
 .nav {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(186, 181, 255, 0.5);
   position: fixed;
   z-index: 100;
   height: 50px;
@@ -58,11 +64,6 @@ button {
     display: flex;
     justify-content: center;
     position: relative; }
-    .main .hero-image .darken {
-      position: absolute;
-      background: rgba(38, 35, 85, 0.75);
-      width: 100%;
-      height: 100%; }
     .main .hero-image #name-logo {
       width: 90vw;
       height: auto;
@@ -86,11 +87,11 @@ button {
   .socials svg {
     height: 37.5px;
     width: 37.5px;
-    border-radius: 5px; }
+    border-radius: 3px; }
     .socials svg * {
-      fill: #262355; }
+      fill: #BAB5FF; }
     .socials svg:hover * {
-      fill: #46419d; }
+      fill: #262355; }
 
 .nav .nav-buttons svg * {
   fill: white; }
@@ -146,15 +147,31 @@ button {
 .music .background {
   background: orange;
   height: 300px;
-  margin-bottom: 37.5px;
+  margin-bottom: 150px;
   text-align: center;
   position: relative; }
+  .music .background .content {
+    width: 300px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2; }
+    .music .background .content .tag-line {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 150px; }
+      .music .background .content .tag-line p {
+        margin: .5em;
+        color: white;
+        text-transform: uppercase;
+        font-size: .75em; }
+    .music .background .content .too-big-to-fail {
+      height: 300px;
+      border-radius: 3px; }
 
-.music .too-big-to-fail {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  border-radius: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 37.5px; }
+.music .streamers {
+  height: 187.5px;
+  background: rgba(186, 181, 255, 0.2);
+  text-align: center;
+  padding: 20px; }

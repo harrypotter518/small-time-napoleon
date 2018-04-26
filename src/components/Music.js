@@ -1,7 +1,7 @@
 import React from 'react'
 
 import epCover from '../assets/epCover.png';
-import buildingsCover from '../assets/buildingsCover.png';
+import jeffDave from '../assets/jeffDave.jpg';
 
 const epCoverStyle = {
   background: 'url(' + epCover + ') #262355',
@@ -11,8 +11,8 @@ const epCoverStyle = {
 }
 
 const buildingsBackgroundStyle = {
-  background: 'url(' + buildingsCover + ') #262355',
-  backgroundPosition: 'left',
+  background: 'url(' + jeffDave + ') #262355',
+  backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
 }
@@ -23,7 +23,18 @@ const Music = () => {
     <div className="music">
 
       <div className="background" style={buildingsBackgroundStyle}>
-        <div className="too-big-to-fail" style={epCoverStyle}></div>
+        <div className="darken"></div>
+        <div className="content">
+          <div className="tag-line">
+            <p>Check out Small Time Napoleon's New EP, "Too Big To Fail".</p>
+            <p>Including the single, "Dear L"</p>
+          </div>
+          <div className="too-big-to-fail" style={epCoverStyle}></div>
+          </div>
+      </div>
+
+      <div className="streamers">
+        streamers
       </div>
 
     </div>
