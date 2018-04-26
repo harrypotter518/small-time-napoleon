@@ -1,0 +1,26 @@
+.socials
+  // background: pink
+  height: 150px
+  width: 300px
+  margin: 0 auto
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: space-around
+
+  svg
+    height: 37.5px
+    width: 37.5px
+    border-radius: 5px
+    *
+      fill: $darkblue
+
+    &:hover
+      *
+        fill: lighten($darkblue, 20%)
+
+.nav
+  .nav-buttons
+    svg
+      *
+        fill: white

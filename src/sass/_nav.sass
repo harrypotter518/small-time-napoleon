@@ -2,14 +2,18 @@
   background: rgba(255,255,255,.5)
   position: fixed
   z-index: 100
-  height: 37.5px
+  height: 50px
   top: 0
   left: 0
   right: 0
+  transition: all .4s
+  &.full
+    height: 100vh
+    background: rgba($darkblue,.95)
 
   .nav-bar
     width: 90vw
-    height: 100%
+    height: 50px
     margin: 0 auto
     display: flex
     flex-direction: row
@@ -24,16 +28,18 @@
     &.open
       #blimp-icon, #hamburger
         *
-          // fill: white
+          fill: white
 
   
   .nav-buttons
     display: flex
     flex-direction: column
     justify-content: space-around
+    height: 75vh
 
     button
       color: white
       margin: 15px
       font-size: 1.5em
-      background: black
+      text-transform: uppercase
+      letter-spacing: 10px
