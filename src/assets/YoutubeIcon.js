@@ -2,17 +2,11 @@ import React from 'react'
 
 const YoutubeIcon = () => {
   return (
-    // <svg xmlns="http://www.w3.org/2000/svg" width="44.62" height="44.619" viewBox="0 0 44.62 44.619">
-    //   <g id="youtube-icon" fill="#D7DF23">
-    //     <path d="M18.721 17.64l9 4.67-9 4.669z"/>
-    //     <path d="M0 0v44.619h44.62V0H0zm37.32 28.119c-.32 2.21-.86 3.87-3.189 4.46-1.051.271-3.221.301-5.431.351-3.16.09-6.39.12-6.39.12s-3.23-.03-6.39-.12c-2.221-.05-4.381-.08-5.431-.351-2.34-.59-2.88-2.25-3.189-4.46-.37-2.619-.37-9 0-11.619.31-2.21.85-3.86 3.189-4.46 1.05-.271 3.21-.29 5.431-.351 3.159-.09 6.39-.12 6.39-.12s3.229.03 6.39.12c2.21.061 4.38.08 5.431.351 2.329.6 2.869 2.25 3.189 4.46.37 2.619.37 9 0 11.619z"/>
-    //   </g>
-    // </svg>
     <svg xmlns="http://www.w3.org/2000/svg" width="44.621" height="44.619" viewBox="0 0 44.62 44.619">
       <defs>
         <linearGradient id="primarySecondary" gradientUnits="userSpaceOnUse" x1="23.2212" y1="26.9795" x2="23.2212" y2="17.6401">
-          <stop offset="0" stop-color="#262355"/>
-          <stop offset="1" stop-color="#bab5ff"/>
+          <stop offset="0" stopColor="#262355"/>
+          <stop offset="1" stopColor="#bab5ff"/>
         </linearGradient>
       </defs>
       <g id="youtube-icon">

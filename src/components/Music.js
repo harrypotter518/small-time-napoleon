@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Streamers from './Streamers'
+
 import epCover from '../assets/epCover.png';
 import jeffDave from '../assets/jeffDave.jpg';
 
@@ -20,7 +22,7 @@ const buildingsBackgroundStyle = {
 const Music = () => {
 
   return (
-    <div className="music">
+    <div id="music" className="music">
 
       <div className="background" style={buildingsBackgroundStyle}>
         <div className="darken"></div>
@@ -33,9 +35,7 @@ const Music = () => {
           </div>
       </div>
 
-      <div className="streamers">
-        streamers
-      </div>
+      <Streamers />
 
     </div>
   )

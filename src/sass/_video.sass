@@ -1,0 +1,62 @@
+.video
+  .background
+    +background-image-section(150px)
+
+    .content
+      color: white
+      position: relative
+
+      h2
+        background: rgba($monoThird, .5)
+        // padding: 0 15px
+        text-align: center
+        position: absolute
+        width: 100%
+        top: 150px
+        // left: 50%
+        transform: translateY(-50%)
+        text-transform: uppercase
+
+      .iframe-container
+        position: absolute
+        top: 200px
+        left: 50%
+        transform: translateX(-50%)
+  
+  .video-links
+    min-height: 187.5px
+    width: 300px
+    margin: 0 auto
+
+    .more-videos
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+
+      .video-thumbnail
+        width: 75px
+        height: 75px
+
+    .subscribe
+      min-height: 37.5px
+      // background: pink
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      margin: 37.5px 0 75px
+
+      p
+        width: 150px
+        font-size: .75em
+        margin: 0
+        text-align: right
+
+      .button-red
+        background: $red
+        width: 112.5px
+        height: 37.5px
+        text-transform: uppercase
+        color: white
+        font-size: .75em
+        letter-spacing: 1px
+        border-radius: 2px

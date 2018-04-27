@@ -1,10 +1,6 @@
 .music
   .background
-    background: orange
-    height: 300px
-    margin-bottom: 150px
-    text-align: center
-    position: relative
+    +background-image-section(150px)
 
     .content
       width: 300px
@@ -30,7 +26,5 @@
         border-radius: 3px
     
   .streamers
-    height: 187.5px
-    background: rgba($monoSecondary, .2)
-    text-align: center
-    padding: 20px
+    +icon-spread(187.5px)
+    

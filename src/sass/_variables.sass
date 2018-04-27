@@ -3,7 +3,9 @@ $darkblue: #262355
 $blue: #433d99
 $lightblue: #0077ff
 $gold: #ffa340
-$darkgold: cc5914
+$darkgold: #cc5914
+
+$red: #ff2d1d
 
 // monochromatic
 $monoPrimary: #262355
@@ -11,3 +13,29 @@ $monoSecondary: #BAB5FF
 $monoThird: #7269ff
 $monoFourth: #5d5b7f
 $monoFifth: #5b54cc
+
+=icon-spread($height)
+  height: $height
+  width: 300px
+  margin: 0 auto
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: space-around
+  svg
+    height: 37.5px
+    width: 37.5px
+    border-radius: 3px
+    *
+      // fill: url(#primarySecondary)
+      fill: $monoPrimary
+    &:hover
+      *
+        fill: $monoSecondary
+
+=background-image-section($marginBottom)
+  background: $monoPrimary
+  height: 300px
+  margin-bottom: $marginBottom
+  text-align: center
+  position: relative

@@ -6,6 +6,7 @@ import Nav from './components/Nav'
 import Main from './components/Main'
 import Music from './components/Music'
 import Video from './components/Video'
+import Pictures from './components/Pictures'
 import Shows from './components/Shows'
 import Contact from './components/Contact'
 
@@ -17,6 +18,7 @@ export default class App extends Component {
       quote: 1,
     }
     this.toggleNav = this.toggleNav.bind(this)
+    this.closeNav = this.closeNav.bind(this)
     this.increaseQuote = this.increaseQuote.bind(this)
     this.decreaseQuote = this.decreaseQuote.bind(this)
   }
@@ -24,6 +26,11 @@ export default class App extends Component {
   toggleNav() {
     this.setState({
       nav: !this.state.nav,
+    })
+  }
+  closeNav() {
+    this.setState({
+      nav: false,
     })
   }
 
@@ -100,7 +107,8 @@ export default class App extends Component {
       <div className="App">
         <Nav 
           nav={nav} 
-          toggleNav={this.toggleNav} />
+          toggleNav={this.toggleNav}
+          closeNav={this.closeNav} />
         <Main
           quote={quote}
           increaseQuote={this.increaseQuote}
@@ -108,6 +116,7 @@ export default class App extends Component {
 
         <Music />
         <Video />
+        <Pictures />
         <Shows />
         <Contact />
         

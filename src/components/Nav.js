@@ -6,19 +6,20 @@ import Socials from './Socials'
 
 export default class Nav extends Component {
   render() {
-    const { toggleNav, nav } = this.props
+    const { toggleNav, nav, closeNav } = this.props
     return(
       <div className={nav ? 'nav full' : 'nav'}>
 
         <div className={nav ? 'nav-bar open' : 'nav-bar'}>
-          <button><BlimpIcon /></button>
+          <a href="#main" onClick={closeNav}><button><BlimpIcon /></button></a>
           <button onClick={toggleNav}><Hamburger /></button>
 
         </div>  
         
         <div className={nav ? 'nav-buttons' : 'hide'}>
-          <button>music</button>
-          <button>video</button>
+          <a href="#music" onClick={closeNav}><button>music</button></a>
+          <a href="#video" onClick={closeNav}><button>video</button></a>
+          <a href="#pictures" onClick={closeNav}><button>pictures</button></a>
           <button>shows</button>
           <button>contact</button>
           <Socials />

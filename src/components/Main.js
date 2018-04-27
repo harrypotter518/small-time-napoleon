@@ -17,7 +17,7 @@ const outdoorPhotoStyle = {
 const Main = (props) => {
 
   return (
-    <div className="main">
+    <div id="main" className="main">
 
       <div className="hero-image" style={outdoorPhotoStyle}>
         <NameLogo />
