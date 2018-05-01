@@ -1,9 +1,23 @@
 import React from 'react'
+import PhotoAlbum from './PhotoAlbum'
+
+import zackBackground from '../assets/zack.jpg'
+
+const backgroundStyle = {
+  background: 'url(' + zackBackground + ') #262355',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+}
 
 const Pictures = () => {
   return(
     <div id="pictures" className="pictures">
-      Pictures here
+      <div className="background" style={backgroundStyle}>
+        <div className="darken"></div>
+      </div>
+
+      <PhotoAlbum />
     </div>
   )
 }

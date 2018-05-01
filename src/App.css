@@ -240,6 +240,21 @@ button {
       left: 50%;
       transform: translateX(-50%); }
 
-.pictures {
-  background: #7269ff;
-  min-height: 100vh; }
+.pictures .background {
+  height: 300px; }
+  .pictures .background .darken {
+    position: static; }
+
+.pictures .photo-album {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+  grid-gap: 5px;
+  width: 90vw;
+  margin: 0 auto;
+  margin-top: -100px; }
+  .pictures .photo-album img {
+    max-width: 100%;
+    height: auto; }
+  .pictures .photo-album .image0, .pictures .photo-album .image2, .pictures .photo-album .image4, .pictures .photo-album .image6 {
+    grid-row: span 2; }
