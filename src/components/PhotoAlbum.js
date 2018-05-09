@@ -14,6 +14,8 @@ import wedding4 from '../assets/photoSection/wedding4.jpg'
 import zack from '../assets/photoSection/zack.jpg'
 
 const photosArray = [
+  daveJeff,
+  wedding3,
   oldQuartet,
   danSings,
   wedding2,
@@ -22,10 +24,8 @@ const photosArray = [
   trio,
   zack,
   newTrio,
-  dan,
   wedding1,
-  wedding3,
-  daveJeff,
+  dan,
 ]
 
 const photos = photosArray.map((photo, i) =>

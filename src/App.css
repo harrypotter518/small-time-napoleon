@@ -183,6 +183,17 @@ button {
     .music .streamers svg:hover * {
       fill: #BAB5FF; }
 
+.album-details {
+  min-height: 100vh;
+  background: #7269ff;
+  color: white; }
+  .album-details .contents {
+    position: absolute;
+    z-index: 2; }
+    .album-details .contents ul {
+      list-style-type: none;
+      padding: 0; }
+
 .video .background {
   background: #262355;
   height: 300px;
@@ -256,5 +267,5 @@ button {
   .pictures .photo-album img {
     max-width: 100%;
     height: auto; }
-  .pictures .photo-album .image0, .pictures .photo-album .image2, .pictures .photo-album .image4, .pictures .photo-album .image6 {
+  .pictures .photo-album .image2, .pictures .photo-album .image4, .pictures .photo-album .image6, .pictures .photo-album .image8 {
     grid-row: span 2; }

@@ -16,13 +16,16 @@ export default class App extends Component {
     this.state = {
       nav: false,
       quote: 1,
+      album: false,
     }
     this.toggleNav = this.toggleNav.bind(this)
     this.closeNav = this.closeNav.bind(this)
     this.increaseQuote = this.increaseQuote.bind(this)
     this.decreaseQuote = this.decreaseQuote.bind(this)
+    this.showMusicDetails = this.showMusicDetails.bind(this)
   }
 
+  //NAV
   toggleNav() {
     this.setState({
       nav: !this.state.nav,
@@ -34,6 +37,7 @@ export default class App extends Component {
     })
   }
 
+  //QUOTES
   increaseQuote() {
     if (this.state.quote < 3) {
       const newQuote = this.state.quote + 1
@@ -99,9 +103,15 @@ export default class App extends Component {
     }
   }
 
+  showMusicDetails() {
+    this.setState({
+      album: !this.state.album,
+    })
+  }
+
 
   render() {
-    const { nav, quote } = this.state
+    const { nav, quote, album } = this.state
 
     return (
       <div className="App">
@@ -114,7 +124,9 @@ export default class App extends Component {
           increaseQuote={this.increaseQuote}
           decreaseQuote={this.decreaseQuote} />
 
-        <Music />
+        <Music 
+          album={album}
+          showMusicDetails={this.showMusicDetails}/>
         <Video />
         <Pictures />
         <Shows />

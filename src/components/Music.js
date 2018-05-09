@@ -1,5 +1,6 @@
 import React from 'react'
 
+import AlbumDetails from './AlbumDetails'
 import Streamers from './Streamers'
 
 import epCover from '../assets/epCover.png';
@@ -19,7 +20,8 @@ const buildingsBackgroundStyle = {
   backgroundSize: 'cover',
 }
 
-const Music = () => {
+
+const Music = (props) => {
 
   return (
     <div id="music" className="music">
@@ -31,12 +33,13 @@ const Music = () => {
             <p>Check out Small Time Napoleon's New EP, "Too Big To Fail".</p>
             <p>Including the single, "Dear L"</p>
           </div>
-          <div className="too-big-to-fail" style={epCoverStyle}></div>
+          <div className="too-big-to-fail" style={epCoverStyle} onClick={props.showMusicDetails}></div>
           </div>
       </div>
 
       <Streamers />
 
+      <AlbumDetails />
     </div>
   )
 }
