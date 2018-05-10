@@ -3,17 +3,20 @@
     +background-image-section(150px)
 
     .content
-      width: 300px
-      position: absolute
-      left: 50%
-      transform: translateX(-50%)
+      // width: 300px
+      position: relative
+      // left: 50%
+      // transform: translateX(-50%)
       z-index: 2
       
       .tag-line
+        width: 300px
         display: flex
         flex-direction: column
         justify-content: center
         min-height: 150px
+        margin: 0 auto
+        // background: pink
         p
           margin: .5em
           color: white
@@ -22,8 +25,15 @@
             
 
       .too-big-to-fail
+        margin: 0 auto
+        width: 300px
         height: 300px
         border-radius: 3px
+        &.album
+          width: 100vw
+          position: fixed
+          top: 0
+          left: 0
     
   .streamers
     +icon-spread(187.5px)

@@ -1,6 +1,7 @@
 import React from 'react'
 
 import albumBackground from '../assets/buildingsCover.png';
+import NameLogo from '../assets/NameLogo'
 
 const albumDetailsStyle = {
   background: 'url(' + albumBackground + ') #262355',
@@ -16,7 +17,7 @@ const AlbumDetails = () => {
 
       <div className="contents">
         <div>
-          <h1>Small Time Napoleon</h1>
+          <NameLogo />
           <h3>Too Big To Fail</h3>
         </div>
 

@@ -147,24 +147,30 @@ button {
   text-align: center;
   position: relative; }
   .music .background .content {
-    width: 300px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
     z-index: 2; }
     .music .background .content .tag-line {
+      width: 300px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      min-height: 150px; }
+      min-height: 150px;
+      margin: 0 auto; }
       .music .background .content .tag-line p {
         margin: .5em;
         color: white;
         text-transform: uppercase;
         font-size: .75em; }
     .music .background .content .too-big-to-fail {
+      margin: 0 auto;
+      width: 300px;
       height: 300px;
       border-radius: 3px; }
+      .music .background .content .too-big-to-fail.album {
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0; }
 
 .music .streamers {
   height: 187.5px;
@@ -186,13 +192,47 @@ button {
 .album-details {
   min-height: 100vh;
   background: #7269ff;
-  color: white; }
-  .album-details .contents {
+  color: white;
+  position: relative; }
+  .album-details .darken {
     position: absolute;
+    z-index: 0; }
+  .album-details #name-logo {
+    margin: 65px auto 0;
+    padding: 0 18.75px;
+    width: 100vw;
+    height: auto;
     z-index: 2; }
+    .album-details #name-logo * {
+      fill: white; }
+  .album-details h3 {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-weight: normal;
+    letter-spacing: 9px; }
+  .album-details .contents {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
+    position: relative;
+    z-index: 2; }
+    .album-details .contents ol {
+      text-align: center;
+      padding: 0;
+      align-self: center; }
+      .album-details .contents ol li {
+        font-size: 1.25em;
+        text-transform: uppercase; }
     .album-details .contents ul {
+      text-align: left;
       list-style-type: none;
+      margin: 5px 18.75px;
       padding: 0; }
+      .album-details .contents ul:last-of-type {
+        margin-bottom: 18.75px; }
+      .album-details .contents ul li {
+        font-size: .75em; }
 
 .video .background {
   background: #262355;

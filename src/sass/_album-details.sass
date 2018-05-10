@@ -2,12 +2,51 @@
   min-height: 100vh
   background: $monoThird
   color: white
+  position: relative
+
+  .darken
+    position: absolute
+    z-index: 0
+
+  #name-logo
+    margin: 65px auto 0
+    padding: 0 18.75px
+    width: 100vw
+    height: auto
+    z-index: 2
+    *
+      fill: white
+
+  h3
+    padding: 0
+    margin: 0
+    text-align: center
+    font-weight: normal
+    letter-spacing: 9px
 
   .contents
-    position: absolute
+    // background: green
+    min-height: 100vh
+    display: grid
+    grid-template-rows: auto 1fr auto auto
+    position: relative
     z-index: 2
 
-    ul
-      list-style-type: none
-      // margin: 0
+    ol
+      text-align: center
+      list-style-position: 
       padding: 0
+      align-self: center
+      li
+        font-size: 1.25em
+        text-transform: uppercase
+
+    ul
+      text-align: left
+      list-style-type: none
+      margin: 5px 18.75px
+      padding: 0
+      &:last-of-type
+        margin-bottom: 18.75px
+      li
+        font-size: .75em

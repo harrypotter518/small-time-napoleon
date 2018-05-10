@@ -33,13 +33,15 @@ const Music = (props) => {
             <p>Check out Small Time Napoleon's New EP, "Too Big To Fail".</p>
             <p>Including the single, "Dear L"</p>
           </div>
-          <div className="too-big-to-fail" style={epCoverStyle} onClick={props.showMusicDetails}></div>
+          <div className={!props.album ? 'too-big-to-fail' : 'too-big-to-fail album'} style={epCoverStyle} onClick={props.showMusicDetails}>
+            {props.album? <AlbumDetails /> : null}
+          </div>
           </div>
       </div>
 
       <Streamers />
 
-      <AlbumDetails />
+      {/* <AlbumDetails /> */}
     </div>
   )
 }

@@ -104,9 +104,12 @@ export default class App extends Component {
   }
 
   showMusicDetails() {
-    this.setState({
-      album: !this.state.album,
-    })
+    if (!document.querySelector('.album')) {
+      // console.log('hey')
+      this.setState({
+        album: !this.state.album,
+      })
+    }
   }
 
 
@@ -123,7 +126,6 @@ export default class App extends Component {
           quote={quote}
           increaseQuote={this.increaseQuote}
           decreaseQuote={this.decreaseQuote} />
-
         <Music 
           album={album}
           showMusicDetails={this.showMusicDetails}/>
