@@ -35,11 +35,14 @@ const Video = () => {
   return (
     <div id="video" className="video">
       <div className="background" style={danBackgroundStyle}>
-        <div className="darken"></div>
-        <div className="content">
-          <div className="iframe-container">
-            <iframe className="iframe" title="youtube video" width="335.5" height="188.7" src="https://www.youtube.com/embed/E0_Gw1Bcpb8" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
+        <div className="darken">
+        
+          <div className="content">
+            <div className="iframe-container">
+              <iframe className="iframe" title="youtube video" width="335.5" height="188.7" src="https://www.youtube.com/embed/E0_Gw1Bcpb8" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
+            </div>
           </div>
+          
         </div>
       </div>
 

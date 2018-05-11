@@ -17,12 +17,14 @@ export default class App extends Component {
       nav: false,
       quote: 1,
       album: false,
+      test: false,
     }
     this.toggleNav = this.toggleNav.bind(this)
     this.closeNav = this.closeNav.bind(this)
     this.increaseQuote = this.increaseQuote.bind(this)
     this.decreaseQuote = this.decreaseQuote.bind(this)
     this.showMusicDetails = this.showMusicDetails.bind(this)
+    this.testButton = this.testButton.bind(this)
   }
 
   //NAV
@@ -112,9 +114,15 @@ export default class App extends Component {
     }
   }
 
+  testButton() {
+    this.setState({
+      test: !this.state.test,
+    })
+  }
+
 
   render() {
-    const { nav, quote, album } = this.state
+    const { nav, quote, album, test, } = this.state
 
     return (
       <div className="App">
@@ -131,7 +139,7 @@ export default class App extends Component {
           showMusicDetails={this.showMusicDetails}/>
         <Video />
         <Pictures />
-        <Shows />
+        <Shows test={test} testButton={this.testButton}/>
         <Contact />
         
       </div>

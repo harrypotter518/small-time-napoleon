@@ -20,8 +20,9 @@ const Main = (props) => {
     <div id="main" className="main">
 
       <div className="hero-image" style={outdoorPhotoStyle}>
-        <NameLogo />
-        <div className="darken"></div>
+        <div className="darken">
+          <NameLogo />
+        </div>
       </div>
 
       <Quotes 

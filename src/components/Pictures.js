@@ -14,10 +14,12 @@ const Pictures = () => {
   return(
     <div id="pictures" className="pictures">
       <div className="background" style={backgroundStyle}>
-        <div className="darken"></div>
+        <div className="darken">
+          {/* throw in a quote */}
+        </div>
       </div>
-
       <PhotoAlbum />
+
     </div>
   )
 }

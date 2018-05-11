@@ -27,21 +27,24 @@ const Music = (props) => {
     <div id="music" className="music">
 
       <div className="background" style={buildingsBackgroundStyle}>
-        <div className="darken"></div>
-        <div className="content">
-          <div className="tag-line">
-            <p>Check out Small Time Napoleon's New EP, "Too Big To Fail".</p>
-            <p>Including the single, "Dear L"</p>
+        <div className="darken">
+    
+          <div className="content">
+            <div className="tag-line">
+              <p>Check out Small Time Napoleon's New EP, "Too Big To Fail".</p>
+              <p>Including the single, "Dear L"</p>
+            </div>
+            <div className="too-big-to-fail" style={epCoverStyle} onClick={props.showMusicDetails}>
+            </div>
           </div>
-          <div className={!props.album ? 'too-big-to-fail' : 'too-big-to-fail album'} style={epCoverStyle} onClick={props.showMusicDetails}>
-            {props.album? <AlbumDetails /> : null}
-          </div>
-          </div>
+
+        </div>
       </div>
+      {/* drop a cd from the bottom of the CD cover when clicked */}
+      {props.album? <AlbumDetails /> : null}
 
       <Streamers />
 
-      {/* <AlbumDetails /> */}
     </div>
   )
 }

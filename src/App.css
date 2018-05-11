@@ -13,7 +13,6 @@ button {
   display: none; }
 
 .darken {
-  position: absolute;
   background: rgba(38, 35, 85, 0.75);
   width: 100%;
   height: 100%; }
@@ -61,14 +60,13 @@ button {
 .main {
   position: relative; }
   .main .hero-image {
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    position: relative; }
+    height: 300px; }
+    .main .hero-image .darken {
+      display: flex;
+      justify-content: center; }
     .main .hero-image #name-logo {
       width: 90vw;
-      height: auto;
-      z-index: 2; }
+      height: auto; }
       .main .hero-image #name-logo * {
         fill: white; }
 
@@ -166,11 +164,6 @@ button {
       width: 300px;
       height: 300px;
       border-radius: 3px; }
-      .music .background .content .too-big-to-fail.album {
-        width: 100vw;
-        position: fixed;
-        top: 0;
-        left: 0; }
 
 .music .streamers {
   height: 187.5px;
@@ -192,11 +185,7 @@ button {
 .album-details {
   min-height: 100vh;
   background: #7269ff;
-  color: white;
-  position: relative; }
-  .album-details .darken {
-    position: absolute;
-    z-index: 0; }
+  color: white; }
   .album-details #name-logo {
     margin: 65px auto 0;
     padding: 0 18.75px;
@@ -214,9 +203,7 @@ button {
   .album-details .contents {
     min-height: 100vh;
     display: grid;
-    grid-template-rows: auto 1fr auto auto;
-    position: relative;
-    z-index: 2; }
+    grid-template-rows: auto 1fr auto auto; }
     .album-details .contents ol {
       text-align: center;
       padding: 0;
@@ -293,8 +280,6 @@ button {
 
 .pictures .background {
   height: 300px; }
-  .pictures .background .darken {
-    position: static; }
 
 .pictures .photo-album {
   display: grid;
@@ -309,3 +294,19 @@ button {
     height: auto; }
   .pictures .photo-album .image2, .pictures .photo-album .image4, .pictures .photo-album .image6, .pictures .photo-album .image8 {
     grid-row: span 2; }
+
+.shows .background {
+  background: lightgreen;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  transition: all .5s ease-in-out; }
+  .shows .background.test {
+    background: pink; }
+  .shows .background .info {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    transition: .5s all ease;
+    transition-delay: 1s; }
