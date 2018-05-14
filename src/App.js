@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { TimelineLite, Power2 } from 'gsap'
+import { TimelineLite, Power2, TimelineMax, Power0 } from 'gsap'
 
 import Nav from './components/Nav'
 import Main from './components/Main'
@@ -17,14 +17,14 @@ export default class App extends Component {
       nav: false,
       quote: 1,
       album: false,
-      test: false,
     }
     this.toggleNav = this.toggleNav.bind(this)
     this.closeNav = this.closeNav.bind(this)
     this.increaseQuote = this.increaseQuote.bind(this)
     this.decreaseQuote = this.decreaseQuote.bind(this)
     this.showMusicDetails = this.showMusicDetails.bind(this)
-    this.testButton = this.testButton.bind(this)
+    this.hoverAlbum = this.hoverAlbum.bind(this)
+    this.unhoverAlbum = this.unhoverAlbum.bind(this)
   }
 
   //NAV
@@ -90,19 +90,21 @@ export default class App extends Component {
       .to("#middle", .5, {autoAlpha: 1}, .2)
   }
 
-
-  componentDidMount() {
-    // advance quote every 10sec
-    setInterval(() => {
-      this.increaseQuote()
-    }, 10000)
+  //MUSIC
+  rotateDisc() {
+    const tl = new TimelineMax({repeat:-1})
+    tl
+    .to('#logo', 6, {rotation: 360, transformOrigin: '48 54', ease:Power0.easeNone})
   }
-  componentDidUpdate() {
-    if (this.state.nav) {
-      this.crossBuns()
-    } else {
-      this.uncrossBuns()
-    }
+  hoverAlbum() {
+    const tl = new TimelineLite()
+    tl
+      .to('.cd', .5, {y: '20px', ease:Power2.easeInOut})
+  }
+  unhoverAlbum() {
+    const tl = new TimelineLite()
+    tl
+      .to('.cd', .5, {y: 0, ease:Power2.easeInOut})
   }
 
   showMusicDetails() {
@@ -113,16 +115,27 @@ export default class App extends Component {
       })
     }
   }
+  
+  componentDidMount() {
+    // advance quote every 10sec
+    setInterval(() => {
+      this.increaseQuote()
+    }, 10000)
 
-  testButton() {
-    this.setState({
-      test: !this.state.test,
-    })
+    // rotate disc in music section
+    this.rotateDisc()
   }
 
+  componentDidUpdate() {
+    if (this.state.nav) {
+      this.crossBuns()
+    } else {
+      this.uncrossBuns()
+    }
+  }
 
   render() {
-    const { nav, quote, album, test, } = this.state
+    const { nav, quote, album, } = this.state
 
     return (
       <div className="App">
@@ -136,10 +149,12 @@ export default class App extends Component {
           decreaseQuote={this.decreaseQuote} />
         <Music 
           album={album}
+          hoverAlbum={this.hoverAlbum}
+          unhoverAlbum={this.unhoverAlbum}
           showMusicDetails={this.showMusicDetails}/>
         <Video />
         <Pictures />
-        <Shows test={test} testButton={this.testButton}/>
+        <Shows />
         <Contact />
         
       </div>

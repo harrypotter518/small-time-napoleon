@@ -3,8 +3,9 @@ import React from 'react'
 import AlbumDetails from './AlbumDetails'
 import Streamers from './Streamers'
 
-import epCover from '../assets/epCover.png';
-import jeffDave from '../assets/jeffDave.jpg';
+import epCover from '../assets/epCover.png'
+import jeffDave from '../assets/jeffDave.jpg'
+import CD from '../assets/CD'
 
 const epCoverStyle = {
   background: 'url(' + epCover + ') #262355',
@@ -20,7 +21,6 @@ const buildingsBackgroundStyle = {
   backgroundSize: 'cover',
 }
 
-
 const Music = (props) => {
 
   return (
@@ -34,14 +34,22 @@ const Music = (props) => {
               <p>Check out Small Time Napoleon's New EP, "Too Big To Fail".</p>
               <p>Including the single, "Dear L"</p>
             </div>
-            <div className="too-big-to-fail" style={epCoverStyle} onClick={props.showMusicDetails}>
+            <div className="too-big-to-fail" style={epCoverStyle}>
             </div>
+            <div className="cd" 
+              onMouseEnter={props.hoverAlbum} 
+              onMouseLeave={props.unhoverAlbum} 
+              onClick={props.showMusicDetails}>
+
+              {props.album? <AlbumDetails /> : null}
+              <CD />
+
+            </div>
+            
           </div>
 
         </div>
       </div>
-      {/* drop a cd from the bottom of the CD cover when clicked */}
-      {props.album? <AlbumDetails /> : null}
 
       <Streamers />
 

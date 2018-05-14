@@ -1,3 +1,9 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
 body {
   min-height: 200vh;
   font-family: 'Taviraj', serif; }
@@ -163,7 +169,20 @@ button {
       margin: 0 auto;
       width: 300px;
       height: 300px;
-      border-radius: 3px; }
+      border-radius: 3px;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 3px 5px -2px rgba(0, 0, 0, 0.75); }
+    .music .background .content .cd {
+      margin: 0 auto;
+      position: relative;
+      width: 290px;
+      height: 290px;
+      margin-top: -270px;
+      cursor: pointer; }
+      .music .background .content .cd #cd {
+        width: 100%;
+        height: 100%; }
 
 .music .streamers {
   height: 187.5px;
@@ -294,19 +313,3 @@ button {
     height: auto; }
   .pictures .photo-album .image2, .pictures .photo-album .image4, .pictures .photo-album .image6, .pictures .photo-album .image8 {
     grid-row: span 2; }
-
-.shows .background {
-  background: lightgreen;
-  width: 300px;
-  height: 300px;
-  margin: 0 auto;
-  transition: all .5s ease-in-out; }
-  .shows .background.test {
-    background: pink; }
-  .shows .background .info {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    transition: .5s all ease;
-    transition-delay: 1s; }
