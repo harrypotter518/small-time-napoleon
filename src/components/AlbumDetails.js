@@ -10,25 +10,24 @@ const albumDetailsStyle = {
   backgroundSize: 'cover',
 }
 
-const AlbumDetails = () => {
+const AlbumDetails = (props) => {
   return(
-    <div className="album-details" style={albumDetailsStyle}>
+    <div className={props.album ? "album-details is-expanded" : "album-details"} style={albumDetailsStyle}>
       <div className="darken">
-
         <div className="contents">
           <div>
             <NameLogo />
             <h3>Too Big To Fail</h3>
           </div>
 
-          <ol>
+          <ul className="track-list">
             <li>Dear L</li>
             <li>Code and Co-Host</li>
             <li>A Certain Shuffle (Easy Climb)</li>
             <li>High Wire</li>
             <li>Cake and Circus</li>
             <li>House Rules</li>
-          </ol>
+          </ul>
 
           <ul>
             <li>Dan Hardin: Vocals, Guitar</li>
@@ -43,9 +42,7 @@ const AlbumDetails = () => {
             <li>Mixing Engineer: Kevin Ratterman</li>
             <li>© Small Time Napoleon 2017</li>
           </ul>
-
         </div>
-
       </div>
 
     </div>

@@ -34,22 +34,25 @@ const Music = (props) => {
               <p>Check out Small Time Napoleon's New EP, "Too Big To Fail".</p>
               <p>Including the single, "Dear L"</p>
             </div>
-            <div className="too-big-to-fail" style={epCoverStyle}>
-            </div>
-            <div className="cd" 
-              onMouseEnter={props.hoverAlbum} 
-              onMouseLeave={props.unhoverAlbum} 
-              onClick={props.showMusicDetails}>
+            <div className="too-big-to-fail" style={epCoverStyle}></div>
 
-              {props.album? <AlbumDetails /> : null}
-              <CD />
 
-            </div>
             
           </div>
 
         </div>
       </div>
+            <div className="cd"
+              onMouseEnter={props.hoverAlbum} 
+              onMouseLeave={props.unhoverAlbum} 
+              onClick={props.showMusicDetails}>
+
+              <AlbumDetails album={props.album}/> 
+              
+              <CD />
+
+
+            </div>
 
       <Streamers />
 

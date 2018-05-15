@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { TimelineLite, Power2, TimelineMax, Power0 } from 'gsap'
+import { TimelineLite, Power2, Power0 } from 'gsap'
 
 import Nav from './components/Nav'
 import Main from './components/Main'
@@ -92,9 +92,11 @@ export default class App extends Component {
 
   //MUSIC
   rotateDisc() {
-    const tl = new TimelineMax({repeat:-1})
+    const tl = new TimelineLite()
     tl
-    .to('#logo', 6, {rotation: 360, transformOrigin: '48 54', ease:Power0.easeNone})
+    .to('#label-and-grooves', 5, {rotation: 360, transformOrigin: 'center', ease:Power0.easeNone, repeat: -1})
+    .to('#grooves', 6.5, {rotation: 360, transformOrigin: 'center', ease:Power0.easeNone, repeat: -1}, 0)
+    .to('#grooves', 1.5, {scale: 1.08, ease:Power2.easeOut, yoyo: true, repeat: -1}, 0)
   }
   hoverAlbum() {
     const tl = new TimelineLite()
@@ -108,12 +110,9 @@ export default class App extends Component {
   }
 
   showMusicDetails() {
-    if (!document.querySelector('.album')) {
-      // console.log('hey')
-      this.setState({
-        album: !this.state.album,
-      })
-    }
+    this.setState({
+      album: !this.state.album,
+    })
   }
   
   componentDidMount() {

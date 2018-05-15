@@ -173,16 +173,15 @@ button {
       position: relative;
       z-index: 1;
       box-shadow: 0 3px 5px -2px rgba(0, 0, 0, 0.75); }
-    .music .background .content .cd {
-      margin: 0 auto;
-      position: relative;
-      width: 290px;
-      height: 290px;
-      margin-top: -270px;
-      cursor: pointer; }
-      .music .background .content .cd #cd {
-        width: 100%;
-        height: 100%; }
+
+.music .cd {
+  margin: 0 auto;
+  width: 290px;
+  margin-top: -270px;
+  cursor: pointer; }
+  .music .cd #cd {
+    width: 100%;
+    height: 100%; }
 
 .music .streamers {
   height: 187.5px;
@@ -202,13 +201,22 @@ button {
       fill: #BAB5FF; }
 
 .album-details {
-  min-height: 100vh;
+  position: static;
+  max-height: 0;
+  overflow: hidden;
+  transition: all .6s ease-out;
   background: #7269ff;
-  color: white; }
+  color: white;
+  border-radius: 10px; }
+  .album-details.is-expanded {
+    max-height: 100vh;
+    margin-top: 375px; }
+  .album-details .darken {
+    border-radius: 10px; }
   .album-details #name-logo {
     margin: 65px auto 0;
     padding: 0 18.75px;
-    width: 100vw;
+    width: 100%;
     height: auto;
     z-index: 2; }
     .album-details #name-logo * {
@@ -220,14 +228,13 @@ button {
     font-weight: normal;
     letter-spacing: 9px; }
   .album-details .contents {
-    min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto auto; }
-    .album-details .contents ol {
+    .album-details .contents .track-list {
       text-align: center;
       padding: 0;
       align-self: center; }
-      .album-details .contents ol li {
+      .album-details .contents .track-list li {
         font-size: 1.25em;
         text-transform: uppercase; }
     .album-details .contents ul {
