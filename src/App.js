@@ -17,6 +17,7 @@ export default class App extends Component {
       nav: false,
       quote: 1,
       album: false,
+      enhanceImage: false,
     }
     this.toggleNav = this.toggleNav.bind(this)
     this.closeNav = this.closeNav.bind(this)
@@ -25,6 +26,7 @@ export default class App extends Component {
     this.showMusicDetails = this.showMusicDetails.bind(this)
     this.hoverAlbum = this.hoverAlbum.bind(this)
     this.unhoverAlbum = this.unhoverAlbum.bind(this)
+    this.expandPhoto = this.expandPhoto.bind(this)
   }
 
   //NAV
@@ -114,6 +116,24 @@ export default class App extends Component {
       album: !this.state.album,
     })
   }
+
+  //PHOTOS
+  expandPhoto(e) {
+    this.setState({
+      enhanceImage: !this.state.enhanceImage,
+    })
+    // remove class 'enlarge' if it already has it, add it if not
+    if (e.target.classList.contains('enlarge')) {
+      e.target.classList.remove('enlarge')
+    } else {
+      e.target.classList.add('enlarge')
+    }
+
+    // make next click remove 'enlarge' class
+    if (this.state.enhanceImage) {
+      console.log('enhance')
+    }
+  }
   
   componentDidMount() {
     // advance quote every 10sec
@@ -134,7 +154,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { nav, quote, album, } = this.state
+    const { nav, quote, album, enhanceImage, } = this.state
 
     return (
       <div className="App">
@@ -150,9 +170,11 @@ export default class App extends Component {
           album={album}
           hoverAlbum={this.hoverAlbum}
           unhoverAlbum={this.unhoverAlbum}
-          showMusicDetails={this.showMusicDetails}/>
+          showMusicDetails={this.showMusicDetails} />
         <Video />
-        <Pictures />
+        <Pictures 
+          enhanceImage={enhanceImage}
+          expandPhoto={this.expandPhoto} />
         <Shows />
         <Contact />
         

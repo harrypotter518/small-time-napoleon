@@ -10,15 +10,19 @@ const backgroundStyle = {
   backgroundSize: 'cover',
 }
 
-const Pictures = () => {
+
+
+const Pictures = (props) => {
   return(
     <div id="pictures" className="pictures">
       <div className="background" style={backgroundStyle}>
-        <div className="darken">
-          {/* throw in a quote */}
-        </div>
+        <div className="darken"></div>
       </div>
-      <PhotoAlbum />
+      <PhotoAlbum 
+        expandPhoto={props.expandPhoto}
+        enhanceImage={props.enhanceImage} />
+
+      
 
     </div>
   )

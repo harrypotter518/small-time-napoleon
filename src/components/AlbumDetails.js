@@ -15,6 +15,9 @@ const AlbumDetails = (props) => {
     <div className={props.album ? "album-details is-expanded" : "album-details"} style={albumDetailsStyle}>
       <div className="darken">
         <div className="contents">
+
+          <div className="spacer"></div>
+
           <div>
             <NameLogo />
             <h3>Too Big To Fail</h3>
@@ -42,9 +45,9 @@ const AlbumDetails = (props) => {
             <li>Mixing Engineer: Kevin Ratterman</li>
             <li>© Small Time Napoleon 2017</li>
           </ul>
+          
         </div>
       </div>
-
     </div>
   )
 }

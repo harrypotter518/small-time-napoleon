@@ -89,9 +89,9 @@ button {
     width: 37.5px;
     border-radius: 3px; }
     .socials svg * {
-      fill: #262355; }
+      fill: url(#primary-fourth); }
     .socials svg:hover * {
-      fill: #BAB5FF; }
+      fill: #262355; }
 
 .nav .nav-buttons svg * {
   fill: white; }
@@ -196,21 +196,20 @@ button {
     width: 37.5px;
     border-radius: 3px; }
     .music .streamers svg * {
-      fill: #262355; }
+      fill: url(#primary-fourth); }
     .music .streamers svg:hover * {
-      fill: #BAB5FF; }
+      fill: #262355; }
 
 .album-details {
   position: static;
   max-height: 0;
   overflow: hidden;
-  transition: all .6s ease-out;
+  transition: all 1s ease-out;
   background: #7269ff;
   color: white;
   border-radius: 10px; }
   .album-details.is-expanded {
-    max-height: 100vh;
-    margin-top: 375px; }
+    max-height: 200vh; }
   .album-details .darken {
     border-radius: 10px; }
   .album-details #name-logo {
@@ -229,7 +228,10 @@ button {
     letter-spacing: 9px; }
   .album-details .contents {
     display: grid;
-    grid-template-rows: auto 1fr auto auto; }
+    grid-template-rows: auto auto 400px auto auto;
+    margin-bottom: 5px; }
+    .album-details .contents .spacer {
+      height: 225px; }
     .album-details .contents .track-list {
       text-align: center;
       padding: 0;
@@ -242,8 +244,6 @@ button {
       list-style-type: none;
       margin: 5px 18.75px;
       padding: 0; }
-      .album-details .contents ul:last-of-type {
-        margin-bottom: 18.75px; }
       .album-details .contents ul li {
         font-size: .75em; }
 
@@ -320,3 +320,19 @@ button {
     height: auto; }
   .pictures .photo-album .image2, .pictures .photo-album .image4, .pictures .photo-album .image6, .pictures .photo-album .image8 {
     grid-row: span 2; }
+  .pictures .photo-album .enlarge {
+    position: fixed;
+    max-height: 95%;
+    width: 95%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 101; }
+  .pictures .photo-album .large-image-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: black;
+    z-index: 100; }

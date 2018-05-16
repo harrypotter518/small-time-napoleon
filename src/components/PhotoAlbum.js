@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 import dan from '../assets/photoSection/dan.jpg'
 import danSings from '../assets/photoSection/danSings.jpg'
@@ -28,16 +28,19 @@ const photosArray = [
   dan,
 ]
 
-const photos = photosArray.map((photo, i) =>
-  <img className={"image" + i} src={photo} alt={photo} key={i}/>
-)
+export default class PhotoAlbum extends Component {
+  render() {
 
-const PhotoAlbum = () => {
-  return(
-    <div className="photo-album">
-      {photos}
-    </div>
-  )
+    const photos = photosArray.map((photo, i) =>
+      <img className={"image" + i} src={photo} alt={photo} key={i} onClick={this.props.expandPhoto}/>
+    )
+    
+    return(
+      <div className="photo-album">
+        {photos}
+  
+        {this.props.enhanceImage ? <div className="large-image-background"></div> : null}
+      </div>
+    )
+  }
 }
-
-export default PhotoAlbum
