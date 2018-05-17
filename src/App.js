@@ -9,6 +9,7 @@ import Video from './components/Video'
 import Pictures from './components/Pictures'
 import Shows from './components/Shows'
 import Contact from './components/Contact'
+import Footer from './components/Footer'
 
 export default class App extends Component {
   constructor(props) {
@@ -97,18 +98,19 @@ export default class App extends Component {
     const tl = new TimelineLite()
     tl
     .to('#label-and-grooves', 5, {rotation: 360, transformOrigin: 'center', ease:Power0.easeNone, repeat: -1})
+    .to('#shine', 30, {rotation: -360, transformOrigin: 'center', ease:Power0.easeNone, repeat: -1}, 0)
     .to('#grooves', 6.5, {rotation: 360, transformOrigin: 'center', ease:Power0.easeNone, repeat: -1}, 0)
     .to('#grooves', 1.5, {scale: 1.08, ease:Power2.easeOut, yoyo: true, repeat: -1}, 0)
   }
   hoverAlbum() {
     const tl = new TimelineLite()
     tl
-      .to('.cd', .5, {y: '20px', ease:Power2.easeInOut})
+      .to('.cd-disc', .5, {y: '20px', ease:Power2.easeInOut})
   }
   unhoverAlbum() {
     const tl = new TimelineLite()
     tl
-      .to('.cd', .5, {y: 0, ease:Power2.easeInOut})
+      .to('.cd-disc', .5, {y: 0, ease:Power2.easeInOut})
   }
 
   showMusicDetails() {
@@ -157,21 +159,29 @@ export default class App extends Component {
           nav={nav} 
           toggleNav={this.toggleNav}
           closeNav={this.closeNav} />
+
         <Main
           quote={quote}
           increaseQuote={this.increaseQuote}
           decreaseQuote={this.decreaseQuote} />
+
         <Music 
           album={album}
           hoverAlbum={this.hoverAlbum}
           unhoverAlbum={this.unhoverAlbum}
           showMusicDetails={this.showMusicDetails} />
+
         <Video />
+
         <Pictures 
           enhanceImage={enhanceImage}
           expandPhoto={this.expandPhoto} />
+
         <Shows />
+
         <Contact />
+
+        <Footer />
         
       </div>
     );

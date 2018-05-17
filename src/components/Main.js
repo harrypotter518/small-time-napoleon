@@ -4,12 +4,12 @@ import Socials from './Socials'
 import Quotes from './Quotes'
 
 import NameLogo from '../assets/NameLogo'
-import weddingPhoto from '../assets/weddingPhoto.jpg';
+import weddingPhoto from '../assets/photoSection/wedding2.jpg';
 
 
 const outdoorPhotoStyle = {
   background: 'url(' + weddingPhoto + ') #262355',
-  backgroundPosition: 'left',
+  backgroundPosition: 'bottom',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
 }

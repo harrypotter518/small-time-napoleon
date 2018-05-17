@@ -1,7 +1,7 @@
 import React from 'react'
 import PhotoAlbum from './PhotoAlbum'
 
-import zackBackground from '../assets/zack.jpg'
+import zackBackground from '../assets/photoSection/zack.jpg'
 
 const backgroundStyle = {
   background: 'url(' + zackBackground + ') #262355',

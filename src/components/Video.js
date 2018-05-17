@@ -1,6 +1,6 @@
 import React from 'react'
 
-import danBackground from '../assets/danBackground.jpg'
+import danBackground from '../assets/photoSection/danSings.jpg'
 import vidThumbNail1 from '../assets/vidThumbNail1.png'
 import vidThumbNail2 from '../assets/vidThumbNail2.png'
 import vidThumbNail3 from '../assets/vidThumbNail3.png'

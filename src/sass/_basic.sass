@@ -12,8 +12,34 @@ button
 .hide
   display: none
 
+.background
+  height: 300px
+
 .darken
   // position: absolute
-  background: rgba($monoPrimary,.75)
+  background: linear-gradient(45deg,darken(rgba($monoPrimary,.95),10%),rgba($monoFourth,.75))
   width: 100%
   height: 100%
+
+.arrow
+  margin: 0 auto
+  width: 0
+  height: 0
+  border-radius: 2px
+
+  &.up
+    border-left: 10px solid transparent
+    border-right: 10px solid transparent
+    border-bottom: 10px solid $monoPrimary
+  &.down
+    border-left: 10px solid transparent
+    border-right: 10px solid transparent
+    border-top: 10px solid $monoPrimary
+  &.left
+    border-top: 10px solid transparent
+    border-right: 10px solid $darkblue
+    border-bottom: 10px solid transparent
+  &.right
+    border-top: 10px solid transparent
+    border-left: 10px solid $darkblue
+    border-bottom: 10px solid transparent

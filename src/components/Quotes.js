@@ -9,7 +9,7 @@ export default class Quotes extends Component {
     return(
       <div className="quotes-container">
         <div className="quotes">
-          <button className="arrow-button left" onClick={decreaseQuote} alt="left"></button>
+          <button className="arrow left" onClick={decreaseQuote} alt="left"></button>
 
           <div className={quote === 1 ? "quote" : "hide"}>
             <p className="testiment">“Truly one of the most unique and exciting bands I’ve seen come out of Louisville in a very long time.”</p>
@@ -26,7 +26,7 @@ export default class Quotes extends Component {
             <p className="author">-Kyle Ware, Insider Louisville</p>
           </div>
 
-          <button className="arrow-button right" onClick={increaseQuote} alt="right"></button>
+          <button className="arrow right" onClick={increaseQuote} alt="right"></button>
         </div>
         <div className="dots">
           <div className={quote === 1 ? "dot full" : "dot"}></div>

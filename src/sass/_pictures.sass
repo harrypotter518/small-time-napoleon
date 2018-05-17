@@ -1,6 +1,5 @@
 .pictures
-  .background
-    height: 300px
+  margin-bottom: 75px
 
   .photo-album
     display: grid
@@ -16,8 +15,11 @@
       height: auto
       cursor: pointer
     
-    .image2, .image4, .image6, .image8
+    .image2, .image4, .image7, .image9
       grid-row: span 2
+
+    .image6
+      grid-column: span 2
 
     .enlarge
       position: fixed
@@ -28,6 +30,7 @@
       left: 50vw
       top: 50vh
       transform: translate(-50%,-50%)
+      transition: max-width .3s ease-in-out
       z-index: 101
 
     .large-image-background

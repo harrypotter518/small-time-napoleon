@@ -10,6 +10,7 @@ import wedding2 from '../assets/photoSection/wedding2.jpg'
 import wedding3 from '../assets/photoSection/wedding3.jpg'
 import wedding4 from '../assets/photoSection/wedding4.jpg'
 import zack from '../assets/photoSection/zack.jpg'
+import jeffDave from '../assets/photoSection/jeffDave.jpg'
 
 const photosObject = [
   {
@@ -37,6 +38,10 @@ const photosObject = [
     alt: 'Jeff 2017 at "Warm up Louisville"',
   },
   {
+    source: newTrio,
+    alt: 'The band 2017 at "Warm up Louisville"',
+  },
+  {
     source: wedding4,
     alt: 'The band 2017 at an outdoor wedding',
   },
@@ -49,16 +54,16 @@ const photosObject = [
     alt: 'Zack 2017 at "Warm up Louisville"',
   },
   {
-    source: newTrio,
-    alt: 'The band 2017 at "Warm up Louisville"',
+    source: dan,
+    alt: 'Dan 2017 at "Warm up Louisville"',
   },
   {
     source: wedding1,
     alt: 'The band 2017 at an outdoor wedding',
   },
   {
-    source: dan,
-    alt: 'Dan 2017 at "Warm up Louisville"',
+    source: jeffDave,
+    alt: 'Jeff and Dave 2017 at "Warm up Louisville"',
   },
 ]
 

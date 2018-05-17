@@ -18,10 +18,35 @@ button {
 .hide {
   display: none; }
 
+.background {
+  height: 300px; }
+
 .darken {
-  background: rgba(38, 35, 85, 0.75);
+  background: linear-gradient(45deg, rgba(22, 20, 49, 0.95), rgba(93, 91, 127, 0.75));
   width: 100%;
   height: 100%; }
+
+.arrow {
+  margin: 0 auto;
+  width: 0;
+  height: 0;
+  border-radius: 2px; }
+  .arrow.up {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #262355; }
+  .arrow.down {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #262355; }
+  .arrow.left {
+    border-top: 10px solid transparent;
+    border-right: 10px solid #262355;
+    border-bottom: 10px solid transparent; }
+  .arrow.right {
+    border-top: 10px solid transparent;
+    border-left: 10px solid #262355;
+    border-bottom: 10px solid transparent; }
 
 .nav {
   background: rgba(186, 181, 255, 0.5);
@@ -114,20 +139,8 @@ button {
       text-align: right;
       font-weight: bold;
       font-size: .75em; }
-  .quotes-container .quotes .arrow-button {
+  .quotes-container .quotes .arrow {
     margin: 15px; }
-    .quotes-container .quotes .arrow-button.left {
-      width: 0;
-      height: 0;
-      border-top: 10px solid transparent;
-      border-right: 10px solid #262355;
-      border-bottom: 10px solid transparent; }
-    .quotes-container .quotes .arrow-button.right {
-      width: 0;
-      height: 0;
-      border-top: 10px solid transparent;
-      border-left: 10px solid #262355;
-      border-bottom: 10px solid transparent; }
 
 .quotes-container .dots {
   display: flex;
@@ -146,7 +159,6 @@ button {
 
 .music .background {
   background: #262355;
-  height: 300px;
   margin-bottom: 150px;
   text-align: center;
   position: relative; }
@@ -237,7 +249,7 @@ button {
       padding: 0;
       align-self: center; }
       .album-details .contents .track-list li {
-        font-size: 1.25em;
+        font-size: .95em;
         text-transform: uppercase; }
     .album-details .contents ul {
       text-align: left;
@@ -249,7 +261,6 @@ button {
 
 .video .background {
   background: #262355;
-  height: 300px;
   margin-bottom: 150px;
   text-align: center;
   position: relative; }
@@ -304,36 +315,56 @@ button {
       left: 50%;
       transform: translateX(-50%); }
 
-.pictures .background {
-  height: 300px; }
+.pictures {
+  margin-bottom: 75px; }
+  .pictures .photo-album {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    grid-gap: 5px;
+    width: 90vw;
+    margin: 0 auto;
+    margin-top: -100px; }
+    .pictures .photo-album img {
+      max-width: 100%;
+      height: auto;
+      cursor: pointer; }
+    .pictures .photo-album .image2, .pictures .photo-album .image4, .pictures .photo-album .image7, .pictures .photo-album .image9 {
+      grid-row: span 2; }
+    .pictures .photo-album .image6 {
+      grid-column: span 2; }
+    .pictures .photo-album .enlarge {
+      position: fixed;
+      max-height: 95vh;
+      max-width: 95vw;
+      left: 50vw;
+      top: 50vh;
+      transform: translate(-50%, -50%);
+      transition: max-width .3s ease-in-out;
+      z-index: 101; }
+    .pictures .photo-album .large-image-background {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(45deg, #06050d, #313044);
+      z-index: 100; }
 
-.pictures .photo-album {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-rows: auto;
-  grid-gap: 5px;
-  width: 90vw;
-  margin: 0 auto;
-  margin-top: -100px; }
-  .pictures .photo-album img {
-    max-width: 100%;
-    height: auto;
-    cursor: pointer; }
-  .pictures .photo-album .image2, .pictures .photo-album .image4, .pictures .photo-album .image6, .pictures .photo-album .image8 {
-    grid-row: span 2; }
-  .pictures .photo-album .enlarge {
-    position: fixed;
-    max-height: 95vh;
-    max-width: 95vw;
-    left: 50vw;
-    top: 50vh;
-    transform: translate(-50%, -50%);
-    z-index: 101; }
-  .pictures .photo-album .large-image-background {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(45deg, #06050d, #313044);
-    z-index: 100; }
+.shows {
+  margin-bottom: 75px; }
+
+.contact {
+  text-align: center;
+  margin-bottom: 75px; }
+
+.footer {
+  background: linear-gradient(45deg, #161431, #5d5b7f); }
+  .footer .socials svg * {
+    fill: white; }
+  .footer p {
+    margin: 0;
+    padding-bottom: .75em;
+    color: white;
+    text-align: center;
+    font-size: .75em; }

@@ -4,7 +4,7 @@ import AlbumDetails from './AlbumDetails'
 import Streamers from './Streamers'
 
 import epCover from '../assets/epCover.png'
-import jeffDave from '../assets/jeffDave.jpg'
+import jeffDave from '../assets/photoSection/jeffDave.jpg'
 import CD from '../assets/CD'
 
 const epCoverStyle = {
@@ -49,7 +49,8 @@ const Music = (props) => {
 
               <AlbumDetails album={props.album}/> 
               
-              <CD />
+              <CD album={props.album} />
+              
 
 
             </div>
