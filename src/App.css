@@ -317,15 +317,16 @@ button {
   margin-top: -100px; }
   .pictures .photo-album img {
     max-width: 100%;
-    height: auto; }
+    height: auto;
+    cursor: pointer; }
   .pictures .photo-album .image2, .pictures .photo-album .image4, .pictures .photo-album .image6, .pictures .photo-album .image8 {
     grid-row: span 2; }
   .pictures .photo-album .enlarge {
     position: fixed;
-    max-height: 95%;
-    width: 95%;
-    left: 50%;
-    top: 50%;
+    max-height: 95vh;
+    max-width: 95vw;
+    left: 50vw;
+    top: 50vh;
     transform: translate(-50%, -50%);
     z-index: 101; }
   .pictures .photo-album .large-image-background {
@@ -334,5 +335,5 @@ button {
     bottom: 0;
     left: 0;
     right: 0;
-    background: black;
+    background: linear-gradient(45deg, #06050d, #313044);
     z-index: 100; }

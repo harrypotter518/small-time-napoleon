@@ -128,11 +128,6 @@ export default class App extends Component {
     } else {
       e.target.classList.add('enlarge')
     }
-
-    // make next click remove 'enlarge' class
-    if (this.state.enhanceImage) {
-      console.log('enhance')
-    }
   }
   
   componentDidMount() {
