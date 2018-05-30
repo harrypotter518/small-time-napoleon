@@ -19,6 +19,10 @@ export default class App extends Component {
       quote: 1,
       album: false,
       enhanceImage: false,
+      emailSubject: 'Booking',
+      emailDate: null,
+      emailButtonValue: 'Booking Email',
+      emailEventTitle: '',
     }
     this.toggleNav = this.toggleNav.bind(this)
     this.closeNav = this.closeNav.bind(this)
@@ -28,6 +32,9 @@ export default class App extends Component {
     this.hoverAlbum = this.hoverAlbum.bind(this)
     this.unhoverAlbum = this.unhoverAlbum.bind(this)
     this.expandPhoto = this.expandPhoto.bind(this)
+    this.changeEmailSubject = this.changeEmailSubject.bind(this)
+    this.changeEmailDate = this.changeEmailDate.bind(this)
+    this.changeEmailEventTitle = this.changeEmailEventTitle.bind(this)
   }
 
   //NAV
@@ -131,6 +138,38 @@ export default class App extends Component {
       e.target.classList.add('enlarge')
     }
   }
+
+  //CONTACT
+  changeEmailSubject(e) {
+    this.setState({
+      emailSubject: e.target.value
+    })
+    if (e.target.value === 'Booking') {
+      this.setState({
+        emailButtonValue: 'Booking Email',
+      })
+    } else if (e.target.value === 'General Question') {
+      this.setState({
+        emailButtonValue: 'Email a General Question',
+        emailDate: null
+      })
+    } else if (e.target.value === 'Other') {
+      this.setState({
+        emailButtonValue: 'Email Other',
+        emailDate: null
+      })
+    }
+  }
+  changeEmailDate(e) {
+    this.setState({
+      emailDate: e.target.value
+    })
+  }
+  changeEmailEventTitle(e) {
+    this.setState({
+      emailEventTitle: e.target.value,
+    })
+  }
   
   componentDidMount() {
     // advance quote every 10sec
@@ -151,7 +190,8 @@ export default class App extends Component {
   }
 
   render() {
-    const { nav, quote, album, enhanceImage, } = this.state
+    const { nav, quote, album, enhanceImage, emailSubject, emailDate, emailButtonValue, emailEventTitle, } = this.state
+    
 
     return (
       <div className="App">
@@ -179,7 +219,14 @@ export default class App extends Component {
 
         <Shows />
 
-        <Contact />
+        <Contact 
+          emailSubject={emailSubject}
+          emailDate={emailDate}
+          changeEmailSubject={this.changeEmailSubject}
+          changeEmailDate={this.changeEmailDate}
+          emailButtonValue={emailButtonValue}
+          emailEventTitle={emailEventTitle} 
+          changeEmailEventTitle={this.changeEmailEventTitle} />
 
         <Footer />
         
