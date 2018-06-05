@@ -23,6 +23,7 @@ export default class App extends Component {
       emailDate: null,
       emailButtonValue: 'Booking Email',
       emailEventTitle: '',
+      emailBody: '',
     }
     this.toggleNav = this.toggleNav.bind(this)
     this.closeNav = this.closeNav.bind(this)
@@ -35,6 +36,7 @@ export default class App extends Component {
     this.changeEmailSubject = this.changeEmailSubject.bind(this)
     this.changeEmailDate = this.changeEmailDate.bind(this)
     this.changeEmailEventTitle = this.changeEmailEventTitle.bind(this)
+    this.changeEmailBody = this.changeEmailBody.bind(this)
   }
 
   //NAV
@@ -161,13 +163,29 @@ export default class App extends Component {
     }
   }
   changeEmailDate(e) {
+    let date = e.target.value
+    //creates an array
+    let newDate = date.split('-')
+    //split array into vars
+    let month = newDate[1]
+    let day = newDate[2]
+    let year = newDate[0]
+    //set emailDate from split date as string literal
     this.setState({
-      emailDate: e.target.value
+      emailDate: `${month}/${day}/${year}`
     })
   }
   changeEmailEventTitle(e) {
     this.setState({
       emailEventTitle: e.target.value,
+    })
+  }
+  changeEmailBody(e) {
+    let body = e.target.value
+    // replace \n(new paragraph) with %0D%05 for new paragraph in mailto:
+    let newBody = body.replace(/\n/g, "%0D%0A")
+    this.setState({
+      emailBody: newBody,
     })
   }
   
@@ -190,7 +208,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { nav, quote, album, enhanceImage, emailSubject, emailDate, emailButtonValue, emailEventTitle, } = this.state
+    const { nav, quote, album, enhanceImage, emailSubject, emailDate, emailButtonValue, emailEventTitle, emailBody, } = this.state
     
 
     return (
@@ -226,7 +244,9 @@ export default class App extends Component {
           changeEmailDate={this.changeEmailDate}
           emailButtonValue={emailButtonValue}
           emailEventTitle={emailEventTitle} 
-          changeEmailEventTitle={this.changeEmailEventTitle} />
+          changeEmailEventTitle={this.changeEmailEventTitle}
+          emailBody={emailBody}
+          changeEmailBody={this.changeEmailBody} />
 
         <Footer />
         

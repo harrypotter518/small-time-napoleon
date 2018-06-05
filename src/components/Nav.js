@@ -20,8 +20,9 @@ export default class Nav extends Component {
           <a href="#music" onClick={closeNav}><button>music</button></a>
           <a href="#video" onClick={closeNav}><button>video</button></a>
           <a href="#pictures" onClick={closeNav}><button>pictures</button></a>
-          <button>shows</button>
-          <button>contact</button>
+          <a href="#shows" onClick={closeNav}><button>shows</button></a>
+          <a href="#contact" onClick={closeNav}><button>contact</button></a>
+
           <Socials />
         </div>
       </div>

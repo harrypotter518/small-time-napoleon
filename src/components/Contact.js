@@ -14,7 +14,7 @@ export default class Contact extends Component {
 
 
   render() {
-    const {emailSubject, emailDate, changeEmailSubject, changeEmailDate, emailButtonValue, emailEventTitle, changeEmailEventTitle, } = this.props
+    const {emailSubject, emailDate, changeEmailSubject, changeEmailDate, emailButtonValue, emailEventTitle, changeEmailEventTitle, emailBody, changeEmailBody} = this.props
 
     let bookingSelections = null
     if (emailSubject === 'Booking') {
@@ -26,7 +26,7 @@ export default class Contact extends Component {
     }
 
     return(
-      <div className="contact">
+      <div className="contact" id="contact">
         <div className="background" style={backgroundStyle}>
           <div className="darken"></div>
         </div>
@@ -45,7 +45,12 @@ export default class Contact extends Component {
 
             {bookingSelections}
 
-            <a href={`mailto:smalltimenapoleonband@gmail.com?Subject=${emailSubject}%20${emailDate !== null ? emailDate : ''}%20${emailEventTitle !== '' ? emailEventTitle : '' }`}>
+            <br />
+
+            <textarea name="message" placeholder="your message here" onChange={changeEmailBody} />
+
+
+            <a href={`mailto:smalltimenapoleonband@gmail.com?Subject=${emailSubject}${emailDate !== null ? '%20-%20'+emailDate : ''}${emailEventTitle !== '' ? '%20-%20'+emailEventTitle : '' }&body=${emailBody}`}>
               {emailButtonValue}
             </a>
 
