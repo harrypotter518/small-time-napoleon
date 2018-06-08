@@ -23,6 +23,7 @@ export default class Contact extends Component {
       // emailEventTitle,
       handleContactChange, 
       submitContactForm, 
+      clicked,
     } = this.props
 
     // let date = <label>Date:<input onChange={handleContactChange} type="date" name="emailDate" /></label>
@@ -37,7 +38,7 @@ export default class Contact extends Component {
         <div className="form">
           <h3>Contact us</h3>
 
-          <form onSubmit={submitContactForm}>
+          <form onSubmit={submitContactForm} action="../public/success.html">
           <p className="hide">
             <label>Don’t fill this out if you're human: <input name="bot-field" type="text" /></label>
           </p>
@@ -55,11 +56,11 @@ export default class Contact extends Component {
                 <option value="Other">Other</option>
               </select>
             </label>
-            
+
             <textarea name="emailBody" placeholder="your message here" onChange={handleContactChange} />
 
 
-            <button type="submit" >{emailButtonValue}</button>
+            <button type="submit" name="submitButton" disabled={ clicked ? 'true' : 'false' } >{emailButtonValue}</button>
           </form>
 
           <h3>Email</h3>

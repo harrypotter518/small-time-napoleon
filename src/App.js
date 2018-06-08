@@ -32,6 +32,8 @@ export default class App extends Component {
       emailButtonValue: 'Booking Email',
       emailEventTitle: '',
       emailBody: '',
+
+      clicked: false,
     }
     this.toggleNav = this.toggleNav.bind(this)
     this.closeNav = this.closeNav.bind(this)
@@ -175,27 +177,6 @@ export default class App extends Component {
       })
     }
   }
-  // changeEmailDate(e) {
-  //   let date = e.target.value
-  //   //creates an array
-  //   let newDate = date.split('-')
-  //   //split array into vars
-  //   let month = newDate[1]
-  //   let day = newDate[2]
-  //   let year = newDate[0]
-  //   //set emailDate from split date as string literal
-  //   this.setState({
-  //     emailDate: `${month}/${day}/${year}`
-  //   })
-  // }
-  // changeEmailBody(e) {
-  //   let body = e.target.value
-  //   // replace \n(new paragraph) with %0D%05 for new paragraph in mailto:
-  //   let newBody = body.replace(/\n/g, "%0D%0A")
-  //   this.setState({
-  //     emailBody: newBody,
-  //   })
-  // }
   submitContactForm(e) {
     fetch("/", {
       method: "POST",
@@ -205,7 +186,11 @@ export default class App extends Component {
       .then(() => alert("Success!"))
       .catch(error => alert(error));
 
-    e.preventDefault();
+    e.preventDefault()
+
+    this.setState({
+      clicked: true,
+    })
   }
   
   componentDidMount() {
@@ -227,7 +212,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { nav, quote, album, enhanceImage, emailSubject, emailUser, emailDate, emailButtonValue, emailEventTitle, emailBody, } = this.state
+    const { nav, quote, album, enhanceImage, emailSubject, emailUser, emailDate, emailButtonValue, emailEventTitle, emailBody, clicked, } = this.state
     
 
     return (
@@ -266,7 +251,8 @@ export default class App extends Component {
           emailUser={emailUser}
           emailBody={emailBody}
           handleContactChange={this.handleContactChange}
-          submitContactForm={this.submitContactForm} />
+          submitContactForm={this.submitContactForm} 
+          clicked={clicked} />
 
         <Footer />
         
