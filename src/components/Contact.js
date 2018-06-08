@@ -22,7 +22,6 @@ export default class Contact extends Component {
       changeEmailDate, 
       emailButtonValue, 
       emailEventTitle,
-      emailUser,
       handleContactChange, 
       submitContactForm, 
     } = this.props
@@ -39,7 +38,7 @@ export default class Contact extends Component {
         <div className="form">
           <h3>Contact us</h3>
 
-          <form name="contact" method="POST" netlify-honeypot="bot-field" netlify onSubmit={submitContactForm}>
+          <form onSubmit={submitContactForm}>
           <p className="hide">
             <label>Don’t fill this out if you're human: <input name="bot-field" type="text" /></label>
           </p>
@@ -54,7 +53,7 @@ export default class Contact extends Component {
             {emailSubject === "Booking" ? date : null}
             {emailSubject === "Booking" ? eventTitle : null}
 
-            <label>Your Email: <input name="emailUser" type="email" value={emailUser} onChange={handleContactChange} /></label>
+            <label>Your Email: <input name="emailUser" type="email" onChange={handleContactChange} /></label>
 
             <textarea name="emailBody" placeholder="your message here" onChange={handleContactChange} />
 

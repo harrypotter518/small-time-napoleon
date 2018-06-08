@@ -11,8 +11,6 @@ import Shows from './components/Shows'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
-import ContactNetlify from './components/ContactNetlify'
-
 const encode = (data) => {
   return Object.keys(data)
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -269,8 +267,6 @@ export default class App extends Component {
           emailBody={emailBody}
           handleContactChange={this.handleContactChange}
           submitContactForm={this.submitContactForm} />
-
-        <ContactNetlify />
 
         <Footer />
         
