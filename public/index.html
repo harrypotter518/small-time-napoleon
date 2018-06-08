@@ -46,7 +46,11 @@
     </noscript>
 
     <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-      <select name="subject" />
+        <select name="subject">
+          <option value="Booking">Booking</option>
+          <option value="General Question">General Questions</option>
+          <option value="Other">Other</option>
+        </select>
       <input name="bot-field" type="text" />
       <input name="emailName" type="text" />
       <input name="emailUser" type="email" />
