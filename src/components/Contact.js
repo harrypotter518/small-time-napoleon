@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-import GoogleForm from './GoogleForm'
+// import GoogleForm from './GoogleForm'
 
 import backgroundImage from '../assets/photoSection/jeffSings.jpg'
 
@@ -16,16 +16,10 @@ export default class Contact extends Component {
 
 
   render() {
-    const {emailSubject, emailDate, changeEmailSubject, changeEmailDate, emailButtonValue, emailEventTitle, changeEmailEventTitle, emailBody, changeEmailBody} = this.props
+    const {emailSubject, changeEmailSubject, changeEmailDate, emailButtonValue, emailEventTitle, changeEmailEventTitle, changeEmailBody} = this.props
 
-    let bookingSelections = null
-    if (emailSubject === 'Booking') {
-      bookingSelections = <div>
-        <label>Date:<input onChange={changeEmailDate} type="date" /></label>    
-        <br />
-        <label>Event Title:<input type="text" value={emailEventTitle} onChange={changeEmailEventTitle} /></label>
-      </div>
-    }
+    let date = <label>Date:<input onChange={changeEmailDate} type="date" /></label>
+    let eventTitle = <label>Event Title:<input type="text" value={emailEventTitle} onChange={changeEmailEventTitle} /></label>
 
     return(
       <div className="contact" id="contact">
@@ -34,8 +28,11 @@ export default class Contact extends Component {
         </div>
 
         <div className="form">
-          <h3>Email</h3>
-          <form>
+          <h3>Contact us</h3>
+          <form name="contact" method="POST" netlify-honeypot="bot-field" netlify>
+          <p class="hide">
+            <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+          </p>
             <label>Subject:
               <select onChange={changeEmailSubject} value={emailSubject}>
                 <option value="Booking">Booking</option>
@@ -44,22 +41,18 @@ export default class Contact extends Component {
               </select>
             </label>
 
-            <br />
-
-            {bookingSelections}
-
-            <br />
+            {emailSubject === "Booking" ? date : null}
+            {emailSubject === "Booking" ? eventTitle : null}
 
             <textarea name="message" placeholder="your message here" onChange={changeEmailBody} />
 
 
-            <a href={`mailto:smalltimenapoleonband@gmail.com?Subject=${emailSubject}${emailDate !== null ? '%20-%20'+emailDate : ''}${emailEventTitle !== '' ? '%20-%20'+emailEventTitle : '' }&body=${emailBody}`}>
-              {emailButtonValue}
-            </a>
+            <button>{emailButtonValue}</button>
           </form>
 
-
-          {/* <GoogleForm /> */}
+          <h3>Email</h3>
+          <a href="mailto:smalltimenapoleonband@gmail.com?Subject=Hello%20amazing%20band%20I%20love">smalltimenapoleonband@gmail.com</a>
+          <h3>Phone</h3>
 
 
         </div>

@@ -363,8 +363,6 @@ button {
     margin: 0 auto;
     margin-top: -100px;
     background: white; }
-    .contact .form iframe {
-      width: 100%; }
     .contact .form form {
       width: 90%;
       margin: 0 auto;
@@ -376,7 +374,7 @@ button {
         grid-column: span 2;
         width: 100%;
         height: 10em; }
-      .contact .form form a {
+      .contact .form form button {
         grid-column: span 2;
         background: red; }
 
