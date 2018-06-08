@@ -60,7 +60,7 @@ export default class Contact extends Component {
             <textarea name="emailBody" placeholder="your message here" onChange={handleContactChange} />
 
 
-            <button type="submit" name="submitButton" disabled={ clicked ? 'true' : 'false' } >{emailButtonValue}</button>
+            <button type="submit" name="submitButton"  >{emailButtonValue}</button>
           </form>
 
           <h3>Email</h3>
