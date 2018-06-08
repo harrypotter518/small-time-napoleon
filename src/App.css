@@ -360,10 +360,25 @@ button {
   .contact .form {
     width: 90vw;
     padding: 2px;
-    margin: 0 auto; }
-    .contact .form textarea {
-      width: 100%;
-      height: 10em; }
+    margin: 0 auto;
+    margin-top: -100px;
+    background: white; }
+    .contact .form iframe {
+      width: 100%; }
+    .contact .form form {
+      width: 90%;
+      margin: 0 auto;
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: auto; }
+      .contact .form form textarea {
+        grid-column: span 2;
+        width: 100%;
+        height: 10em; }
+      .contact .form form a {
+        grid-column: span 2;
+        background: red; }
 
 .footer {
   background: linear-gradient(45deg, #161431, #5d5b7f); }

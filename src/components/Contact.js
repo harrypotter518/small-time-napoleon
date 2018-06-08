@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 
+import GoogleForm from './GoogleForm'
+
 import backgroundImage from '../assets/photoSection/jeffSings.jpg'
 
 const backgroundStyle = {
@@ -30,6 +32,7 @@ export default class Contact extends Component {
         <div className="background" style={backgroundStyle}>
           <div className="darken"></div>
         </div>
+
         <div className="form">
           <h3>Email</h3>
           <form>
@@ -53,9 +56,10 @@ export default class Contact extends Component {
             <a href={`mailto:smalltimenapoleonband@gmail.com?Subject=${emailSubject}${emailDate !== null ? '%20-%20'+emailDate : ''}${emailEventTitle !== '' ? '%20-%20'+emailEventTitle : '' }&body=${emailBody}`}>
               {emailButtonValue}
             </a>
-
-
           </form>
+
+
+          {/* <GoogleForm /> */}
 
 
         </div>
