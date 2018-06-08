@@ -11,6 +11,12 @@ import Shows from './components/Shows'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
+const encode = (data) => {
+  return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+}
+
 export default class App extends Component {
   constructor(props) {
     super(props)
@@ -37,6 +43,7 @@ export default class App extends Component {
     this.changeEmailDate = this.changeEmailDate.bind(this)
     this.changeEmailEventTitle = this.changeEmailEventTitle.bind(this)
     this.changeEmailBody = this.changeEmailBody.bind(this)
+    this.submitContactForm = this.submitContactForm.bind(this)
   }
 
   //NAV
@@ -188,6 +195,17 @@ export default class App extends Component {
       emailBody: newBody,
     })
   }
+  submitContactForm(e) {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...this.state })
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
+
+    e.preventDefault();
+  }
   
   componentDidMount() {
     // advance quote every 10sec
@@ -246,7 +264,8 @@ export default class App extends Component {
           emailEventTitle={emailEventTitle} 
           changeEmailEventTitle={this.changeEmailEventTitle}
           emailBody={emailBody}
-          changeEmailBody={this.changeEmailBody} />
+          changeEmailBody={this.changeEmailBody}
+          submitContactForm={this.submitContactForm} />
 
         <Footer />
         

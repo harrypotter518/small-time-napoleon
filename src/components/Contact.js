@@ -16,10 +16,10 @@ export default class Contact extends Component {
 
 
   render() {
-    const {emailSubject, changeEmailSubject, changeEmailDate, emailButtonValue, emailEventTitle, changeEmailEventTitle, changeEmailBody} = this.props
+    const {emailSubject, changeEmailSubject, changeEmailDate, emailButtonValue, emailEventTitle, changeEmailEventTitle, changeEmailBody, submitContactForm, } = this.props
 
-    let date = <label>Date:<input onChange={changeEmailDate} type="date" /></label>
-    let eventTitle = <label>Event Title:<input type="text" value={emailEventTitle} onChange={changeEmailEventTitle} /></label>
+    let date = <label>Date:<input onChange={changeEmailDate} type="date" name="date" /></label>
+    let eventTitle = <label>Event Title:<input type="text" value={emailEventTitle} onChange={changeEmailEventTitle} name="event" /></label>
 
     return(
       <div className="contact" id="contact">
@@ -29,12 +29,13 @@ export default class Contact extends Component {
 
         <div className="form">
           <h3>Contact us</h3>
-          <form name="contact" method="POST" netlify-honeypot="bot-field" netlify>
-          <p class="hide">
-            <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+
+          <form name="contact" method="POST" netlify-honeypot="bot-field" netlify onSubmit={submitContactForm}>
+          <p className="hide">
+            <label>Don’t fill this out if you're human: <input name="bot-field" type="text" /></label>
           </p>
             <label>Subject:
-              <select onChange={changeEmailSubject} value={emailSubject}>
+              <select name="subject" onChange={changeEmailSubject} value={emailSubject}>
                 <option value="Booking">Booking</option>
                 <option value="General Question">General Questions</option>
                 <option value="Other">Other</option>
@@ -44,10 +45,12 @@ export default class Contact extends Component {
             {emailSubject === "Booking" ? date : null}
             {emailSubject === "Booking" ? eventTitle : null}
 
+            <label>Email: <input name="email" type="email" /></label>
+
             <textarea name="message" placeholder="your message here" onChange={changeEmailBody} />
 
 
-            <button>{emailButtonValue}</button>
+            <button type="submit" >{emailButtonValue}</button>
           </form>
 
           <h3>Email</h3>
