@@ -19,15 +19,14 @@ export default class Contact extends Component {
     const { 
       emailSubject, 
       changeEmailSubject, 
-      changeEmailDate, 
       emailButtonValue, 
-      emailEventTitle,
+      // emailEventTitle,
       handleContactChange, 
       submitContactForm, 
     } = this.props
 
-    let date = <label>Date:<input onChange={changeEmailDate} type="date" name="date" /></label>
-    let eventTitle = <label>Event Title:<input type="text" name="emailEventTitle" value={emailEventTitle} onChange={handleContactChange} /></label>
+    // let date = <label>Date:<input onChange={handleContactChange} type="date" name="emailDate" /></label>
+    // let eventTitle = <label>Event Title:<input type="text" name="emailEventTitle" value={emailEventTitle} onChange={handleContactChange} /></label>
 
     return(
       <div className="contact" id="contact">
@@ -42,6 +41,13 @@ export default class Contact extends Component {
           <p className="hide">
             <label>Don’t fill this out if you're human: <input name="bot-field" type="text" /></label>
           </p>
+
+            {/* {emailSubject === "Booking" ? date : null}
+            {emailSubject === "Booking" ? eventTitle : null} */}
+
+            <label>Your Name: <input name="emailName" type="text" onChange={handleContactChange} /></label>
+            <label>Your Email: <input name="emailUser" type="email" onChange={handleContactChange} /></label>
+
             <label>Subject:
               <select name="subject" onChange={changeEmailSubject} value={emailSubject}>
                 <option value="Booking">Booking</option>
@@ -49,12 +55,7 @@ export default class Contact extends Component {
                 <option value="Other">Other</option>
               </select>
             </label>
-
-            {emailSubject === "Booking" ? date : null}
-            {emailSubject === "Booking" ? eventTitle : null}
-
-            <label>Your Email: <input name="emailUser" type="email" onChange={handleContactChange} /></label>
-
+            
             <textarea name="emailBody" placeholder="your message here" onChange={handleContactChange} />
 
 

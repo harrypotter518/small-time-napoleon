@@ -27,6 +27,7 @@ export default class App extends Component {
       enhanceImage: false,
       emailSubject: 'Booking',
       emailDate: null,
+      emailName: '',
       emailUser: '',
       emailButtonValue: 'Booking Email',
       emailEventTitle: '',
@@ -41,7 +42,7 @@ export default class App extends Component {
     this.unhoverAlbum = this.unhoverAlbum.bind(this)
     this.expandPhoto = this.expandPhoto.bind(this)
     this.changeEmailSubject = this.changeEmailSubject.bind(this)
-    this.changeEmailDate = this.changeEmailDate.bind(this)
+    // this.changeEmailDate = this.changeEmailDate.bind(this)
     this.handleContactChange = this.handleContactChange.bind(this)
     this.submitContactForm = this.submitContactForm.bind(this)
   }
@@ -154,7 +155,6 @@ export default class App extends Component {
       [e.target.name]: e.target.value 
     });
   }
-
   changeEmailSubject(e) {
     this.setState({
       emailSubject: e.target.value
@@ -175,19 +175,19 @@ export default class App extends Component {
       })
     }
   }
-  changeEmailDate(e) {
-    let date = e.target.value
-    //creates an array
-    let newDate = date.split('-')
-    //split array into vars
-    let month = newDate[1]
-    let day = newDate[2]
-    let year = newDate[0]
-    //set emailDate from split date as string literal
-    this.setState({
-      emailDate: `${month}/${day}/${year}`
-    })
-  }
+  // changeEmailDate(e) {
+  //   let date = e.target.value
+  //   //creates an array
+  //   let newDate = date.split('-')
+  //   //split array into vars
+  //   let month = newDate[1]
+  //   let day = newDate[2]
+  //   let year = newDate[0]
+  //   //set emailDate from split date as string literal
+  //   this.setState({
+  //     emailDate: `${month}/${day}/${year}`
+  //   })
+  // }
   // changeEmailBody(e) {
   //   let body = e.target.value
   //   // replace \n(new paragraph) with %0D%05 for new paragraph in mailto:
