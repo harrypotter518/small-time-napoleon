@@ -11,6 +11,8 @@ import Shows from './components/Shows'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
+import ContactNetlify from './components/ContactNetlify'
+
 const encode = (data) => {
   return Object.keys(data)
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -27,6 +29,7 @@ export default class App extends Component {
       enhanceImage: false,
       emailSubject: 'Booking',
       emailDate: null,
+      emailUser: '',
       emailButtonValue: 'Booking Email',
       emailEventTitle: '',
       emailBody: '',
@@ -41,8 +44,7 @@ export default class App extends Component {
     this.expandPhoto = this.expandPhoto.bind(this)
     this.changeEmailSubject = this.changeEmailSubject.bind(this)
     this.changeEmailDate = this.changeEmailDate.bind(this)
-    this.changeEmailEventTitle = this.changeEmailEventTitle.bind(this)
-    this.changeEmailBody = this.changeEmailBody.bind(this)
+    this.handleContactChange = this.handleContactChange.bind(this)
     this.submitContactForm = this.submitContactForm.bind(this)
   }
 
@@ -149,6 +151,12 @@ export default class App extends Component {
   }
 
   //CONTACT
+  handleContactChange(e) {
+    this.setState({ 
+      [e.target.name]: e.target.value 
+    });
+  }
+
   changeEmailSubject(e) {
     this.setState({
       emailSubject: e.target.value
@@ -182,19 +190,14 @@ export default class App extends Component {
       emailDate: `${month}/${day}/${year}`
     })
   }
-  changeEmailEventTitle(e) {
-    this.setState({
-      emailEventTitle: e.target.value,
-    })
-  }
-  changeEmailBody(e) {
-    let body = e.target.value
-    // replace \n(new paragraph) with %0D%05 for new paragraph in mailto:
-    let newBody = body.replace(/\n/g, "%0D%0A")
-    this.setState({
-      emailBody: newBody,
-    })
-  }
+  // changeEmailBody(e) {
+  //   let body = e.target.value
+  //   // replace \n(new paragraph) with %0D%05 for new paragraph in mailto:
+  //   let newBody = body.replace(/\n/g, "%0D%0A")
+  //   this.setState({
+  //     emailBody: newBody,
+  //   })
+  // }
   submitContactForm(e) {
     fetch("/", {
       method: "POST",
@@ -226,7 +229,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { nav, quote, album, enhanceImage, emailSubject, emailDate, emailButtonValue, emailEventTitle, emailBody, } = this.state
+    const { nav, quote, album, enhanceImage, emailSubject, emailUser, emailDate, emailButtonValue, emailEventTitle, emailBody, } = this.state
     
 
     return (
@@ -262,10 +265,12 @@ export default class App extends Component {
           changeEmailDate={this.changeEmailDate}
           emailButtonValue={emailButtonValue}
           emailEventTitle={emailEventTitle} 
-          changeEmailEventTitle={this.changeEmailEventTitle}
+          emailUser={emailUser}
           emailBody={emailBody}
-          changeEmailBody={this.changeEmailBody}
+          handleContactChange={this.handleContactChange}
           submitContactForm={this.submitContactForm} />
+
+        <ContactNetlify />
 
         <Footer />
         
