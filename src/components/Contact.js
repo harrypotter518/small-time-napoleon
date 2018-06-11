@@ -11,23 +11,24 @@ const backgroundStyle = {
   backgroundSize: 'cover',
 }
 
+
 export default class Contact extends Component {
-
-
-
+  
+  
+  
   render() {
     const { 
-      emailSubject, 
-      changeEmailSubject, 
-      emailButtonValue, 
-      // emailEventTitle,
+      contactSubject, 
+      changecontactSubject, 
+      // emailButtonValue, 
+      // contactEventTitle,
       handleContactChange, 
       submitContactForm, 
+      updateContactButton,
+      contactButtonMessage,
+      contactSent,
       clicked,
     } = this.props
-
-    // let date = <label>Date:<input onChange={handleContactChange} type="date" name="emailDate" /></label>
-    // let eventTitle = <label>Event Title:<input type="text" name="emailEventTitle" value={emailEventTitle} onChange={handleContactChange} /></label>
 
     return(
       <div className="contact" id="contact">
@@ -38,30 +39,28 @@ export default class Contact extends Component {
         <div className="form">
           <h3>Contact us</h3>
 
-          <form onSubmit={submitContactForm} action="../public/success.html">
+          <form onSubmit={submitContactForm} onChange={updateContactButton}>
           <p className="hide">
             <label>Don’t fill this out if you're human: <input name="bot-field" type="text" /></label>
           </p>
 
-            {/* {emailSubject === "Booking" ? date : null}
-            {emailSubject === "Booking" ? eventTitle : null} */}
+            <div className={`inputs ${contactSent ? 'sent ': ''}`}>
+              <label>Your Name: <input name="contactName" type="text" onChange={handleContactChange} /></label>
+              <label>Your Email: <input name="contactUser" type="email" onChange={handleContactChange} /></label>
 
-            <label>Your Name: <input name="emailName" type="text" onChange={handleContactChange} /></label>
-            <label>Your Email: <input name="emailUser" type="email" onChange={handleContactChange} /></label>
+              <label>Subject:
+                <select name="subject" onChange={changecontactSubject} value={contactSubject}>
+                  <option value="Booking">Booking</option>
+                  <option value="General Question">General Questions</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
 
-            <label>Subject:
-              <select name="subject" onChange={changeEmailSubject} value={emailSubject}>
-                <option value="Booking">Booking</option>
-                <option value="General Question">General Questions</option>
-                <option value="Other">Other</option>
-              </select>
-            </label>
-
-            <textarea name="emailBody" placeholder="your message here" onChange={handleContactChange} />
-
-
-            <button type="submit" name="submitButton"  >{emailButtonValue}</button>
+              <textarea name="contactBody" placeholder="your message here" onChange={handleContactChange} />
+            </div>
+            <button className={`contact-button ${clicked ? 'disabled': ''} ${contactSent ? 'btn-sent' : ''}`} type="submit" name="submitButton">{contactButtonMessage}</button>
           </form>
+
 
           <h3>Email</h3>
           <a href="mailto:smalltimenapoleonband@gmail.com?Subject=Hello%20amazing%20band%20I%20love">smalltimenapoleonband@gmail.com</a>

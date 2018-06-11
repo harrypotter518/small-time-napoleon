@@ -45,16 +45,16 @@
       You need to enable JavaScript to run this app.
     </noscript>
 
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-        <select name="subject">
-          <option value="Booking">Booking</option>
-          <option value="General Question">General Questions</option>
-          <option value="Other">Other</option>
-        </select>
+    <form name="contact" netlify netlify-honeypot="bot-field" action="../public/success.html" hidden>
+      <select name="subject">
+        <option value="Booking">Booking</option>
+        <option value="General Question">General Questions</option>
+        <option value="Other">Other</option>
+      </select>
       <input name="bot-field" type="text" />
-      <input name="emailName" type="text" />
-      <input name="emailUser" type="email" />
-      <textarea name="emailBody"></textarea>
+      <input name="contactName" type="text" />
+      <input name="contactUser" type="email" />
+      <textarea name="contactBody"></textarea>
     </form>
     
 

@@ -25,15 +25,15 @@ export default class App extends Component {
       quote: 1,
       album: false,
       enhanceImage: false,
-      emailSubject: 'Booking',
-      emailDate: null,
-      emailName: '',
-      emailUser: '',
-      emailButtonValue: 'Booking Email',
-      emailEventTitle: '',
-      emailBody: '',
-
-      clicked: false,
+      contactSubject: 'Booking',
+      contactDate: null,
+      contactName: '',
+      contactUser: '',
+      contactButtonMessage: 'Send',
+      contactEventTitle: '',
+      contactBody: '',
+      clicked: true,
+      contactSent: false,
     }
     this.toggleNav = this.toggleNav.bind(this)
     this.closeNav = this.closeNav.bind(this)
@@ -43,9 +43,10 @@ export default class App extends Component {
     this.hoverAlbum = this.hoverAlbum.bind(this)
     this.unhoverAlbum = this.unhoverAlbum.bind(this)
     this.expandPhoto = this.expandPhoto.bind(this)
-    this.changeEmailSubject = this.changeEmailSubject.bind(this)
-    // this.changeEmailDate = this.changeEmailDate.bind(this)
+    this.changecontactSubject = this.changecontactSubject.bind(this)
+    // this.changecontactDate = this.changecontactDate.bind(this)
     this.handleContactChange = this.handleContactChange.bind(this)
+    this.updateContactButton = this.updateContactButton.bind(this)
     this.submitContactForm = this.submitContactForm.bind(this)
   }
 
@@ -157,9 +158,9 @@ export default class App extends Component {
       [e.target.name]: e.target.value 
     });
   }
-  changeEmailSubject(e) {
+  changecontactSubject(e) {
     this.setState({
-      emailSubject: e.target.value
+      contactSubject: e.target.value
     })
     if (e.target.value === 'Booking') {
       this.setState({
@@ -168,15 +169,29 @@ export default class App extends Component {
     } else if (e.target.value === 'General Question') {
       this.setState({
         emailButtonValue: 'Email a General Question',
-        emailDate: null
+        contactDate: null
       })
     } else if (e.target.value === 'Other') {
       this.setState({
         emailButtonValue: 'Email Other',
-        emailDate: null
+        contactDate: null
       })
     }
   }
+  updateContactButton() {
+    const { contactName, contactUser, contactBody } = this.state
+    if (contactName.length !== 0 && contactUser.length !== 0 && contactBody.length !== 0) {
+      this.setState({
+        clicked: false,
+      })
+    } else {
+      this.setState({
+        clicked: true,
+      })
+    }
+
+  }
+
   submitContactForm(e) {
     fetch("/", {
       method: "POST",
@@ -186,10 +201,13 @@ export default class App extends Component {
       .then(() => alert("Success!"))
       .catch(error => alert(error));
 
+    console.log('clicked')
+    
     e.preventDefault()
-
     this.setState({
       clicked: true,
+      contactSent: true,
+      contactButtonMessage: 'thanks!',
     })
   }
   
@@ -212,8 +230,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { nav, quote, album, enhanceImage, emailSubject, emailUser, emailDate, emailButtonValue, emailEventTitle, emailBody, clicked, } = this.state
-    
+    const { nav, quote, album, enhanceImage, contactSubject, contactUser, contactDate, emailButtonValue, contactEventTitle, contactBody, contactButtonMessage, contactSent, clicked, } = this.state
 
     return (
       <div className="App">
@@ -242,16 +259,19 @@ export default class App extends Component {
         <Shows />
 
         <Contact 
-          emailSubject={emailSubject}
-          emailDate={emailDate}
-          changeEmailSubject={this.changeEmailSubject}
-          changeEmailDate={this.changeEmailDate}
+          contactSubject={contactSubject}
+          contactDate={contactDate}
+          changecontactSubject={this.changecontactSubject}
+          changecontactDate={this.changecontactDate}
           emailButtonValue={emailButtonValue}
-          emailEventTitle={emailEventTitle} 
-          emailUser={emailUser}
-          emailBody={emailBody}
+          contactEventTitle={contactEventTitle} 
+          contactUser={contactUser}
+          contactBody={contactBody}
           handleContactChange={this.handleContactChange}
           submitContactForm={this.submitContactForm} 
+          updateContactButton={this.updateContactButton}
+          contactButtonMessage={contactButtonMessage}
+          contactSent={contactSent}
           clicked={clicked} />
 
         <Footer />
