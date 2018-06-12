@@ -9,6 +9,7 @@ import Video from './components/Video'
 import Pictures from './components/Pictures'
 import Shows from './components/Shows'
 import Contact from './components/Contact'
+// import ContactSuccess from './components/ContactSuccess'
 import Footer from './components/Footer'
 
 const encode = (data) => {
@@ -25,12 +26,12 @@ export default class App extends Component {
       quote: 1,
       album: false,
       enhanceImage: false,
-      contactSubject: 'Booking',
       contactDate: null,
       contactName: '',
       contactUser: '',
       contactButtonMessage: 'Send',
       contactEventTitle: '',
+      contactSubject: '',
       contactBody: '',
       clicked: true,
       contactSent: false,
@@ -43,7 +44,7 @@ export default class App extends Component {
     this.hoverAlbum = this.hoverAlbum.bind(this)
     this.unhoverAlbum = this.unhoverAlbum.bind(this)
     this.expandPhoto = this.expandPhoto.bind(this)
-    this.changecontactSubject = this.changecontactSubject.bind(this)
+    // this.changecontactSubject = this.changecontactSubject.bind(this)
     // this.changecontactDate = this.changecontactDate.bind(this)
     this.handleContactChange = this.handleContactChange.bind(this)
     this.updateContactButton = this.updateContactButton.bind(this)
@@ -158,26 +159,6 @@ export default class App extends Component {
       [e.target.name]: e.target.value 
     });
   }
-  changecontactSubject(e) {
-    this.setState({
-      contactSubject: e.target.value
-    })
-    if (e.target.value === 'Booking') {
-      this.setState({
-        emailButtonValue: 'Booking Email',
-      })
-    } else if (e.target.value === 'General Question') {
-      this.setState({
-        emailButtonValue: 'Email a General Question',
-        contactDate: null
-      })
-    } else if (e.target.value === 'Other') {
-      this.setState({
-        emailButtonValue: 'Email Other',
-        contactDate: null
-      })
-    }
-  }
   updateContactButton() {
     const { contactName, contactUser, contactBody } = this.state
     if (contactName.length !== 0 && contactUser.length !== 0 && contactBody.length !== 0) {
@@ -198,15 +179,20 @@ export default class App extends Component {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...this.state })
     })
-      .then(() => alert("Success!"))
+      .then(this.setState({
+        clicked: true,
+        contactSent: true,
+        contactButtonMessage: 'thanks!',
+      }))
       .catch(error => alert(error));
     
     e.preventDefault()
-    this.setState({
-      clicked: true,
-      contactSent: true,
-      contactButtonMessage: 'thanks!',
-    })
+
+    // this.setState({
+    //   clicked: true,
+    //   contactSent: true,
+    //   contactButtonMessage: 'thanks!',
+    // })
   }
   
   componentDidMount() {
