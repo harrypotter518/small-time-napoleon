@@ -187,12 +187,6 @@ export default class App extends Component {
       .catch(error => alert(error));
     
     e.preventDefault()
-
-    // this.setState({
-    //   clicked: true,
-    //   contactSent: true,
-    //   contactButtonMessage: 'thanks!',
-    // })
   }
   
   componentDidMount() {
