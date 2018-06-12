@@ -200,8 +200,6 @@ export default class App extends Component {
     })
       .then(() => alert("Success!"))
       .catch(error => alert(error));
-
-    console.log('clicked')
     
     e.preventDefault()
     this.setState({

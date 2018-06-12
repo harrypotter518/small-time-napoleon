@@ -62,9 +62,9 @@ export default class Contact extends Component {
           </form>
 
 
-          <h3>Email</h3>
+          <h4>Email</h4>
           <a href="mailto:smalltimenapoleonband@gmail.com?Subject=Hello%20amazing%20band%20I%20love">smalltimenapoleonband@gmail.com</a>
-          <h3>Phone</h3>
+          <h4>Phone</h4>
           <a href="#contact">502-439-1974</a>
 
 
