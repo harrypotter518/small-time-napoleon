@@ -22,13 +22,12 @@
       text-align: center
 
     form
-      width: 95%
-      margin: 0 auto 35px
-
-      
+      width: 300px
+      margin: 0 auto 75px
 
       .inputs
         border: 1px $monoPrimary solid
+        box-shadow: inset $shadow
         border-radius: 2px
         padding: 10px
         margin: 0 auto
@@ -39,6 +38,8 @@
         max-height: 500px
         max-width: 1000px
         transition: all .5s cubic-bezier(0.36,-0.32, 0.23, 1.17)
+        &:hover
+          box-shadow: $shadow
         &.sent
           overflow: hidden
           max-height: 0
@@ -58,16 +59,50 @@
         padding: 10px
 
       .contact-button
-        +button($monoThird)
+        +button($monoFifth)
         &.disabled
-          color: lighten($monoFourth, 25%)
-          background: $monoFourth
+          color: lighten($monoFourth, 15%)
+          background: $slantGrade
           pointer-events: none
         &.btn-sent
           color: white
+          background: $slantGrade
 
-    h4
-      padding: 0
-      margin: 0
+    a
+      text-decoration: none
+      color: $monoPrimary
+      transition: .5s all ease
+      &:hover
+        color: $monoFifth
+        svg
+          #background
+            fill: $monoFifth
 
+    .icon-set
+      margin: 35px auto
+      border: 1px solid $monoPrimary
+      padding: 10px 0
+      border-radius: 2px
+      width: 300px
+      box-shadow: inset $shadow
+      &:hover
+        box-shadow: $shadow
+      a
+        display: block
+        
+      svg
+        max-width: 50px
+        max-height: 50px
+        display: block
+        margin: 0 auto
+
+        #background
+          fill: $monoFourth
+        #phone, #envelope
+          fill: $monoPrimary
+
+      h4, p
+        text-align: center
+        margin: 0
+        padding: 0
 

@@ -3,6 +3,8 @@ import React, {Component} from 'react'
 // import GoogleForm from './GoogleForm'
 
 import backgroundImage from '../assets/photoSection/jeffSings.jpg'
+import PhoneIcon from '../assets/PhoneIcon';
+import MailIcon from '../assets/MailIcon';
 
 const backgroundStyle = {
   background: 'url(' + backgroundImage + ') #262355',
@@ -11,9 +13,7 @@ const backgroundStyle = {
   backgroundSize: 'cover',
 }
 
-
 export default class Contact extends Component {
-  
   
   
   render() {
@@ -28,6 +28,9 @@ export default class Contact extends Component {
       contactButtonMessage,
       contactSent,
       clicked,
+      // what's up with these touch events?
+      touchStart,
+      touchEnd,
     } = this.props
 
     return(
@@ -54,10 +57,22 @@ export default class Contact extends Component {
             <button className={`contact-button ${clicked ? 'disabled': ''} ${contactSent ? 'btn-sent' : ''}`} type="submit" name="submitButton">{contactButtonMessage}</button>
           </form>
 
-          <h4>Email</h4>
-          <a href="mailto:smalltimenapoleonband@gmail.com?Subject=Hello%20amazing%20band%20I%20love">smalltimenapoleonband@gmail.com</a>
-          <h4>Phone</h4>
-          <a href="#contact">502-439-1974</a>
+          {/* touch events on link populated througout the app on its own? */}
+          <a href="mailto:smalltimenapoleonband@gmail.com?Subject=Hello%20amazing%20band%20I%20love" onTouchStart={touchStart} onTouchEnd={touchEnd} >
+            <div className="icon-set">
+              <MailIcon />
+              <h4>Email</h4>
+              <p>smalltimenapoleonband@gmail.com</p>
+            </div>
+          </a>
+
+          <a href="#contact">
+            <div className="icon-set">
+              <PhoneIcon />
+              <h4>Phone</h4>
+              <p>502-439-1974</p>
+            </div>
+          </a>
 
 
         </div>

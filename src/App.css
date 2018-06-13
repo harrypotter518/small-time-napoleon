@@ -375,10 +375,11 @@ button {
       letter-spacing: 2px;
       text-align: center; }
     .contact .form form {
-      width: 95%;
-      margin: 0 auto 35px; }
+      width: 300px;
+      margin: 0 auto 75px; }
       .contact .form form .inputs {
         border: 1px #262355 solid;
+        box-shadow: inset 0px 5px 8px -6px rgba(38, 35, 85, 0.75);
         border-radius: 2px;
         padding: 10px;
         margin: 0 auto;
@@ -389,6 +390,8 @@ button {
         max-height: 500px;
         max-width: 1000px;
         transition: all 0.5s cubic-bezier(0.36, -0.32, 0.23, 1.17); }
+        .contact .form form .inputs:hover {
+          box-shadow: 0px 5px 8px -6px rgba(38, 35, 85, 0.75); }
         .contact .form form .inputs.sent {
           overflow: hidden;
           max-height: 0;
@@ -403,7 +406,7 @@ button {
         height: 112.5px;
         padding: 10px; }
       .contact .form form .contact-button {
-        background: #7269ff;
+        background: #5b54cc;
         position: relative;
         width: 187.5px;
         height: 50px;
@@ -415,14 +418,44 @@ button {
         left: 50%;
         transform: translateX(-50%); }
         .contact .form form .contact-button.disabled {
-          color: #a19fba;
-          background: #5d5b7f;
+          color: #8381a5;
+          background: linear-gradient(45deg, rgba(22, 20, 49, 0.95), rgba(93, 91, 127, 0.75));
           pointer-events: none; }
         .contact .form form .contact-button.btn-sent {
-          color: white; }
-    .contact .form h4 {
-      padding: 0;
-      margin: 0; }
+          color: white;
+          background: linear-gradient(45deg, rgba(22, 20, 49, 0.95), rgba(93, 91, 127, 0.75)); }
+    .contact .form a {
+      text-decoration: none;
+      color: #262355;
+      transition: .5s all ease; }
+      .contact .form a:hover {
+        color: #5b54cc; }
+        .contact .form a:hover svg #background {
+          fill: #5b54cc; }
+    .contact .form .icon-set {
+      margin: 35px auto;
+      border: 1px solid #262355;
+      padding: 10px 0;
+      border-radius: 2px;
+      width: 300px;
+      box-shadow: inset 0px 5px 8px -6px rgba(38, 35, 85, 0.75); }
+      .contact .form .icon-set:hover {
+        box-shadow: 0px 5px 8px -6px rgba(38, 35, 85, 0.75); }
+      .contact .form .icon-set a {
+        display: block; }
+      .contact .form .icon-set svg {
+        max-width: 50px;
+        max-height: 50px;
+        display: block;
+        margin: 0 auto; }
+        .contact .form .icon-set svg #background {
+          fill: #5d5b7f; }
+        .contact .form .icon-set svg #phone, .contact .form .icon-set svg #envelope {
+          fill: #262355; }
+      .contact .form .icon-set h4, .contact .form .icon-set p {
+        text-align: center;
+        margin: 0;
+        padding: 0; }
 
 .footer {
   background: linear-gradient(45deg, #161431, #5d5b7f); }

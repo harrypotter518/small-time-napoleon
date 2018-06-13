@@ -49,6 +49,8 @@ export default class App extends Component {
     this.handleContactChange = this.handleContactChange.bind(this)
     this.updateContactButton = this.updateContactButton.bind(this)
     this.submitContactForm = this.submitContactForm.bind(this)
+    this.touchStart = this.touchStart.bind(this)
+    this.touchEnd = this.touchEnd.bind(this)
   }
 
   //NAV
@@ -188,6 +190,14 @@ export default class App extends Component {
     
     e.preventDefault()
   }
+
+  // not so sure about these touch events
+  touchStart(e) {
+    console.log('touchStarted')
+  }
+  touchEnd(e) {
+    console.log('touchEnded')
+  }
   
   componentDidMount() {
     // advance quote every 10sec
@@ -250,7 +260,9 @@ export default class App extends Component {
           updateContactButton={this.updateContactButton}
           contactButtonMessage={contactButtonMessage}
           contactSent={contactSent}
-          clicked={clicked} />
+          clicked={clicked} 
+          touchStart={this.touchStart}
+          touchEnd={this.touchEnd} />
 
         <Footer />
         
