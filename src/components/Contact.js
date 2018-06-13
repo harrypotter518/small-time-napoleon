@@ -18,8 +18,8 @@ export default class Contact extends Component {
   
   render() {
     const { 
-      // contactSubject, 
-      // changecontactSubject, 
+      // subject, 
+      // changesubject, 
       // emailButtonValue, 
       // contactEventTitle,
       handleContactChange, 
@@ -48,11 +48,11 @@ export default class Contact extends Component {
           </p>
 
             <div className={`inputs ${contactSent ? 'sent ': ''}`}>
-              <label aria-label="Your Name"><input name="contactName" type="text" placeholder="Your Name..." onChange={handleContactChange} /></label>
-              <label aria-label="Your Email"><input name="contactUser" type="email" placeholder="Your Email..." onChange={handleContactChange} /></label>
-              <label aria-label="Message Subject"><input name="contactSubject" type="text" placeholder="Subject..." onChange={handleContactChange} /></label>
+              <label aria-label="Your Name"><input name="name" type="text" placeholder="Your Name..." onChange={handleContactChange} /></label>
+              <label aria-label="Your Email"><input name="email" type="email" placeholder="Your Email..." onChange={handleContactChange} /></label>
+              <label aria-label="Message Subject"><input name="subject" type="text" placeholder="Subject..." onChange={handleContactChange} /></label>
 
-              <textarea name="contactBody" aria-label="Your message here..." placeholder="Your message here..." onChange={handleContactChange} />
+              <textarea name="message" aria-label="Your message here..." placeholder="Your message here..." onChange={handleContactChange} />
             </div>
             <button className={`contact-button ${clicked ? 'disabled': ''} ${contactSent ? 'btn-sent' : ''}`} type="submit" name="submitButton">{contactButtonMessage}</button>
           </form>

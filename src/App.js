@@ -27,12 +27,12 @@ export default class App extends Component {
       album: false,
       enhanceImage: false,
       contactDate: null,
-      contactName: '',
-      contactUser: '',
+      name: '',
+      email: '',
       contactButtonMessage: 'Send',
       contactEventTitle: '',
-      contactSubject: '',
-      contactBody: '',
+      subject: '',
+      message: '',
       clicked: true,
       contactSent: false,
     }
@@ -44,7 +44,7 @@ export default class App extends Component {
     this.hoverAlbum = this.hoverAlbum.bind(this)
     this.unhoverAlbum = this.unhoverAlbum.bind(this)
     this.expandPhoto = this.expandPhoto.bind(this)
-    // this.changecontactSubject = this.changecontactSubject.bind(this)
+    // this.changesubject = this.changesubject.bind(this)
     // this.changecontactDate = this.changecontactDate.bind(this)
     this.handleContactChange = this.handleContactChange.bind(this)
     this.updateContactButton = this.updateContactButton.bind(this)
@@ -162,8 +162,8 @@ export default class App extends Component {
     });
   }
   updateContactButton() {
-    const { contactName, contactUser, contactBody } = this.state
-    if (contactName.length !== 0 && contactUser.length !== 0 && contactBody.length !== 0) {
+    const { name, email, message } = this.state
+    if (name.length !== 0 && email.length !== 0 && message.length !== 0) {
       this.setState({
         clicked: false,
       })
@@ -218,7 +218,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { nav, quote, album, enhanceImage, contactSubject, contactUser, contactDate, emailButtonValue, contactEventTitle, contactBody, contactButtonMessage, contactSent, clicked, } = this.state
+    const { nav, quote, album, enhanceImage, subject, email, contactDate, emailButtonValue, contactEventTitle, message, contactButtonMessage, contactSent, clicked, } = this.state
 
     return (
       <div className="App">
@@ -247,14 +247,14 @@ export default class App extends Component {
         <Shows />
 
         <Contact 
-          contactSubject={contactSubject}
+          subject={subject}
           contactDate={contactDate}
-          changecontactSubject={this.changecontactSubject}
+          changesubject={this.changesubject}
           changecontactDate={this.changecontactDate}
           emailButtonValue={emailButtonValue}
           contactEventTitle={contactEventTitle} 
-          contactUser={contactUser}
-          contactBody={contactBody}
+          email={email}
+          message={message}
           handleContactChange={this.handleContactChange}
           submitContactForm={this.submitContactForm} 
           updateContactButton={this.updateContactButton}
