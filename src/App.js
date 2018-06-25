@@ -49,8 +49,11 @@ export default class App extends Component {
     this.handleContactChange = this.handleContactChange.bind(this)
     this.updateContactButton = this.updateContactButton.bind(this)
     this.submitContactForm = this.submitContactForm.bind(this)
+    //     \ / what's up with these \ /
+    //      V        ??????          V
     this.touchStart = this.touchStart.bind(this)
     this.touchEnd = this.touchEnd.bind(this)
+    this.handleSwipe = this.handleSwipe.bind(this)
   }
 
   //NAV
@@ -90,6 +93,23 @@ export default class App extends Component {
       })
     }
   }
+  handleSwipe(direction) {
+    switch (direction) {
+      case "up":
+        break
+      case "down":
+        break
+      case "left": 
+        this.increaseQuote()
+        break
+      case "right": 
+        this.decreaseQuote()
+        break
+      default:
+        break
+
+    }
+  }
   // hamburger menu animation
   crossBuns() {
     const tl = new TimelineLite();
@@ -115,6 +135,7 @@ export default class App extends Component {
       .to("#bottom", .3, {y: 0}, .3)
       .to("#middle", .5, {autoAlpha: 1}, .2)
   }
+  
 
   //MUSIC
   rotateDisc() {
@@ -174,7 +195,6 @@ export default class App extends Component {
     }
 
   }
-
   submitContactForm(e) {
     fetch("/", {
       method: "POST",
@@ -230,7 +250,8 @@ export default class App extends Component {
         <Main
           quote={quote}
           increaseQuote={this.increaseQuote}
-          decreaseQuote={this.decreaseQuote} />
+          decreaseQuote={this.decreaseQuote}
+          handleSwipe={this.handleSwipe} />
 
         <Music 
           album={album}

@@ -28,7 +28,8 @@ const Main = (props) => {
       <Quotes 
         quote={props.quote} 
         increaseQuote={props.increaseQuote}
-        decreaseQuote={props.decreaseQuote} />
+        decreaseQuote={props.decreaseQuote}
+        handleSwipe={props.handleSwipe} />
 
       <Socials />
       

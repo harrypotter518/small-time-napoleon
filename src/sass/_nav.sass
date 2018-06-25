@@ -18,12 +18,18 @@
     display: flex
     flex-direction: row
     justify-content: space-between
+    align-items: center
+
+    //<a> is offseting y axis somehow. absolute height and align-items: center fixes
+    a
+      height: 39.5px
 
     #blimp-icon, #hamburger
       width: 37.5px
       height: 37.5px
       *
         fill: $darkblue
+    
 
     &.open
       #blimp-icon, #hamburger

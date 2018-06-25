@@ -18,9 +18,13 @@ const Pictures = (props) => {
       <div className="background" style={backgroundStyle}>
         <div className="darken"></div>
       </div>
-      <PhotoAlbum 
-        expandPhoto={props.expandPhoto}
-        enhanceImage={props.enhanceImage} />
+
+      <div className="photos-container">
+        <h1>Photos</h1>
+        <PhotoAlbum 
+          expandPhoto={props.expandPhoto}
+          enhanceImage={props.enhanceImage} />
+      </div>
 
       
 

@@ -66,7 +66,10 @@ button {
     margin: 0 auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-between; }
+    justify-content: space-between;
+    align-items: center; }
+    .nav .nav-bar a {
+      height: 39.5px; }
     .nav .nav-bar #blimp-icon, .nav .nav-bar #hamburger {
       width: 37.5px;
       height: 37.5px; }
@@ -103,7 +106,7 @@ button {
 
 .socials {
   height: 150px;
-  width: 300px;
+  width: 85%;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -158,27 +161,39 @@ button {
     .quotes-container .dots .dot.full {
       background: #262355; }
 
-.music .background {
-  background: #262355;
-  margin-bottom: 150px;
-  text-align: center;
-  position: relative; }
-  .music .background .content {
-    position: relative;
-    z-index: 2; }
-    .music .background .content .tag-line {
-      width: 300px;
+.music {
+  margin-bottom: 75px; }
+  .music .content {
+    width: 95vw;
+    padding: 2px;
+    margin: 0 auto;
+    margin-top: -150px;
+    background: white;
+    border-radius: 2px;
+    border-top: 10px solid #BAB5FF; }
+    .music .content h1 {
+      font-size: 30px;
+      margin: 22.5px auto;
+      font-weight: normal;
+      line-height: 30px;
+      width: 100%;
+      height: 30px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-align: center; }
+    .music .content .tag-line {
+      width: 90%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       min-height: 150px;
       margin: 0 auto; }
-      .music .background .content .tag-line p {
+      .music .content .tag-line p {
         margin: .5em;
-        color: white;
         text-transform: uppercase;
+        text-align: center;
         font-size: .75em; }
-    .music .background .content .too-big-to-fail {
+    .music .content .too-big-to-fail {
       margin: 0 auto;
       width: 300px;
       height: 300px;
@@ -186,32 +201,30 @@ button {
       position: relative;
       z-index: 1;
       box-shadow: 0 3px 5px -2px rgba(0, 0, 0, 0.75); }
-
-.music .cd {
-  margin: 0 auto;
-  width: 290px;
-  margin-top: -270px;
-  cursor: pointer; }
-  .music .cd #cd {
-    width: 100%;
-    height: 100%; }
-
-.music .streamers {
-  height: 187.5px;
-  width: 300px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around; }
-  .music .streamers svg {
+  .music .cd {
+    margin: 0 auto;
+    width: 290px;
+    margin-top: -270px;
+    cursor: pointer; }
+    .music .cd #cd {
+      width: 100%;
+      height: 100%; }
+  .music .streamers {
     height: 37.5px;
-    width: 37.5px;
-    border-radius: 3px; }
-    .music .streamers svg * {
-      fill: url(#primary-fourth); }
-    .music .streamers svg:hover * {
-      fill: #262355; }
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around; }
+    .music .streamers svg {
+      height: 37.5px;
+      width: 37.5px;
+      border-radius: 3px; }
+      .music .streamers svg * {
+        fill: url(#primary-fourth); }
+      .music .streamers svg:hover * {
+        fill: #262355; }
 
 .album-details {
   position: static;
@@ -260,110 +273,154 @@ button {
       .album-details .contents ul li {
         font-size: .75em; }
 
-.video .background {
-  background: #262355;
-  margin-bottom: 150px;
-  text-align: center;
-  position: relative; }
-  .video .background .content {
-    color: white;
-    position: relative; }
-    .video .background .content h2 {
-      background: rgba(114, 105, 255, 0.5);
-      text-align: center;
-      position: absolute;
-      width: 100%;
-      top: 150px;
-      transform: translateY(-50%);
-      text-transform: uppercase; }
-    .video .background .content .iframe-container {
-      position: absolute;
-      top: 200px;
-      left: 50%;
-      transform: translateX(-50%); }
-
-.video .video-links {
-  min-height: 187.5px;
-  width: 300px;
-  margin: 0 auto; }
-  .video .video-links .more-videos {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 37.5px 0; }
-    .video .video-links .more-videos .video-thumbnail {
-      width: 75px;
-      height: 75px; }
-  .video .video-links .for-more-videos {
-    margin: 0;
-    margin-top: 150px; }
-  .video .video-links .subscribe {
-    margin-bottom: 75px; }
-    .video .video-links .subscribe p {
-      margin: 0;
-      margin-bottom: 37.5px;
-      text-align: right; }
-    .video .video-links .subscribe .button-red {
-      background: #ff2d1d;
-      position: relative;
-      width: 187.5px;
-      height: 50px;
-      text-transform: uppercase;
-      color: white;
-      font-size: 1.25em;
-      letter-spacing: 2px;
-      border-radius: 2px;
-      left: 50%;
-      transform: translateX(-50%); }
-
-.pictures {
+.video {
   margin-bottom: 75px; }
-  .pictures .photo-album {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: auto;
-    grid-gap: 5px;
-    width: 90vw;
-    margin: 0 auto;
-    margin-top: -100px; }
-    .pictures .photo-album img {
-      max-width: 100%;
-      height: auto;
-      cursor: pointer; }
-    .pictures .photo-album .image2, .pictures .photo-album .image4, .pictures .photo-album .image7, .pictures .photo-album .image9 {
-      grid-row: span 2; }
-    .pictures .photo-album .image6 {
-      grid-column: span 2; }
-    .pictures .photo-album .enlarge {
-      position: fixed;
-      max-height: 95vh;
-      max-width: 95vw;
-      left: 50vw;
-      top: 50vh;
-      transform: translate(-50%, -50%);
-      transition: max-width .3s ease-in-out;
-      z-index: 101; }
-    .pictures .photo-album .large-image-background {
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(45deg, #06050d, #313044);
-      z-index: 100; }
-
-.shows {
-  margin-bottom: 75px; }
-
-.contact {
-  margin-bottom: 75px; }
-  .contact .form {
-    width: 90vw;
+  .video .content {
+    width: 95vw;
     padding: 2px;
     margin: 0 auto;
     margin-top: -150px;
     background: white;
-    border-radius: 2px; }
+    border-radius: 2px;
+    border-top: 10px solid #BAB5FF; }
+    .video .content h1 {
+      font-size: 30px;
+      margin: 22.5px auto;
+      font-weight: normal;
+      line-height: 30px;
+      width: 100%;
+      height: 30px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-align: center; }
+    .video .content .iframe-container {
+      position: relative;
+      overflow: hidden;
+      padding-top: 56.25%;
+      width: 90%;
+      margin: 0 auto; }
+      .video .content .iframe-container .iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0; }
+    .video .content .video-links {
+      min-height: 187.5px;
+      width: 90%;
+      margin: 75px auto 0; }
+      .video .content .video-links .more-videos {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 37.5px 0; }
+        .video .content .video-links .more-videos .video-thumbnail {
+          width: 75px;
+          height: 75px; }
+      .video .content .video-links .for-more-videos {
+        margin: 0; }
+      .video .content .video-links .subscribe p {
+        margin: 0;
+        margin-bottom: 37.5px;
+        text-align: right; }
+      .video .content .video-links .subscribe .button-red {
+        background: #ff2d1d;
+        position: relative;
+        width: 187.5px;
+        height: 50px;
+        text-transform: uppercase;
+        color: white;
+        font-size: 1.25em;
+        letter-spacing: 2px;
+        border-radius: 2px;
+        left: 50%;
+        transform: translateX(-50%); }
+
+.pictures {
+  margin-bottom: 75px; }
+  .pictures .photos-container {
+    width: 95vw;
+    padding: 2px;
+    margin: 0 auto;
+    margin-top: -150px;
+    background: white;
+    border-radius: 2px;
+    border-top: 10px solid #BAB5FF; }
+    .pictures .photos-container h1 {
+      font-size: 30px;
+      margin: 22.5px auto;
+      font-weight: normal;
+      line-height: 30px;
+      width: 100%;
+      height: 30px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-align: center; }
+    .pictures .photos-container .photo-album {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: auto;
+      grid-gap: 5px;
+      width: 90%;
+      margin: 0 auto; }
+      .pictures .photos-container .photo-album img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer; }
+      .pictures .photos-container .photo-album .image2, .pictures .photos-container .photo-album .image4, .pictures .photos-container .photo-album .image7, .pictures .photos-container .photo-album .image9 {
+        grid-row: span 2; }
+      .pictures .photos-container .photo-album .image6 {
+        grid-column: span 2; }
+      .pictures .photos-container .photo-album .enlarge {
+        position: fixed;
+        max-height: 95vh;
+        max-width: 95vw;
+        left: 50vw;
+        top: 50vh;
+        transform: translate(-50%, -50%);
+        transition: max-width .3s ease-in-out;
+        z-index: 101; }
+      .pictures .photos-container .photo-album .large-image-background {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(45deg, #06050d, #313044);
+        z-index: 100; }
+
+.shows {
+  margin-bottom: 75px; }
+  .shows .content {
+    width: 95vw;
+    padding: 2px;
+    margin: 0 auto;
+    margin-top: -150px;
+    background: white;
+    border-radius: 2px;
+    border-top: 10px solid #BAB5FF; }
+    .shows .content h1 {
+      font-size: 30px;
+      margin: 22.5px auto;
+      font-weight: normal;
+      line-height: 30px;
+      width: 100%;
+      height: 30px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-align: center; }
+
+.contact {
+  margin-bottom: 75px; }
+  .contact .form {
+    width: 95vw;
+    padding: 2px;
+    margin: 0 auto;
+    margin-top: -150px;
+    background: white;
+    border-radius: 2px;
+    border-top: 10px solid #BAB5FF; }
     .contact .form h1 {
       font-size: 30px;
       margin: 22.5px auto;
@@ -375,7 +432,7 @@ button {
       letter-spacing: 2px;
       text-align: center; }
     .contact .form form {
-      width: 300px;
+      width: 90%;
       margin: 0 auto 75px; }
       .contact .form form .inputs {
         border: 1px #262355 solid;
@@ -437,7 +494,7 @@ button {
       border: 1px solid #262355;
       padding: 10px 0;
       border-radius: 2px;
-      width: 300px;
+      width: 90%;
       box-shadow: inset 0px 5px 8px -6px rgba(38, 35, 85, 0.75); }
       .contact .form .icon-set:hover {
         box-shadow: 0px 5px 8px -6px rgba(38, 35, 85, 0.75); }

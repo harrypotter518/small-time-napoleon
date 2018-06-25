@@ -1,43 +1,49 @@
 .pictures
   margin-bottom: 75px
 
-  .photo-album
-    display: grid
-    grid-template-columns: 1fr 1fr
-    grid-auto-rows: auto
-    grid-gap: 5px
-    width: 90vw
-    margin: 0 auto
-    margin-top: -100px
+  .photos-container
+    +section($monoSecondary)
 
-    img
-      max-width: 100%
-      height: auto
-      cursor: pointer
-    
-    .image2, .image4, .image7, .image9
-      grid-row: span 2
+    h1
+      +section-header()
 
-    .image6
-      grid-column: span 2
+    .photo-album
+      display: grid
+      grid-template-columns: 1fr 1fr
+      grid-auto-rows: auto
+      grid-gap: 5px
+      width: 90%
+      margin: 0 auto
+      // margin-top: -100px
 
-    .enlarge
-      position: fixed
-      // width: 95vw
-      // height: auto
-      max-height: 95vh
-      max-width: 95vw
-      left: 50vw
-      top: 50vh
-      transform: translate(-50%,-50%)
-      transition: max-width .3s ease-in-out
-      z-index: 101
+      img
+        max-width: 100%
+        height: auto
+        cursor: pointer
+      
+      .image2, .image4, .image7, .image9
+        grid-row: span 2
 
-    .large-image-background
-      position: fixed
-      top: 0
-      bottom: 0
-      left: 0
-      right: 0
-      background: linear-gradient(45deg, darken($monoPrimary, 20%), darken($monoFourth, 20%))
-      z-index: 100
+      .image6
+        grid-column: span 2
+
+      .enlarge
+        position: fixed
+        // width: 95vw
+        // height: auto
+        max-height: 95vh
+        max-width: 95vw
+        left: 50vw
+        top: 50vh
+        transform: translate(-50%,-50%)
+        transition: max-width .3s ease-in-out
+        z-index: 101
+
+      .large-image-background
+        position: fixed
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        background: linear-gradient(45deg, darken($monoPrimary, 20%), darken($monoFourth, 20%))
+        z-index: 100

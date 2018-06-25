@@ -15,11 +15,15 @@ const Shows = (props) => {
       <div className="background" style={backgroundStyle}>
         <div className="darken"></div>
       </div>
-      shows
-      <br />
-      shows 
-      <br />
-      shows
+
+      <div className="content">
+        <h1>Shows</h1>
+        shows
+        <br />
+        shows 
+        <br />
+        shows
+      </div>
     </div>
   )
 }
