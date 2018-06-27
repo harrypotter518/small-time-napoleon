@@ -18,11 +18,12 @@ const Shows = (props) => {
 
       <div className="content">
         <h1>Shows</h1>
-        shows
-        <br />
-        shows 
-        <br />
-        shows
+        <div className="calendar-container">
+          <iframe title="calendar" src="https://feed.mikle.com/widget/v2/84035/" height="402px" width="100%" className="fw-iframe" scrolling="no" frameBorder="0"></iframe>
+        </div>
+
+        <p>Check back often as our calendar is updated regularly.</p>
+
       </div>
     </div>
   )

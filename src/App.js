@@ -12,6 +12,8 @@ import Contact from './components/Contact'
 // import ContactSuccess from './components/ContactSuccess'
 import Footer from './components/Footer'
 
+import bandcampData from './data/bandcampData'
+
 const encode = (data) => {
   return Object.keys(data)
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -22,10 +24,16 @@ export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      // navigation
       nav: false,
+      // main
       quote: 1,
+      // music
       album: false,
+      audioSource: '',
+      // photos
       enhanceImage: false,
+      // contact
       contactDate: null,
       name: '',
       email: '',
@@ -36,16 +44,20 @@ export default class App extends Component {
       clicked: true,
       contactSent: false,
     }
+    // navigation
     this.toggleNav = this.toggleNav.bind(this)
     this.closeNav = this.closeNav.bind(this)
+    // main
     this.increaseQuote = this.increaseQuote.bind(this)
     this.decreaseQuote = this.decreaseQuote.bind(this)
+    // music
     this.showMusicDetails = this.showMusicDetails.bind(this)
+    this.changeTrack = this.changeTrack.bind(this)
+    // photos
     this.hoverAlbum = this.hoverAlbum.bind(this)
     this.unhoverAlbum = this.unhoverAlbum.bind(this)
     this.expandPhoto = this.expandPhoto.bind(this)
-    // this.changesubject = this.changesubject.bind(this)
-    // this.changecontactDate = this.changecontactDate.bind(this)
+    // contact
     this.handleContactChange = this.handleContactChange.bind(this)
     this.updateContactButton = this.updateContactButton.bind(this)
     this.submitContactForm = this.submitContactForm.bind(this)
@@ -162,6 +174,39 @@ export default class App extends Component {
       album: !this.state.album,
     })
   }
+  changeTrack(e) {
+    let track = e.target.title
+    if (track === 'Dear L') {
+      this.setState({
+        audioSource: bandcampData[0].src,
+      })
+    }
+    if (track === 'Code and Co-host') {
+      this.setState({
+        audioSource: bandcampData[1].src,
+      })
+    }
+    if (track === 'A Certain Shuffle (Easy Climb)') {
+      this.setState({
+        audioSource: bandcampData[2].src,
+      })
+    }
+    if (track === 'High Wire') {
+      this.setState({
+        audioSource: bandcampData[3].src,
+      })
+    }
+    if (track === 'Cake and Circus') {
+      this.setState({
+        audioSource: bandcampData[4].src,
+      })
+    }
+    if (track === 'House Rules') {
+      this.setState({
+        audioSource: bandcampData[5].src,
+      })
+    }
+  }
 
   //PHOTOS
   expandPhoto(e) {
@@ -238,7 +283,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { nav, quote, album, enhanceImage, subject, email, contactDate, emailButtonValue, contactEventTitle, message, contactButtonMessage, contactSent, clicked, } = this.state
+    const { nav, quote, album, audioSource, enhanceImage, subject, email, contactDate, emailButtonValue, contactEventTitle, message, contactButtonMessage, contactSent, clicked, } = this.state
 
     return (
       <div className="App">
@@ -257,7 +302,9 @@ export default class App extends Component {
           album={album}
           hoverAlbum={this.hoverAlbum}
           unhoverAlbum={this.unhoverAlbum}
-          showMusicDetails={this.showMusicDetails} />
+          showMusicDetails={this.showMusicDetails}
+          audioSource={audioSource}
+          changeTrack={this.changeTrack} />
 
         <Video />
 

@@ -2,14 +2,19 @@
   margin-bottom: 75px
 
   .form
-    +section($monoSecondary)
+    +section()
 
     h1
       +section-header()
 
+    // .tagline
+    //   width: 90%
+    //   margin: 37.5px auto
+    //   text-align: center
+
     form
       width: 90%
-      margin: 0 auto 75px
+      margin: 0 auto
 
       .inputs
         border: 1px $monoPrimary solid
@@ -54,41 +59,50 @@
           color: white
           background: $slantGrade
 
-    a
-      text-decoration: none
-      color: $monoPrimary
-      transition: .5s all ease
-      &:hover
-        color: $monoFifth
-        svg
-          #background
-            fill: $monoFifth
-
-    .icon-set
-      margin: 35px auto
-      border: 1px solid $monoPrimary
-      padding: 10px 0
-      border-radius: 2px
+    .contact-icons
       width: 90%
-      box-shadow: inset $shadow
-      &:hover
-        box-shadow: $shadow
+      margin: 75px auto 0
+      display: grid
+      grid-template-columns: 1fr 1fr
+      grid-gap: 20px
+
       a
-        display: block
-        
-      svg
-        max-width: 50px
-        max-height: 50px
-        display: block
-        margin: 0 auto
+        text-decoration: none
+        color: $monoPrimary
+        transition: .5s all ease
+        &:hover
+          color: $monoFifth
+          svg
+            #background
+              fill: $monoFifth
+        &:first-of-type
+          grid-column: span 2
 
-        #background
-          fill: $monoFourth
-        #phone, #envelope
-          fill: $monoPrimary
+      .icon-set
+        // margin: 0 auto
+        border: 1px solid $monoPrimary
+        padding: 10px 0
+        border-radius: 2px
+        // width: 90%
+        box-shadow: inset $shadow
+        &:hover
+          box-shadow: $shadow
+        a
+          display: block
+          
+        svg
+          max-width: 50px
+          max-height: 50px
+          display: block
+          margin: 0 auto
 
-      h4, p
-        text-align: center
-        margin: 0
-        padding: 0
+          #background
+            fill: $monoFourth
+          #phone, #envelope, #text-lines
+            fill: $monoPrimary
+
+        h4, p
+          text-align: center
+          margin: 0
+          padding: 0
 

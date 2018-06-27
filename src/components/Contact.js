@@ -5,6 +5,7 @@ import React, {Component} from 'react'
 import backgroundImage from '../assets/photoSection/jeffSings.jpg'
 import PhoneIcon from '../assets/PhoneIcon';
 import MailIcon from '../assets/MailIcon';
+import TextIcon from '../TextIcon';
 
 const backgroundStyle = {
   background: 'url(' + backgroundImage + ') #262355',
@@ -57,22 +58,34 @@ export default class Contact extends Component {
             <button className={`contact-button ${clicked ? 'disabled': ''} ${contactSent ? 'btn-sent' : ''}`} type="submit" name="submitButton">{contactButtonMessage}</button>
           </form>
 
-          {/* touch events on link populated througout the app on its own? */}
-          <a href="mailto:smalltimenapoleonband@gmail.com?Subject=Hello%20amazing%20band%20I%20love" onTouchStart={touchStart} onTouchEnd={touchEnd} >
-            <div className="icon-set">
-              <MailIcon />
-              <h4>Email</h4>
-              <p>smalltimenapoleonband@gmail.com</p>
-            </div>
-          </a>
+          {/* <h4 className="tagline">Feel free to email, call, or text us.</h4> */}
 
-          <a href="#contact">
-            <div className="icon-set">
-              <PhoneIcon />
-              <h4>Phone</h4>
-              <p>502-439-1974</p>
-            </div>
-          </a>
+          <div className="contact-icons">
+            {/* touch events on link populated througout the app on its own? */}
+            <a href="mailto:smalltimenapoleonband@gmail.com?Subject=Hello%20amazing%20band%20I%20love" onTouchStart={touchStart} onTouchEnd={touchEnd} >
+              <div className="icon-set">
+                <MailIcon />
+                <h4>Email</h4>
+                {/* <p>smalltimenapoleonband@gmail.com</p> */}
+              </div>
+            </a>
+
+            <a href="tel:+15024391974">
+              <div className="icon-set">
+                <PhoneIcon />
+                <h4>Call</h4>
+                {/* <p>502-439-1974</p> */}
+              </div>
+            </a>
+
+            <a href="sms:5024391974">
+              <div className="icon-set">
+                <TextIcon />
+                <h4>Text</h4>
+                {/* <p>502-439-1974</p> */}
+              </div>
+            </a>
+          </div>
 
 
         </div>

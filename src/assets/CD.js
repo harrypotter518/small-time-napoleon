@@ -2,7 +2,11 @@ import React from 'react'
 
 const CD = (props) => {
   return(
-    <div className="cd-disc">
+    <div className="cd-disc" 
+      onMouseEnter={props.hoverAlbum}
+      onMouseLeave={props.unhoverAlbum}
+      onClick={props.showMusicDetails} 
+      >
       <svg id="cd" xmlns="http://www.w3.org/2000/svg" width="144" height="144" viewBox="0 0 144 144">
         <linearGradient id="a" x1="22.067" x2="121.934" y1="22.067" y2="121.934" gradientUnits="userSpaceOnUse">
           <stop offset="0" stopColor="#26232a"/>

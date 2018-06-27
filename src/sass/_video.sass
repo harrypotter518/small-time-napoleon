@@ -2,7 +2,7 @@
   margin-bottom: 75px
 
   .content
-    +section($monoSecondary)
+    +section()
 
     h1
       +section-header()
@@ -48,5 +48,8 @@
           text-align: right
 
         .button-red
-          +button($red)
+          +button(lighten($red, 15%))
+          &:hover
+            background: $red
+            box-shadow: $shadow
       
