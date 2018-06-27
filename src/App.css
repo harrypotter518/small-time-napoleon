@@ -189,10 +189,8 @@ button {
       min-height: 150px;
       margin: 0 auto; }
       .music .content .tag-line p {
-        margin: .5em;
-        text-transform: uppercase;
-        text-align: center;
-        font-size: .75em; }
+        margin: 0 auto;
+        text-align: center; }
     .music .content .too-big-to-fail {
       margin: 0 auto;
       width: 90vw;
