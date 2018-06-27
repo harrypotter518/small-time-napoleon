@@ -38,7 +38,6 @@ const Music = (props) => {
           <AlbumDetails 
             album={props.album}
             audioSource={props.audioSource}
-            changeTrack={props.changeTrack}
              /> 
           
           <CD 

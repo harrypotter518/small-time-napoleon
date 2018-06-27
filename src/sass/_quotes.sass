@@ -5,6 +5,7 @@
     flex-direction: row
     align-items: center
     min-height: 300px
+    
 
     .quote
       margin: 0 auto
@@ -43,3 +44,44 @@
       
       &.full
         background: $darkblue
+
+
+
+// MEDIA QUERIES
+@media (min-width: $midBreak)
+  .quotes-container
+    display: grid
+    grid-template-columns: 75px 1fr
+    // height: 375px
+    // background: pink
+
+    .quotes
+      grid-column: 2
+      flex-direction: column
+      // background: pink
+      
+      .quote
+        height: 225px
+        width: 337.5px
+        // background: pink
+      .arrow
+        &.left
+          border-left: 10px solid transparent
+          border-right: 10px solid transparent
+          border-bottom: 10px solid $monoPrimary
+        &.right
+          border-left: 10px solid transparent
+          border-right: 10px solid transparent
+          border-top: 10px solid $monoPrimary
+
+    .dots
+      grid-column: 1
+      grid-row: 1
+      height: 150px
+      margin: auto 0
+      width: 37.5px
+      flex-direction: column
+      justify-self: start
+      // background: lightblue
+      .dot
+        margin: 0 auto

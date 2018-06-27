@@ -104,6 +104,21 @@ button {
       .main .hero-image #name-logo * {
         fill: white; }
 
+@media (min-width: 550px) {
+  .main .hero-image #name-logo {
+    width: 60vw; }
+  .main .quotes-social {
+    display: grid;
+    grid-template-columns: 1fr 75px;
+    width: 90vw;
+    margin: 37.5px auto; }
+  .main .socials {
+    flex-direction: column;
+    height: 225px;
+    width: 37.5px;
+    margin: auto 0;
+    justify-self: end; } }
+
 .socials {
   height: 150px;
   width: 85%;
@@ -160,6 +175,35 @@ button {
     transition: background .5s ease; }
     .quotes-container .dots .dot.full {
       background: #262355; }
+
+@media (min-width: 550px) {
+  .quotes-container {
+    display: grid;
+    grid-template-columns: 75px 1fr; }
+    .quotes-container .quotes {
+      grid-column: 2;
+      flex-direction: column; }
+      .quotes-container .quotes .quote {
+        height: 225px;
+        width: 337.5px; }
+      .quotes-container .quotes .arrow.left {
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #262355; }
+      .quotes-container .quotes .arrow.right {
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid #262355; }
+    .quotes-container .dots {
+      grid-column: 1;
+      grid-row: 1;
+      height: 150px;
+      margin: auto 0;
+      width: 37.5px;
+      flex-direction: column;
+      justify-self: start; }
+      .quotes-container .dots .dot {
+        margin: 0 auto; } }
 
 .music {
   margin-bottom: 75px; }

@@ -25,13 +25,15 @@ const Main = (props) => {
         </div>
       </div>
 
-      <Quotes 
-        quote={props.quote} 
-        increaseQuote={props.increaseQuote}
-        decreaseQuote={props.decreaseQuote}
-        handleSwipe={props.handleSwipe} />
+      <div className="quotes-social">
+        <Quotes 
+          quote={props.quote} 
+          increaseQuote={props.increaseQuote}
+          decreaseQuote={props.decreaseQuote}
+          handleSwipe={props.handleSwipe} />
 
-      <Socials />
+        <Socials />
+      </div>
       
     </div>
   )
