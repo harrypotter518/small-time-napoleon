@@ -22,6 +22,9 @@ export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      // window dimensions
+      width: window.innerWidth,
+      height: window.innerHeight,
       // navigation
       nav: false,
       // main
@@ -41,6 +44,8 @@ export default class App extends Component {
       clicked: true,
       contactSent: false,
     }
+    // window dimensions
+    this.updateDimensions = this.updateDimensions.bind(this)
     // navigation
     this.toggleNav = this.toggleNav.bind(this)
     this.closeNav = this.closeNav.bind(this)
@@ -71,9 +76,11 @@ export default class App extends Component {
     })
   }
   closeNav() {
-    this.setState({
-      nav: false,
-    })
+    if (this.state.width < 550) {
+      this.setState({
+        nav: false,
+      })
+    }
   }
 
   //QUOTES
@@ -226,7 +233,35 @@ export default class App extends Component {
     console.log('touchEnded')
   }
   
+  // update window dimensions
+  updateDimensions() {
+    this.setState({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    })
+    // expand nav is window is larger that 550px
+    if (this.state.width >= 550) {
+      this.setState({
+        nav: true,
+      })
+    }
+    // close nav if window width shrinks below 550px
+    if (this.state.width < 550) {
+      this.setState({
+        nav: false,
+      })
+    }
+  }
+
+
+  componentWillMount() {
+    this.updateDimensions()
+  }
+
   componentDidMount() {
+    // listen for window resizes
+    window.addEventListener('resize', this.updateDimensions)
+
     // advance quote every 10sec
     setInterval(() => {
       this.increaseQuote()
@@ -237,6 +272,7 @@ export default class App extends Component {
   }
 
   componentDidUpdate() {
+    // handle hamburger icon
     if (this.state.nav) {
       this.crossBuns()
     } else {
@@ -244,15 +280,21 @@ export default class App extends Component {
     }
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateDimensions)
+  }
+  
+
   render() {
-    const { nav, quote, album, audioSource, enhanceImage, subject, email, contactDate, emailButtonValue, contactEventTitle, message, contactButtonMessage, contactSent, clicked, } = this.state
+    const { nav, width, quote, album, audioSource, enhanceImage, subject, email, contactDate, emailButtonValue, contactEventTitle, message, contactButtonMessage, contactSent, clicked, } = this.state
 
     return (
       <div className="App">
         <Nav 
           nav={nav} 
           toggleNav={this.toggleNav}
-          closeNav={this.closeNav} />
+          closeNav={this.closeNav}
+          width={width} />
 
         <Main
           quote={quote}

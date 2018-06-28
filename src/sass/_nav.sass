@@ -41,14 +41,49 @@
     display: flex
     flex-direction: column
     justify-content: space-around
-    height: 75vh
+    height: 85vh
 
     a
       text-align: center
+      text-decoration: none
+      // background: pink
+      width: 50%
+      margin: 0 auto
+      
+      .nav-icon
+        width: 37.5px
+        height: 37.5px
+        display: none
+        
 
-    button
+    h4
       color: white
-      margin: 15px
-      font-size: 1.5em
+      margin: 5px
+      // font-size: 1.5em
       text-transform: uppercase
       letter-spacing: 10px
+      // background: pink
+
+  @media (min-width: $midBreak)
+    // background: pink
+    &.full
+      width: 75px
+      height: 300px
+      right: 0
+      left: auto
+      background: rgba($monoFourth, .75)
+    .nav-bar
+      width: 100%
+      height: 37.5px
+      flex-direction: column
+      // background: lightgreen
+    .nav-buttons
+      height: 250px
+      a
+        .nav-icon
+          display: block
+        h4
+          display: none
+
+
+    
