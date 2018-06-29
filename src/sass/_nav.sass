@@ -54,6 +54,7 @@
         width: 37.5px
         height: 37.5px
         display: none
+        border-radius: 3px
         
 
     h4
@@ -67,21 +68,39 @@
   @media (min-width: $midBreak)
     // background: pink
     &.full
-      width: 75px
-      height: 300px
-      right: 0
-      left: auto
-      background: rgba($monoFourth, .75)
+      // width: 90vw
+      padding: 9.375px 5vw 0
+      height: 56.25px
+      // right: 5vw
+      // left: 5vw
+      display: flex
+      flex-direction: row
+      background: rgba($monoSecondary, .5)
     .nav-bar
-      width: 100%
+      width: 25vw
       height: 37.5px
-      flex-direction: column
+      flex-direction: row
+      // margin-left: 5vw
       // background: lightgreen
+      &.open
+        #blimp-icon
+          *
+            fill: $monoPrimary
     .nav-buttons
-      height: 250px
+      // height: 250px
+      flex-direction: row
+      justify-content: flex-end
+      width: 65vw
+      height: auto
+      // margin-right: 5vw
       a
+        margin: 0
+        width: auto
+        margin-left: 37.5px
         .nav-icon
           display: block
+          *
+            fill: $monoPrimary
         h4
           display: none
 

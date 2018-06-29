@@ -90,7 +90,8 @@ button {
       .nav .nav-buttons a .nav-icon {
         width: 37.5px;
         height: 37.5px;
-        display: none; }
+        display: none;
+        border-radius: 3px; }
     .nav .nav-buttons h4 {
       color: white;
       margin: 5px;
@@ -98,21 +99,32 @@ button {
       letter-spacing: 10px; }
   @media (min-width: 550px) {
     .nav.full {
-      width: 75px;
-      height: 300px;
-      right: 0;
-      left: auto;
-      background: rgba(93, 91, 127, 0.75); }
+      padding: 9.375px 5vw 0;
+      height: 56.25px;
+      display: flex;
+      flex-direction: row;
+      background: rgba(186, 181, 255, 0.5); }
     .nav .nav-bar {
-      width: 100%;
+      width: 25vw;
       height: 37.5px;
-      flex-direction: column; }
+      flex-direction: row; }
+      .nav .nav-bar.open #blimp-icon * {
+        fill: #262355; }
     .nav .nav-buttons {
-      height: 250px; }
-      .nav .nav-buttons a .nav-icon {
-        display: block; }
-      .nav .nav-buttons a h4 {
-        display: none; } }
+      flex-direction: row;
+      justify-content: flex-end;
+      width: 65vw;
+      height: auto; }
+      .nav .nav-buttons a {
+        margin: 0;
+        width: auto;
+        margin-left: 37.5px; }
+        .nav .nav-buttons a .nav-icon {
+          display: block; }
+          .nav .nav-buttons a .nav-icon * {
+            fill: #262355; }
+        .nav .nav-buttons a h4 {
+          display: none; } }
 
 .main {
   position: relative; }

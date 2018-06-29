@@ -62,8 +62,8 @@ export default class App extends Component {
     this.handleContactChange = this.handleContactChange.bind(this)
     this.updateContactButton = this.updateContactButton.bind(this)
     this.submitContactForm = this.submitContactForm.bind(this)
-    //     \ / what's up with these \ /
-    //      V        ??????          V
+    
+    // ? What are those ! V
     this.touchStart = this.touchStart.bind(this)
     this.touchEnd = this.touchEnd.bind(this)
     this.handleSwipe = this.handleSwipe.bind(this)
@@ -225,7 +225,7 @@ export default class App extends Component {
     e.preventDefault()
   }
 
-  // not so sure about these touch events
+  // ? not so sure about these touch events
   touchStart(e) {
     console.log('touchStarted')
   }
