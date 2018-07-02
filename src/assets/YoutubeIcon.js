@@ -2,7 +2,7 @@ import React from 'react'
 
 const YoutubeIcon = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="44.621" height="44.619" viewBox="0 0 44.62 44.619">
+    <svg className="icon" xmlns="http://www.w3.org/2000/svg" width="44.621" height="44.619" viewBox="0 0 44.62 44.619">
       <defs>
         <linearGradient id="primarySecondary" gradientUnits="userSpaceOnUse" x1="23.2212" y1="26.9795" x2="23.2212" y2="17.6401">
           <stop offset="0" stopColor="#262355"/>

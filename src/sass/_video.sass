@@ -52,4 +52,23 @@
           &:hover
             background: $red
             box-shadow: $shadow
-      
+
+  @media (min-width: $midBreak)
+    .content
+      .video-links
+        display: grid
+        grid-template-columns: auto auto
+        grid-auto-rows: 37.5px auto
+        grid-template-areas: "more-videos for-more-videos" "more-videos subscribe"
+
+        .for-more-videos
+          grid-area: for-more-videos
+          // grid-column: 2
+        .more-videos
+          grid-area: more-videos
+          flex-direction: column
+          margin: 0
+          a
+            padding: 10px 0
+        .subscribe
+          grid-area: subscribe

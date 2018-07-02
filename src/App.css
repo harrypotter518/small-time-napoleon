@@ -87,7 +87,7 @@ button {
       text-decoration: none;
       width: 50%;
       margin: 0 auto; }
-      .nav .nav-buttons a .nav-icon {
+      .nav .nav-buttons a .nav-icon, .nav .nav-buttons a .icon {
         width: 37.5px;
         height: 37.5px;
         display: none;
@@ -119,9 +119,9 @@ button {
         margin: 0;
         width: auto;
         margin-left: 37.5px; }
-        .nav .nav-buttons a .nav-icon {
+        .nav .nav-buttons a .nav-icon, .nav .nav-buttons a .icon {
           display: block; }
-          .nav .nav-buttons a .nav-icon * {
+          .nav .nav-buttons a .nav-icon *, .nav .nav-buttons a .icon * {
             fill: #262355; }
         .nav .nav-buttons a h4 {
           display: none; } }
@@ -423,6 +423,22 @@ button {
         .video .content .video-links .subscribe .button-red:hover {
           background: #FF0000;
           box-shadow: 0px 5px 8px -6px rgba(38, 35, 85, 0.75); }
+  @media (min-width: 550px) {
+    .video .content .video-links {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-auto-rows: 37.5px auto;
+      grid-template-areas: "more-videos for-more-videos" "more-videos subscribe"; }
+      .video .content .video-links .for-more-videos {
+        grid-area: for-more-videos; }
+      .video .content .video-links .more-videos {
+        grid-area: more-videos;
+        flex-direction: column;
+        margin: 0; }
+        .video .content .video-links .more-videos a {
+          padding: 10px 0; }
+      .video .content .video-links .subscribe {
+        grid-area: subscribe; } }
 
 .pictures {
   margin-bottom: 75px; }

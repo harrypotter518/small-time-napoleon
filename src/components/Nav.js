@@ -5,10 +5,11 @@ import Hamburger from '../assets/Hamburger'
 import Socials from './Socials'
 
 import MusicIcon from '../assets/navIcons/MusicIcon'
-import VideoIcon from '../assets/navIcons/VideoIcon';
+// import VideoIcon from '../assets/navIcons/VideoIcon';
 import PhotoIcon from '../assets/navIcons/PhotoIcon';
 import CalendarIcon from '../assets/navIcons/CalendarIcon';
 import ContactIcon from '../assets/navIcons/ContactIcon';
+import YoutubeIcon from '../assets/YoutubeIcon';
 
 
 export default class Nav extends Component {
@@ -33,7 +34,7 @@ export default class Nav extends Component {
             <h4>music</h4>
           </a>
           <a href="#video" onClick={closeNav}>
-            <VideoIcon />
+            <YoutubeIcon />
             <h4>video</h4>
           </a>
           <a href="#pictures" onClick={closeNav}>
