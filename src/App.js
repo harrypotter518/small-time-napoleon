@@ -11,6 +11,7 @@ import Shows from './components/Shows'
 import Contact from './components/Contact'
 // import ContactSuccess from './components/ContactSuccess'
 import Footer from './components/Footer'
+import MailChimpForm from './components/MailChimpForm';
 
 const encode = (data) => {
   return Object.keys(data)
@@ -302,6 +303,8 @@ export default class App extends Component {
           decreaseQuote={this.decreaseQuote}
           handleSwipe={this.handleSwipe} />
 
+        <MailChimpForm />
+
         <Music 
           album={album}
           hoverAlbum={this.hoverAlbum}
@@ -334,6 +337,8 @@ export default class App extends Component {
           clicked={clicked} 
           touchStart={this.touchStart}
           touchEnd={this.touchEnd} />
+
+        <MailChimpForm />
 
         <Footer />
         

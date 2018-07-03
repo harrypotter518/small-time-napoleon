@@ -126,6 +126,70 @@ button {
         .nav .nav-buttons a h4 {
           display: none; } }
 
+.mailchimp {
+  margin-bottom: 75px; }
+  .mailchimp h3 {
+    margin: 0 auto;
+    text-align: center; }
+  .mailchimp form {
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto;
+    -webkit-appearance: none; }
+    .mailchimp form textarea, .mailchimp form input {
+      outline: none; }
+    .mailchimp form .inputs {
+      border-radius: 2px;
+      padding: 10px;
+      margin: 0 auto;
+      margin-bottom: 22.5px;
+      display: grid;
+      grid-auto-rows: 100%;
+      box-shadow: 0px 6px 12px -4px rgba(38, 35, 85, 0.75); }
+      .mailchimp form .inputs label {
+        -webkit-appearance: none;
+        margin: 0; }
+        .mailchimp form .inputs label input {
+          border-radius: 0;
+          height: 50px;
+          width: 100%;
+          padding-left: 10px;
+          font-size: 1rem;
+          letter-spacing: 2px;
+          text-align: center;
+          border: 0; }
+      .mailchimp form .inputs .contact-button {
+        -webkit-appearance: none;
+        border-radius: 0;
+        border: 0;
+        background: rgba(91, 84, 204, 0.75);
+        position: relative;
+        width: 187.5px;
+        height: 50px;
+        text-transform: uppercase;
+        color: white;
+        font-size: 1.25em;
+        letter-spacing: 2px;
+        border-radius: 2px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 37.5px;
+        font-size: 1rem;
+        cursor: pointer;
+        padding: 0; }
+        .mailchimp form .inputs .contact-button:hover {
+          background: #5b54cc; }
+  @media (min-width: 550px) {
+    .mailchimp form .inputs {
+      grid-template-columns: auto auto; }
+      .mailchimp form .inputs label input {
+        text-align: left; }
+      .mailchimp form .inputs .contact-button {
+        width: auto;
+        height: 50px;
+        left: 0;
+        transform: none; } }
+
 .main {
   position: relative; }
   .main .hero-image {
@@ -545,8 +609,7 @@ button {
       width: 90%;
       margin: 0 auto; }
       .contact .form form .inputs {
-        border: 1px #262355 solid;
-        box-shadow: inset 0px 5px 8px -6px rgba(38, 35, 85, 0.75);
+        box-shadow: 0px 6px 12px -4px rgba(38, 35, 85, 0.75);
         border-radius: 2px;
         padding: 10px;
         margin: 0 auto;
@@ -600,7 +663,7 @@ button {
       .contact .form .contact-icons a {
         text-decoration: none;
         color: #262355;
-        transition: .5s all ease; }
+        transition: 0.5s all cubic-bezier(0.36, -0.32, 0.23, 1.17); }
         .contact .form .contact-icons a:hover {
           color: #5b54cc; }
           .contact .form .contact-icons a:hover svg #background {
@@ -608,10 +671,9 @@ button {
         .contact .form .contact-icons a:first-of-type {
           grid-column: span 2; }
       .contact .form .contact-icons .icon-set {
-        border: 1px solid #262355;
         padding: 10px 0;
         border-radius: 2px;
-        box-shadow: inset 0px 5px 8px -6px rgba(38, 35, 85, 0.75); }
+        box-shadow: 0px 6px 12px -4px rgba(38, 35, 85, 0.75); }
         .contact .form .contact-icons .icon-set:hover {
           box-shadow: 0px 5px 8px -6px rgba(38, 35, 85, 0.75); }
         .contact .form .contact-icons .icon-set a {

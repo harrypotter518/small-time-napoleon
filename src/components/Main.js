@@ -6,7 +6,6 @@ import Quotes from './Quotes'
 import NameLogo from '../assets/NameLogo'
 import weddingPhoto from '../assets/photoSection/wedding2.jpg';
 
-
 const outdoorPhotoStyle = {
   background: 'url(' + weddingPhoto + ') #262355',
   backgroundPosition: 'bottom',
@@ -33,8 +32,7 @@ const Main = (props) => {
           handleSwipe={props.handleSwipe} />
 
         <Socials />
-      </div>
-      
+      </div>      
     </div>
   )
 }

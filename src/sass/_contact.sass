@@ -17,8 +17,9 @@
       margin: 0 auto
 
       .inputs
-        border: 1px $monoPrimary solid
-        box-shadow: inset $shadow
+        // border: 1px $monoPrimary solid
+        // box-shadow: inset $shadow
+        box-shadow: $float-shadow
         border-radius: 2px
         padding: 10px
         margin: 0 auto
@@ -69,7 +70,7 @@
       a
         text-decoration: none
         color: $monoPrimary
-        transition: .5s all ease
+        transition: .5s all cubic-bezier(0.36,-0.32, 0.23, 1.17)
         &:hover
           color: $monoFifth
           svg
@@ -80,11 +81,11 @@
 
       .icon-set
         // margin: 0 auto
-        border: 1px solid $monoPrimary
+        // border: 1px solid $monoPrimary
         padding: 10px 0
         border-radius: 2px
         // width: 90%
-        box-shadow: inset $shadow
+        box-shadow: $float-shadow
         &:hover
           box-shadow: $shadow
         a
