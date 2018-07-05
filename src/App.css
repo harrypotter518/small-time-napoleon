@@ -623,6 +623,7 @@ button {
         .contact .form form .inputs:hover {
           box-shadow: 0px 5px 8px -6px rgba(38, 35, 85, 0.75); }
         .contact .form form .inputs.sent {
+          border: 1px #262355 solid;
           overflow: hidden;
           max-height: 0;
           padding: 0;
