@@ -32,6 +32,9 @@
         flex-direction: row
         justify-content: space-between
         margin: 37.5px 0
+        // height: 150px
+        padding: 10px
+        box-shadow: $float-shadow
 
         .video-thumbnail
           width: 75px
@@ -51,7 +54,8 @@
           +button(lighten($red, 15%))
           &:hover
             background: $red
-            box-shadow: $shadow
+            // box-shadow: $shadow
+            box-shadow: $float-shadow
 
   @media (min-width: $midBreak)
     .content

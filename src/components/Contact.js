@@ -3,9 +3,9 @@ import React, {Component} from 'react'
 // import GoogleForm from './GoogleForm'
 
 import backgroundImage from '../assets/photoSection/jeffSings.jpg'
-import PhoneIcon from '../assets/PhoneIcon';
-import MailIcon from '../assets/MailIcon';
-import TextIcon from '../TextIcon';
+import PhoneIcon from '../assets/contactIcons/PhoneIcon';
+import TextIcon from '../assets/contactIcons/TextIcon';
+import MailIcon from '../assets/contactIcons/MailIcon'
 
 const backgroundStyle = {
   background: 'url(' + backgroundImage + ') #262355',
@@ -15,8 +15,7 @@ const backgroundStyle = {
 }
 
 export default class Contact extends Component {
-  
-  
+
   render() {
     const { 
       // subject, 
@@ -62,27 +61,27 @@ export default class Contact extends Component {
 
           <div className="contact-icons">
             {/* touch events on link populated througout the app on its own? */}
-            <a href="mailto:smalltimenapoleonband@gmail.com?Subject=Hello%20amazing%20band%20I%20love" onTouchStart={touchStart} onTouchEnd={touchEnd} >
-              <div className="icon-set">
-                <MailIcon />
-                <h4>Email</h4>
-                {/* <p>smalltimenapoleonband@gmail.com</p> */}
-              </div>
-            </a>
-
             <a href="tel:+15024391974">
               <div className="icon-set">
-                <PhoneIcon />
                 <h4>Call</h4>
+                <PhoneIcon />
                 {/* <p>502-439-1974</p> */}
               </div>
             </a>
 
             <a href="sms:5024391974">
               <div className="icon-set">
-                <TextIcon />
                 <h4>Text</h4>
+                <TextIcon />
                 {/* <p>502-439-1974</p> */}
+              </div>
+            </a>
+
+            <a href="mailto:smalltimenapoleonband@gmail.com?Subject=Hello%20amazing%20band%20I%20love" onTouchStart={touchStart} onTouchEnd={touchEnd} >
+              <div className="icon-set">
+                <h4>Email</h4>
+                <MailIcon />
+                {/* <p>smalltimenapoleonband@gmail.com</p> */}
               </div>
             </a>
           </div>

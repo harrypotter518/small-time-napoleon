@@ -162,7 +162,7 @@ button {
         -webkit-appearance: none;
         border-radius: 0;
         border: 0;
-        background: rgba(91, 84, 204, 0.75);
+        background: rgba(38, 35, 85, 0.5);
         position: relative;
         width: 187.5px;
         height: 50px;
@@ -220,7 +220,7 @@ button {
 
 .socials {
   height: 150px;
-  width: 85%;
+  width: 90%;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -309,11 +309,13 @@ button {
   .music .content {
     width: 95vw;
     padding: 2px;
+    padding-bottom: 37.5px;
     margin: 0 auto;
     margin-top: -150px;
     background: white;
     border-radius: 2px;
-    border-top: 10px solid #ffa340; }
+    border-top: 10px solid #ffa340;
+    box-shadow: 0px 5px 12px -2px rgba(38, 35, 85, 0.75); }
     .music .content h1 {
       font-size: 30px;
       margin: 22.5px auto;
@@ -342,7 +344,7 @@ button {
       position: relative;
       z-index: 1;
       cursor: pointer;
-      box-shadow: 0 3px 5px -2px rgba(0, 0, 0, 0.75); }
+      box-shadow: 0px 5px 12px -2px rgba(38, 35, 85, 0.75); }
   .music .cd {
     margin: 0 auto;
     width: 90%;
@@ -356,7 +358,7 @@ button {
         height: 100%; }
   .music .streamers {
     height: 37.5px;
-    width: 85%;
+    width: 90%;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
@@ -426,11 +428,13 @@ button {
   .video .content {
     width: 95vw;
     padding: 2px;
+    padding-bottom: 37.5px;
     margin: 0 auto;
     margin-top: -150px;
     background: white;
     border-radius: 2px;
-    border-top: 10px solid #ffa340; }
+    border-top: 10px solid #ffa340;
+    box-shadow: 0px 5px 12px -2px rgba(38, 35, 85, 0.75); }
     .video .content h1 {
       font-size: 30px;
       margin: 22.5px auto;
@@ -462,7 +466,9 @@ button {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin: 37.5px 0; }
+        margin: 37.5px 0;
+        padding: 10px;
+        box-shadow: 0px 5px 12px -2px rgba(38, 35, 85, 0.75); }
         .video .content .video-links .more-videos .video-thumbnail {
           width: 75px;
           height: 75px; }
@@ -486,7 +492,7 @@ button {
         transform: translateX(-50%); }
         .video .content .video-links .subscribe .button-red:hover {
           background: #FF0000;
-          box-shadow: 0px 5px 8px -6px rgba(38, 35, 85, 0.75); }
+          box-shadow: 0px 5px 12px -2px rgba(38, 35, 85, 0.75); }
   @media (min-width: 550px) {
     .video .content .video-links {
       display: grid;
@@ -509,11 +515,13 @@ button {
   .pictures .photos-container {
     width: 95vw;
     padding: 2px;
+    padding-bottom: 37.5px;
     margin: 0 auto;
     margin-top: -150px;
     background: white;
     border-radius: 2px;
-    border-top: 10px solid #ffa340; }
+    border-top: 10px solid #ffa340;
+    box-shadow: 0px 5px 12px -2px rgba(38, 35, 85, 0.75); }
     .pictures .photos-container h1 {
       font-size: 30px;
       margin: 22.5px auto;
@@ -535,6 +543,8 @@ button {
         max-width: 100%;
         height: auto;
         cursor: pointer; }
+        .pictures .photos-container .photo-album img:hover {
+          box-shadow: 0px 5px 12px -2px rgba(38, 35, 85, 0.75); }
       .pictures .photos-container .photo-album .image2, .pictures .photos-container .photo-album .image4, .pictures .photos-container .photo-album .image7, .pictures .photos-container .photo-album .image9 {
         grid-row: span 2; }
       .pictures .photos-container .photo-album .image6 {
@@ -556,17 +566,30 @@ button {
         right: 0;
         background: linear-gradient(45deg, #06050d, #313044);
         z-index: 100; }
+  .pictures .for-more-photos {
+    width: 90%;
+    margin: 37.5px auto 75px; }
+    .pictures .for-more-photos .socials {
+      height: auto;
+      padding: 15px 0; }
+      .pictures .for-more-photos .socials a {
+        height: 50px; }
+      .pictures .for-more-photos .socials svg {
+        height: 50px;
+        width: 50px; }
 
 .shows {
   margin-bottom: 75px; }
   .shows .content {
     width: 95vw;
     padding: 2px;
+    padding-bottom: 37.5px;
     margin: 0 auto;
     margin-top: -150px;
     background: white;
     border-radius: 2px;
-    border-top: 10px solid #ffa340; }
+    border-top: 10px solid #ffa340;
+    box-shadow: 0px 5px 12px -2px rgba(38, 35, 85, 0.75); }
     .shows .content h1 {
       font-size: 30px;
       margin: 22.5px auto;
@@ -590,11 +613,13 @@ button {
   .contact .form {
     width: 95vw;
     padding: 2px;
+    padding-bottom: 37.5px;
     margin: 0 auto;
     margin-top: -150px;
     background: white;
     border-radius: 2px;
-    border-top: 10px solid #ffa340; }
+    border-top: 10px solid #ffa340;
+    box-shadow: 0px 5px 12px -2px rgba(38, 35, 85, 0.75); }
     .contact .form h1 {
       font-size: 30px;
       margin: 22.5px auto;
@@ -609,7 +634,6 @@ button {
       width: 90%;
       margin: 0 auto; }
       .contact .form form .inputs {
-        box-shadow: 0px 6px 12px -4px rgba(38, 35, 85, 0.75);
         border-radius: 2px;
         padding: 10px;
         margin: 0 auto;
@@ -620,8 +644,6 @@ button {
         max-height: 500px;
         max-width: 1000px;
         transition: all 0.5s cubic-bezier(0.36, -0.32, 0.23, 1.17); }
-        .contact .form form .inputs:hover {
-          box-shadow: 0px 5px 8px -6px rgba(38, 35, 85, 0.75); }
         .contact .form form .inputs.sent {
           border: 1px #262355 solid;
           overflow: hidden;
@@ -658,9 +680,9 @@ button {
     .contact .form .contact-icons {
       width: 90%;
       margin: 75px auto 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 20px; }
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around; }
       .contact .form .contact-icons a {
         text-decoration: none;
         color: #262355;
@@ -669,29 +691,26 @@ button {
           color: #5b54cc; }
           .contact .form .contact-icons a:hover svg #background {
             fill: #5b54cc; }
-        .contact .form .contact-icons a:first-of-type {
+        .contact .form .contact-icons a:last-of-type {
           grid-column: span 2; }
       .contact .form .contact-icons .icon-set {
         padding: 10px 0;
-        border-radius: 2px;
-        box-shadow: 0px 6px 12px -4px rgba(38, 35, 85, 0.75); }
-        .contact .form .contact-icons .icon-set:hover {
-          box-shadow: 0px 5px 8px -6px rgba(38, 35, 85, 0.75); }
+        border-radius: 2px; }
         .contact .form .contact-icons .icon-set a {
           display: block; }
-        .contact .form .contact-icons .icon-set svg {
+        .contact .form .contact-icons .icon-set .contact-icon {
           max-width: 50px;
           max-height: 50px;
           display: block;
           margin: 0 auto; }
-          .contact .form .contact-icons .icon-set svg #background {
-            fill: #5d5b7f; }
-          .contact .form .contact-icons .icon-set svg #phone, .contact .form .contact-icons .icon-set svg #envelope, .contact .form .contact-icons .icon-set svg #text-lines {
-            fill: #262355; }
+        .contact .form .contact-icons .icon-set * {
+          fill: #262355; }
         .contact .form .contact-icons .icon-set h4, .contact .form .contact-icons .icon-set p {
           text-align: center;
           margin: 0;
           padding: 0; }
+        .contact .form .contact-icons .icon-set h4 {
+          text-transform: uppercase; }
 
 .footer {
   background: linear-gradient(45deg, #161431, #5d5b7f); }

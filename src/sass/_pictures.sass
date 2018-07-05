@@ -20,6 +20,8 @@
         max-width: 100%
         height: auto
         cursor: pointer
+        &:hover
+          box-shadow: $float-shadow
       
       .image2, .image4, .image7, .image9
         grid-row: span 2
@@ -47,3 +49,25 @@
         right: 0
         background: linear-gradient(45deg, darken($monoPrimary, 20%), darken($monoFourth, 20%))
         z-index: 100
+  
+  .for-more-photos
+    // display: grid
+    // grid-template-columns: 1fr 2fr
+    width: 90%
+    margin: 37.5px auto 75px
+    // background: rgba($monoSecondary,.5)
+
+    // h4
+    //   text-align: center
+
+    .socials
+      height: auto
+      padding: 15px 0
+      // width: 50%
+      // flex-direction: column
+      // box-shadow: $float-shadow
+      a
+        height: 50px
+      svg
+        height: 50px
+        width: 50px

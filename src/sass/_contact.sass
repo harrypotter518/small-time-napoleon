@@ -17,7 +17,7 @@
       margin: 0 auto
 
       .inputs
-        box-shadow: $float-shadow
+        // box-shadow: $float-shadow
         border-radius: 2px
         padding: 10px
         margin: 0 auto
@@ -29,7 +29,7 @@
         max-width: 1000px
         transition: all .5s cubic-bezier(0.36,-0.32, 0.23, 1.17)
         &:hover
-          box-shadow: $shadow
+          // box-shadow: $shadow
         &.sent
           border: 1px $monoPrimary solid
           overflow: hidden
@@ -62,9 +62,13 @@
     .contact-icons
       width: 90%
       margin: 75px auto 0
-      display: grid
-      grid-template-columns: 1fr 1fr
-      grid-gap: 20px
+      display: flex
+      flex-direction: row
+      justify-content: space-around
+      // background: pink
+      // display: grid
+      // grid-template-columns: 1fr 1fr
+      // grid-gap: 20px
 
       a
         text-decoration: none
@@ -75,7 +79,7 @@
           svg
             #background
               fill: $monoFifth
-        &:first-of-type
+        &:last-of-type
           grid-column: span 2
 
       .icon-set
@@ -84,25 +88,24 @@
         padding: 10px 0
         border-radius: 2px
         // width: 90%
-        box-shadow: $float-shadow
+        // box-shadow: $float-shadow
         &:hover
-          box-shadow: $shadow
+          // box-shadow: $shadow
         a
           display: block
-          
-        svg
+
+        .contact-icon
           max-width: 50px
           max-height: 50px
           display: block
           margin: 0 auto
-
-          #background
-            fill: $monoFourth
-          #phone, #envelope, #text-lines
-            fill: $monoPrimary
+        *
+          fill: $monoPrimary
 
         h4, p
           text-align: center
           margin: 0
           padding: 0
+        h4
+          text-transform: uppercase
 

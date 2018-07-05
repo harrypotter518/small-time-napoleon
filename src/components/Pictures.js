@@ -3,6 +3,9 @@ import PhotoAlbum from './PhotoAlbum'
 
 import zackBackground from '../assets/photoSection/zack.jpg'
 
+import FacebookIcon from '../assets/FacebookIcon'
+import InstagramIcon from '../assets/InstagramIcon'
+
 const backgroundStyle = {
   background: 'url(' + zackBackground + ') #262355',
   backgroundPosition: 'center',
@@ -26,7 +29,15 @@ const Pictures = (props) => {
           enhanceImage={props.enhanceImage} />
       </div>
 
-      
+      <div className="for-more-photos">
+        {/* <h4>Check out our facebook and instagram for more photos</h4> */}
+        <div className="socials">
+          <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/smalltimenapoleonband" ><FacebookIcon /></a>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/smalltime_napoleon/" ><InstagramIcon /></a>
+        </div>    
+      </div>
+
+
 
     </div>
   )
