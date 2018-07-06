@@ -33,12 +33,15 @@
         justify-content: space-between
         margin: 37.5px 0
         // height: 150px
-        padding: 10px
-        box-shadow: $float-shadow
+        padding: 18.75px 10px
+        box-shadow: inset $float-shadow
 
         .video-thumbnail
           width: 75px
-          height: 75px
+          height: 56.25px
+          transition: box-shadow .3s ease
+          &:hover
+            box-shadow: $float-shadow
 
       .for-more-videos
         margin: 0
@@ -52,6 +55,7 @@
 
         .button-red
           +button(lighten($red, 15%))
+          transition: all .3s ease
           &:hover
             background: $red
             // box-shadow: $shadow

@@ -9,7 +9,8 @@ import MusicIcon from '../assets/navIcons/MusicIcon'
 import PhotoIcon from '../assets/navIcons/PhotoIcon';
 import CalendarIcon from '../assets/navIcons/CalendarIcon';
 import ContactIcon from '../assets/navIcons/ContactIcon';
-import YoutubeIcon from '../assets/YoutubeIcon';
+// import YoutubeIcon from '../assets/YoutubeIcon';
+import VideoIcon from '../assets/navIcons/VideoIcon'
 
 
 export default class Nav extends Component {
@@ -34,7 +35,7 @@ export default class Nav extends Component {
             <h4>music</h4>
           </a>
           <a href="#video" onClick={closeNav}>
-            <YoutubeIcon />
+            <VideoIcon />
             <h4>video</h4>
           </a>
           <a href="#pictures" onClick={closeNav}>

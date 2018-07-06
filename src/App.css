@@ -315,7 +315,7 @@ button {
     background: white;
     border-radius: 2px;
     border-top: 10px solid #ffa340;
-    box-shadow: 0px 5px 12px -2px rgba(38, 35, 85, 0.75); }
+    box-shadow: 0px 5px 10px -4px rgba(38, 35, 85, 0.5); }
     .music .content h1 {
       font-size: 30px;
       margin: 22.5px auto;
@@ -344,7 +344,7 @@ button {
       position: relative;
       z-index: 1;
       cursor: pointer;
-      box-shadow: 0px 5px 12px -2px rgba(38, 35, 85, 0.75); }
+      box-shadow: 0px 5px 10px -4px rgba(38, 35, 85, 0.5); }
   .music .cd {
     margin: 0 auto;
     width: 90%;
@@ -434,7 +434,7 @@ button {
     background: white;
     border-radius: 2px;
     border-top: 10px solid #ffa340;
-    box-shadow: 0px 5px 12px -2px rgba(38, 35, 85, 0.75); }
+    box-shadow: 0px 5px 10px -4px rgba(38, 35, 85, 0.5); }
     .video .content h1 {
       font-size: 30px;
       margin: 22.5px auto;
@@ -467,11 +467,14 @@ button {
         flex-direction: row;
         justify-content: space-between;
         margin: 37.5px 0;
-        padding: 10px;
-        box-shadow: 0px 5px 12px -2px rgba(38, 35, 85, 0.75); }
+        padding: 18.75px 10px;
+        box-shadow: inset 0px 5px 10px -4px rgba(38, 35, 85, 0.5); }
         .video .content .video-links .more-videos .video-thumbnail {
           width: 75px;
-          height: 75px; }
+          height: 56.25px;
+          transition: box-shadow .3s ease; }
+          .video .content .video-links .more-videos .video-thumbnail:hover {
+            box-shadow: 0px 5px 10px -4px rgba(38, 35, 85, 0.5); }
       .video .content .video-links .for-more-videos {
         margin: 0; }
       .video .content .video-links .subscribe p {
@@ -489,10 +492,11 @@ button {
         letter-spacing: 2px;
         border-radius: 2px;
         left: 50%;
-        transform: translateX(-50%); }
+        transform: translateX(-50%);
+        transition: all .3s ease; }
         .video .content .video-links .subscribe .button-red:hover {
           background: #FF0000;
-          box-shadow: 0px 5px 12px -2px rgba(38, 35, 85, 0.75); }
+          box-shadow: 0px 5px 10px -4px rgba(38, 35, 85, 0.5); }
   @media (min-width: 550px) {
     .video .content .video-links {
       display: grid;
@@ -521,7 +525,7 @@ button {
     background: white;
     border-radius: 2px;
     border-top: 10px solid #ffa340;
-    box-shadow: 0px 5px 12px -2px rgba(38, 35, 85, 0.75); }
+    box-shadow: 0px 5px 10px -4px rgba(38, 35, 85, 0.5); }
     .pictures .photos-container h1 {
       font-size: 30px;
       margin: 22.5px auto;
@@ -542,9 +546,10 @@ button {
       .pictures .photos-container .photo-album img {
         max-width: 100%;
         height: auto;
-        cursor: pointer; }
+        cursor: pointer;
+        transition: box-shadow .3s ease; }
         .pictures .photos-container .photo-album img:hover {
-          box-shadow: 0px 5px 12px -2px rgba(38, 35, 85, 0.75); }
+          box-shadow: 0px 5px 10px -4px rgba(38, 35, 85, 0.5); }
       .pictures .photos-container .photo-album .image2, .pictures .photos-container .photo-album .image4, .pictures .photos-container .photo-album .image7, .pictures .photos-container .photo-album .image9 {
         grid-row: span 2; }
       .pictures .photos-container .photo-album .image6 {
@@ -568,10 +573,11 @@ button {
         z-index: 100; }
   .pictures .for-more-photos {
     width: 90%;
-    margin: 37.5px auto 75px; }
+    margin: 75px auto; }
     .pictures .for-more-photos .socials {
       height: auto;
-      padding: 15px 0; }
+      padding: 15px 0;
+      box-shadow: 0px 5px 10px -4px rgba(38, 35, 85, 0.5); }
       .pictures .for-more-photos .socials a {
         height: 50px; }
       .pictures .for-more-photos .socials svg {
@@ -589,7 +595,7 @@ button {
     background: white;
     border-radius: 2px;
     border-top: 10px solid #ffa340;
-    box-shadow: 0px 5px 12px -2px rgba(38, 35, 85, 0.75); }
+    box-shadow: 0px 5px 10px -4px rgba(38, 35, 85, 0.5); }
     .shows .content h1 {
       font-size: 30px;
       margin: 22.5px auto;
@@ -619,7 +625,7 @@ button {
     background: white;
     border-radius: 2px;
     border-top: 10px solid #ffa340;
-    box-shadow: 0px 5px 12px -2px rgba(38, 35, 85, 0.75); }
+    box-shadow: 0px 5px 10px -4px rgba(38, 35, 85, 0.5); }
     .contact .form h1 {
       font-size: 30px;
       margin: 22.5px auto;
@@ -671,8 +677,8 @@ button {
         left: 50%;
         transform: translateX(-50%); }
         .contact .form form .contact-button.disabled {
-          color: #8381a5;
-          background: linear-gradient(45deg, rgba(22, 20, 49, 0.95), rgba(93, 91, 127, 0.75));
+          color: #cdccda;
+          background: rgba(38, 35, 85, 0.5);
           pointer-events: none; }
         .contact .form form .contact-button.btn-sent {
           color: white;
@@ -682,13 +688,15 @@ button {
       margin: 75px auto 0;
       display: flex;
       flex-direction: row;
-      justify-content: space-around; }
+      justify-content: space-around;
+      box-shadow: inset 0px 5px 10px -4px rgba(38, 35, 85, 0.5); }
       .contact .form .contact-icons a {
         text-decoration: none;
-        color: #262355;
-        transition: 0.5s all cubic-bezier(0.36, -0.32, 0.23, 1.17); }
+        color: rgba(38, 35, 85, 0.5); }
         .contact .form .contact-icons a:hover {
           color: #5b54cc; }
+          .contact .form .contact-icons a:hover .icon-set .contact-icon * {
+            fill: #5b54cc; }
           .contact .form .contact-icons a:hover svg #background {
             fill: #5b54cc; }
         .contact .form .contact-icons a:last-of-type {
@@ -700,11 +708,10 @@ button {
           display: block; }
         .contact .form .contact-icons .icon-set .contact-icon {
           max-width: 50px;
-          max-height: 50px;
           display: block;
           margin: 0 auto; }
-        .contact .form .contact-icons .icon-set * {
-          fill: #262355; }
+          .contact .form .contact-icons .icon-set .contact-icon * {
+            fill: rgba(38, 35, 85, 0.5); }
         .contact .form .contact-icons .icon-set h4, .contact .form .contact-icons .icon-set p {
           text-align: center;
           margin: 0;
