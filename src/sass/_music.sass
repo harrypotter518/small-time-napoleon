@@ -57,3 +57,31 @@
   .streamers
     +icon-spread(37.5px)
     
+  @media (min-width: $midBreak)
+    .content
+      display: grid
+      grid-template-columns: 2fr 1fr
+      grid-template-rows: auto 1fr 1fr
+
+      h1
+        grid-column: span 2
+
+      .streamers
+        max-width: 375px
+
+      .cd-and-case
+        margin-bottom: 20px
+        grid-row: span 2
+        .too-big-to-fail
+          width: 58vw
+          height: 58vw
+        .cd
+
+          .cd-disc
+            width: 55vw
+            margin: 0 auto
+            margin-top: -30vw
+            #cd
+              width: 55vw
+              height: 55vw
+      

@@ -37,8 +37,8 @@
         box-shadow: inset $float-shadow
 
         .video-thumbnail
-          width: 75px
-          height: 56.25px
+          width: 25vw
+          height: calc(25vw * .5625)
           transition: box-shadow .3s ease
           &:hover
             box-shadow: $float-shadow
@@ -46,13 +46,12 @@
       .for-more-videos
         margin: 0
 
+      .head-to-our
+        margin: 0
+        margin-bottom: 37.5px
+        text-align: right
+
       .subscribe
-
-        p
-          margin: 0
-          margin-bottom: 37.5px
-          text-align: right
-
         .button-red
           +button(lighten($red, 15%))
           transition: all .3s ease
@@ -66,17 +65,23 @@
       .video-links
         display: grid
         grid-template-columns: auto auto
-        grid-auto-rows: 37.5px auto
-        grid-template-areas: "more-videos for-more-videos" "more-videos subscribe"
+        grid-auto-rows: 1fr 1fr 1fr
+        grid-template-areas: "more-videos for-more-videos" "more-videos subscribe" "more-videos head-to-our"
+        grid-gap: 10px
 
         .for-more-videos
           grid-area: for-more-videos
+          align-self: end
           // grid-column: 2
         .more-videos
           grid-area: more-videos
           flex-direction: column
           margin: 0
+          align-items: center
           a
             padding: 10px 0
+        .head-to-our
+          grid-area: head-to-our
         .subscribe
           grid-area: subscribe
+          align-self: center

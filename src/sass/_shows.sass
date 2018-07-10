@@ -14,5 +14,23 @@
 
     p
       width: 90%
-      margin: 0 auto
+      margin: 18.75px auto
       text-align: center
+    
+    a
+      text-decoration: none
+      display: block
+      +button($gold)
+      text-align: center
+      width: 90%
+      height: auto
+      transition: all .3s ease
+      &:hover
+        background: darken($gold,20%)
+        box-shadow: $float-shadow
+
+  @media (min-width: $midBreak)
+    .calendar-links
+      width: 75%
+      margin: 0 auto
+      margin-top: 37.5px

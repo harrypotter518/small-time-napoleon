@@ -25,6 +25,11 @@ $largeBreak: 750px
 $shadow: 0px 5px 8px -6px rgba($monoPrimary, .75)
 $float-shadow: 0px 5px 10px -4px rgba($monoPrimary, .5)
 
+// width and height 16:9 ratio
+=sixteenNine($width: 25vw)
+  width: $width
+  height: calc($width * .5625)
+
 // section setup
 =section($color: rgba($gold,1))
   width: 95vw

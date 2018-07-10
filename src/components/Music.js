@@ -32,20 +32,22 @@ const Music = (props) => {
     
       <div className="content">
         <h1>Music</h1>
-        <div className="too-big-to-fail" style={epCoverStyle} onClick={props.showMusicDetails}></div>
+        <div className="cd-and-case">
+          <div className="too-big-to-fail" style={epCoverStyle} onClick={props.showMusicDetails}></div>
 
-        <div className="cd">
-          <AlbumDetails 
-            album={props.album}
-            audioSource={props.audioSource}
-             /> 
-          
-          <CD 
-            album={props.album}
-            hoverAlbum={props.hoverAlbum} 
-            unhoverAlbum={props.unhoverAlbum} 
-            showMusicDetails={props.showMusicDetails}
-             />    
+          <div className="cd">
+            <AlbumDetails 
+              album={props.album}
+              audioSource={props.audioSource}
+              /> 
+            
+            <CD 
+              album={props.album}
+              hoverAlbum={props.hoverAlbum} 
+              unhoverAlbum={props.unhoverAlbum} 
+              showMusicDetails={props.showMusicDetails}
+              />    
+          </div>
         </div>
 
         <div className="tag-line">

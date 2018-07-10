@@ -52,9 +52,10 @@ const Video = () => {
             <a href="https://www.youtube.com/watch?v=05I8EkZXHug" target="_blank" rel="noopener noreferrer"><div className="video-thumbnail" style={vidThumbNail2Background}></div></a>
             <a href="https://www.youtube.com/watch?v=z1tHgByDajo" target="_blank" rel="noopener noreferrer"><div className="video-thumbnail" style={vidThumbNail3Background}></div></a>
           </div>
+          
+          <p className="head-to-our">...head to our youtube channel and subscribe</p>
 
           <div className="subscribe">
-            <p>...head to our youtube channel and subscribe</p>
             <a href="https://www.youtube.com/user/stnapoleonband/?sub_confirmation=1" target="_blank" rel="noopener noreferrer"><button className="button-red">subscribe</button></a>
           </div>
         </div>
