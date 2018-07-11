@@ -387,14 +387,14 @@ button {
     .music .content {
       display: grid;
       grid-template-columns: 2fr 1fr;
-      grid-template-rows: auto 1fr 1fr; }
+      grid-template-rows: auto 225px auto auto; }
       .music .content h1 {
         grid-column: span 2; }
       .music .content .streamers {
         max-width: 375px; }
       .music .content .cd-and-case {
         margin-bottom: 20px;
-        grid-row: span 2; }
+        grid-row: span 3; }
         .music .content .cd-and-case .too-big-to-fail {
           width: 58vw;
           height: 58vw; }
@@ -455,9 +455,6 @@ button {
       padding: 0; }
       .album-details .contents ul li {
         font-size: .75em; }
-  @media (min-width: 550px) {
-    .album-details {
-      background: pink; } }
 
 .video {
   margin-bottom: 75px; }
@@ -503,13 +500,13 @@ button {
         flex-direction: row;
         justify-content: space-between;
         margin: 37.5px 0;
-        padding: 18.75px 10px;
-        box-shadow: inset 0px 5px 10px -4px rgba(38, 35, 85, 0.5); }
+        padding: 18.75px 10px; }
         .video .content .video-links .more-videos .video-thumbnail {
           width: 25vw;
           height: calc(25vw * .5625);
-          transition: box-shadow .3s ease; }
+          transition: all .3s ease; }
           .video .content .video-links .more-videos .video-thumbnail:hover {
+            border: 1px #ffa340 solid;
             box-shadow: 0px 5px 10px -4px rgba(38, 35, 85, 0.5); }
       .video .content .video-links .for-more-videos {
         margin: 0; }
@@ -624,6 +621,14 @@ button {
       .pictures .for-more-photos .socials svg {
         height: 50px;
         width: 50px; }
+  @media (min-width: 550px) {
+    .pictures .photos-container .photo-album {
+      grid-template-columns: repeat(3, 1fr); }
+      .pictures .photos-container .photo-album .image6 {
+        grid-row: span 1;
+        grid-column: span 1; }
+      .pictures .photos-container .photo-album .image12 {
+        grid-column: 3; } }
 
 .shows {
   margin-bottom: 75px; }
@@ -785,6 +790,13 @@ button {
           padding: 0; }
         .contact .form .contact-icons .icon-set h4 {
           text-transform: uppercase; }
+  @media (min-width: 550px) {
+    .contact .form form .inputs {
+      grid-template-columns: 1fr 1fr; }
+      .contact .form form .inputs label:last-of-type {
+        grid-column: span 2; }
+      .contact .form form .inputs textarea {
+        grid-column: span 2; } }
 
 .footer {
   background: linear-gradient(45deg, #161431, #5d5b7f); }

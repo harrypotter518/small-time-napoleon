@@ -34,13 +34,14 @@
         margin: 37.5px 0
         // height: 150px
         padding: 18.75px 10px
-        box-shadow: inset $float-shadow
+        // box-shadow: inset $float-shadow
 
         .video-thumbnail
           width: 25vw
           height: calc(25vw * .5625)
-          transition: box-shadow .3s ease
+          transition: all .3s ease
           &:hover
+            border: 1px $gold solid
             box-shadow: $float-shadow
 
       .for-more-videos
@@ -62,6 +63,8 @@
 
   @media (min-width: $midBreak)
     .content
+      .iframe-container
+        // width: 75%
       .video-links
         display: grid
         grid-template-columns: auto auto

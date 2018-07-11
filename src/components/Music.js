@@ -36,6 +36,7 @@ const Music = (props) => {
           <div className="too-big-to-fail" style={epCoverStyle} onClick={props.showMusicDetails}></div>
 
           <div className="cd">
+            {/* // ! rework album details styling */}
             <AlbumDetails 
               album={props.album}
               audioSource={props.audioSource}

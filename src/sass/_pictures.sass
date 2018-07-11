@@ -72,3 +72,19 @@
       svg
         height: 50px
         width: 50px
+
+  @media (min-width: $midBreak)
+    .photos-container
+      .photo-album
+        grid-template-columns: repeat(3, 1fr)
+        .image6
+          grid-row: span 1
+          grid-column: span 1
+        // .image8
+        //   grid-column: 4
+        //   grid-row: 2
+        // .image11
+        //   grid-column: 3
+        //   grid-row: 3
+        .image12
+          grid-column: 3
