@@ -8,7 +8,12 @@
 
     h1
       +section-header()
-    
+  
+    .arrow
+      cursor: pointer
+      // background: pink
+      margin: 10px auto
+
     .tag-line
       width: 90%
       display: flex
@@ -67,10 +72,17 @@
 
       .streamers
         max-width: 375px
+      
+      .album-details-container
+        grid-column: span 2
+
+      .tag-line
+        grid-column: 2
+        grid-row: 2
 
       .cd-and-case
         margin-bottom: 20px
-        grid-row: span 3
+        grid-row: span 2
         .too-big-to-fail
           width: 58vw
           height: 58vw
@@ -83,3 +95,12 @@
               width: 55vw
               height: 55vw
           
+      .streamers
+        // background: pink
+        height: auto
+        grid-column: 2
+        grid-row: 3
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-template-rows: 75px 75px
+        justify-items: center

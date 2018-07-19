@@ -56,7 +56,7 @@ const CD = (props) => {
         </g>
       </svg>
 
-      <div className={`arrow ${props.album ? 'up' : 'down'}`}></div>
+      {/* <div className={`arrow ${props.album ? 'up' : 'down'}`}></div> */}
     </div>
   )
 }

@@ -36,12 +36,7 @@ const Music = (props) => {
           <div className="too-big-to-fail" style={epCoverStyle} onClick={props.showMusicDetails}></div>
 
           <div className="cd">
-            {/* // ! rework album details styling */}
-            <AlbumDetails 
-              album={props.album}
-              audioSource={props.audioSource}
-              /> 
-            
+            {/* // ! rework album details styling */}            
             <CD 
               album={props.album}
               hoverAlbum={props.hoverAlbum} 
@@ -50,6 +45,11 @@ const Music = (props) => {
               />    
           </div>
         </div>
+        <AlbumDetails 
+            album={props.album}
+            audioSource={props.audioSource}
+            showMusicDetails={props.showMusicDetails}
+            /> 
 
         <div className="tag-line">
           <p>Check out Small Time Napoleon's New EP, "Too Big To Fail".</p>

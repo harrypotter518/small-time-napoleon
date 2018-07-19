@@ -41,7 +41,7 @@
           height: calc(25vw * .5625)
           transition: all .3s ease
           &:hover
-            border: 1px $gold solid
+            transform: scale(1.1)
             box-shadow: $float-shadow
 
       .for-more-videos
@@ -69,7 +69,7 @@
         display: grid
         grid-template-columns: auto auto
         grid-auto-rows: 1fr 1fr 1fr
-        grid-template-areas: "more-videos for-more-videos" "more-videos subscribe" "more-videos head-to-our"
+        grid-template-areas: "for-more-videos more-videos" "subscribe more-videos" "head-to-our more-videos"
         grid-gap: 10px
 
         .for-more-videos

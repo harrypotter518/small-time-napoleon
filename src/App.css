@@ -29,8 +29,9 @@ button {
 .arrow {
   margin: 0 auto;
   width: 0;
-  height: 0;
-  border-radius: 2px; }
+  max-height: 0;
+  border-radius: 2px;
+  overflow: none; }
   .arrow.up {
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
@@ -337,6 +338,9 @@ button {
       text-transform: uppercase;
       letter-spacing: 2px;
       text-align: center; }
+    .music .content .arrow {
+      cursor: pointer;
+      margin: 10px auto; }
     .music .content .tag-line {
       width: 90%;
       display: flex;
@@ -392,9 +396,14 @@ button {
         grid-column: span 2; }
       .music .content .streamers {
         max-width: 375px; }
+      .music .content .album-details-container {
+        grid-column: span 2; }
+      .music .content .tag-line {
+        grid-column: 2;
+        grid-row: 2; }
       .music .content .cd-and-case {
         margin-bottom: 20px;
-        grid-row: span 3; }
+        grid-row: span 2; }
         .music .content .cd-and-case .too-big-to-fail {
           width: 58vw;
           height: 58vw; }
@@ -404,7 +413,15 @@ button {
           margin-top: -30vw; }
           .music .content .cd-and-case .cd .cd-disc #cd {
             width: 55vw;
-            height: 55vw; } }
+            height: 55vw; }
+      .music .content .streamers {
+        height: auto;
+        grid-column: 2;
+        grid-row: 3;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 75px 75px;
+        justify-items: center; } }
 
 .album-details {
   position: relative;
@@ -414,11 +431,13 @@ button {
   transition: all 1s ease-out;
   background: #7269ff;
   color: white;
-  border-radius: 0 0 2px 2px; }
+  border-radius: 2px;
+  width: 95%;
+  margin: 0 auto; }
   .album-details.is-expanded {
     max-height: 200vh; }
   .album-details .darken {
-    border-radius: 0 0 2px 2px; }
+    border-radius: 2px; }
   .album-details #name-logo {
     padding: 18.75px;
     width: 100%;
@@ -506,7 +525,7 @@ button {
           height: calc(25vw * .5625);
           transition: all .3s ease; }
           .video .content .video-links .more-videos .video-thumbnail:hover {
-            border: 1px #ffa340 solid;
+            transform: scale(1.1);
             box-shadow: 0px 5px 10px -4px rgba(38, 35, 85, 0.5); }
       .video .content .video-links .for-more-videos {
         margin: 0; }
@@ -535,7 +554,7 @@ button {
       display: grid;
       grid-template-columns: auto auto;
       grid-auto-rows: 1fr 1fr 1fr;
-      grid-template-areas: "more-videos for-more-videos" "more-videos subscribe" "more-videos head-to-our";
+      grid-template-areas: "for-more-videos more-videos" "subscribe more-videos" "head-to-our more-videos";
       grid-gap: 10px; }
       .video .content .video-links .for-more-videos {
         grid-area: for-more-videos;
@@ -729,12 +748,29 @@ button {
           padding: 0;
           max-width: 75px; }
         .contact .form form .inputs label input {
-          height: 37.5px;
+          border-radius: 0;
+          height: 50px;
           width: 100%;
-          padding-left: 10px; }
+          padding-left: 10px;
+          font-size: 1rem;
+          letter-spacing: 2px;
+          text-align: left;
+          border: 0;
+          box-shadow: inset 0px 5px 10px -4px rgba(38, 35, 85, 0.5);
+          background: rgba(38, 35, 85, 0.05); }
       .contact .form form textarea {
+        border-radius: 0;
+        height: 50px;
         width: 100%;
+        padding-left: 10px;
+        font-size: 1rem;
+        letter-spacing: 2px;
+        text-align: left;
+        border: 0;
+        box-shadow: inset 0px 5px 10px -4px rgba(38, 35, 85, 0.5);
+        background: rgba(38, 35, 85, 0.05);
         height: 112.5px;
+        line-height: 1.25rem;
         padding: 10px; }
       .contact .form form .contact-button {
         background: #5b54cc;
@@ -747,7 +783,8 @@ button {
         letter-spacing: 2px;
         border-radius: 2px;
         left: 50%;
-        transform: translateX(-50%); }
+        transform: translateX(-50%);
+        width: 90%; }
         .contact .form form .contact-button.disabled {
           color: #cdccda;
           background: rgba(38, 35, 85, 0.5);
@@ -791,6 +828,8 @@ button {
         .contact .form .contact-icons .icon-set h4 {
           text-transform: uppercase; }
   @media (min-width: 550px) {
+    .contact .form form .contact-button {
+      width: 50%; }
     .contact .form form .inputs {
       grid-template-columns: 1fr 1fr; }
       .contact .form form .inputs label:last-of-type {

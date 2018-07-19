@@ -40,17 +40,17 @@
         
         label
           input
-            height: 37.5px
-            width: 100%
-            padding-left: 10px
+            +input(left)
 
       textarea
-        width: 100%
+        +input(left)
         height: 112.5px
+        line-height: 1.25rem
         padding: 10px
 
       .contact-button
         +button($monoFifth)
+        width: 90%
         &.disabled
           color: lighten($monoFourth, 40%)
           background: rgba($monoPrimary,.5)
@@ -118,10 +118,11 @@
   @media (min-width: $midBreak)
     .form
       form
+        .contact-button
+          width: 50%
         .inputs
           grid-template-columns: 1fr 1fr
           label:last-of-type
             grid-column: span 2
-            
           textarea
             grid-column: span 2
