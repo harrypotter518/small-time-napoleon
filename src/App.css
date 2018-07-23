@@ -6,7 +6,8 @@
 
 body {
   min-height: 200vh;
-  font-family: 'Taviraj', serif; }
+  font-family: 'Taviraj', serif;
+  background: rgba(38, 35, 85, 0.05); }
 
 button {
   background: none;
@@ -136,6 +137,7 @@ button {
     width: 90%;
     max-width: 550px;
     margin: 0 auto;
+    background: white;
     -webkit-appearance: none; }
     .mailchimp form textarea, .mailchimp form input {
       outline: none; }
@@ -338,9 +340,10 @@ button {
       text-transform: uppercase;
       letter-spacing: 2px;
       text-align: center; }
-    .music .content .arrow {
-      cursor: pointer;
-      margin: 10px auto; }
+    .music .content iframe {
+      display: block;
+      width: 90%;
+      margin: 37.5px auto 0; }
     .music .content .tag-line {
       width: 90%;
       display: flex;
@@ -358,19 +361,14 @@ button {
       border-radius: 3px;
       position: relative;
       z-index: 1;
-      cursor: pointer;
       box-shadow: 0px 5px 10px -4px rgba(38, 35, 85, 0.5); }
-  .music .cd {
-    margin: 0 auto;
-    width: 90%;
-    position: relative; }
-    .music .cd .cd-disc {
-      margin-top: -45vw;
-      z-index: 0; }
-      .music .cd .cd-disc #cd {
-        cursor: pointer;
-        width: 100%;
-        height: 100%; }
+    .music .content .cd {
+      margin-top: -45vw; }
+      .music .content .cd #cd {
+        display: block;
+        width: 85vw;
+        height: 85vw;
+        margin: 0 auto; }
   .music .streamers {
     height: 37.5px;
     width: 90%;
@@ -387,10 +385,19 @@ button {
         fill: url(#primary-fourth); }
       .music .streamers svg:hover * {
         fill: #262355; }
+  @media (min-width: 440px) {
+    .music .content .cd-and-case .too-big-to-fail {
+      width: 75vw;
+      height: 75vw; }
+    .music .content .cd-and-case .cd {
+      margin-top: -40vw; }
+      .music .content .cd-and-case .cd #cd {
+        width: 70vw;
+        height: 70vw; } }
   @media (min-width: 550px) {
     .music .content {
       display: grid;
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: repeat(1fr, 2);
       grid-template-rows: auto 225px auto auto; }
       .music .content h1 {
         grid-column: span 2; }
@@ -401,27 +408,23 @@ button {
       .music .content .tag-line {
         grid-column: 2;
         grid-row: 2; }
+      .music .content iframe {
+        grid-column: span 2;
+        max-width: 375px; }
       .music .content .cd-and-case {
         margin-bottom: 20px;
         grid-row: span 2; }
         .music .content .cd-and-case .too-big-to-fail {
-          width: 58vw;
-          height: 58vw; }
-        .music .content .cd-and-case .cd .cd-disc {
-          width: 55vw;
-          margin: 0 auto;
-          margin-top: -30vw; }
-          .music .content .cd-and-case .cd .cd-disc #cd {
-            width: 55vw;
-            height: 55vw; }
+          width: 45vw;
+          height: 45vw; }
+        .music .content .cd-and-case .cd {
+          margin-top: -20vw; }
+          .music .content .cd-and-case .cd #cd {
+            width: 40vw;
+            height: 40vw; }
       .music .content .streamers {
-        height: auto;
         grid-column: 2;
-        grid-row: 3;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 75px 75px;
-        justify-items: center; } }
+        grid-row: 3; } }
 
 .album-details {
   position: relative;
@@ -693,7 +696,8 @@ button {
       left: 50%;
       transform: translateX(-50%);
       text-align: center;
-      width: 90%;
+      width: 70%;
+      max-width: 225px;
       height: auto;
       transition: all .3s ease; }
       .shows .content a:hover {
@@ -794,10 +798,12 @@ button {
           background: linear-gradient(45deg, rgba(22, 20, 49, 0.95), rgba(93, 91, 127, 0.75)); }
     .contact .form .contact-icons {
       width: 90%;
+      max-width: 450px;
       margin: 75px auto 0;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
+      background: rgba(38, 35, 85, 0.05);
       box-shadow: inset 0px 5px 10px -4px rgba(38, 35, 85, 0.5); }
       .contact .form .contact-icons a {
         text-decoration: none;

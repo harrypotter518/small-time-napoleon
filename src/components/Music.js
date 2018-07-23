@@ -1,11 +1,12 @@
 import React from 'react'
 
-import AlbumDetails from './AlbumDetails'
+// import AlbumDetails from './AlbumDetails'
 import Streamers from './Streamers'
 
 import epCover from '../assets/epCover.png'
 import jeffDave from '../assets/photoSection/jeffDave.jpg'
 import CD from '../assets/CD'
+import bandcampData from '../data/bandcampData';
 
 const epCoverStyle = {
   background: 'url(' + epCover + ') #262355',
@@ -21,6 +22,11 @@ const buildingsBackgroundStyle = {
   backgroundSize: 'cover',
 }
 
+// get random number for bandcampAudio to have random tune from Too Big To Fail
+let randomNumber = Math.floor(Math.random() * 6)
+const bandcampAudio = <iframe title={bandcampData[randomNumber].title} style={{border: 0, width: '90%', height: 120}} src={bandcampData[randomNumber].src} seamless><a href="http://smalltimenapoleon.bandcamp.com/album/too-big-to-fail">{bandcampData[randomNumber].title}</a></iframe>
+
+
 const Music = (props) => {
 
   return (
@@ -34,26 +40,18 @@ const Music = (props) => {
         <h1>Music</h1>
         <div className="cd-and-case">
           <div className="too-big-to-fail" style={epCoverStyle} onClick={props.showMusicDetails}></div>
-
           <div className="cd">
-            {/* // ! rework album details styling */}            
-            <CD 
-              album={props.album}
-              hoverAlbum={props.hoverAlbum} 
-              unhoverAlbum={props.unhoverAlbum} 
-              showMusicDetails={props.showMusicDetails}
-              />    
+            <CD />    
           </div>
+
         </div>
-        <AlbumDetails 
-            album={props.album}
-            audioSource={props.audioSource}
-            showMusicDetails={props.showMusicDetails}
-            /> 
+
+        {bandcampAudio}
 
         <div className="tag-line">
-          <p>Check out Small Time Napoleon's New EP, "Too Big To Fail".</p>
-          <p>Including the single, "Dear L"</p>
+          {/* <p>Check out Small Time Napoleon's New EP, "Too Big To Fail".</p>
+          <p>Including the single, "Dear L"</p> */}
+          <p>Stream the new record anywhere you see fit.</p>
         </div>
         
         <Streamers />

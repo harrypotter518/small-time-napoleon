@@ -3,7 +3,6 @@ import React from 'react'
 import albumBackground from '../assets/buildingsCover.png';
 import NameLogo from '../assets/NameLogo'
 
-import bandcampData from '../data/bandcampData'
 
 const albumDetailsStyle = {
   background: 'url(' + albumBackground + ') #262355',
@@ -11,10 +10,6 @@ const albumDetailsStyle = {
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
 }
-
-const bandcampAudio = bandcampData.map((track, i) =>
-  <li key={i}><iframe title={track.title} style={{border: 0, width: '100%', height: 42}} src={track.src} seamless><a href="http://smalltimenapoleon.bandcamp.com/album/too-big-to-fail">{track.title}</a></iframe></li>
-)
 
 const AlbumDetails = (props) => {
   return(
@@ -26,11 +21,6 @@ const AlbumDetails = (props) => {
               <NameLogo />
               <h3>Too Big To Fail</h3>
             </div>
-
-            <ul className="track-list">
-              { bandcampAudio }
-            </ul>
-
 
             <ul>
               <li>Dan Hardin: Vocals, Guitar</li>
@@ -74,7 +64,7 @@ const AlbumDetails = (props) => {
           </div>
         </div>
       </div>
-      <div className={`arrow ${props.album ? 'up' : 'down'}`} onClick={props.showMusicDetails}></div>
+      
     </div>
   )
 }

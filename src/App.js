@@ -30,8 +30,6 @@ export default class App extends Component {
       nav: false,
       // main
       quote: 1,
-      // music
-      album: false,
       // photos
       enhanceImage: false,
       // contact
@@ -53,11 +51,7 @@ export default class App extends Component {
     // main
     this.increaseQuote = this.increaseQuote.bind(this)
     this.decreaseQuote = this.decreaseQuote.bind(this)
-    // music
-    this.showMusicDetails = this.showMusicDetails.bind(this)
     // photos
-    this.hoverAlbum = this.hoverAlbum.bind(this)
-    this.unhoverAlbum = this.unhoverAlbum.bind(this)
     this.expandPhoto = this.expandPhoto.bind(this)
     // contact
     this.handleContactChange = this.handleContactChange.bind(this)
@@ -161,21 +155,6 @@ export default class App extends Component {
     .to('#shine', 30, {rotation: -360, transformOrigin: 'center', ease:Power0.easeNone, repeat: -1}, 0)
     .to('#grooves', 6.5, {rotation: 360, transformOrigin: 'center', ease:Power0.easeNone, repeat: -1}, 0)
     .to('#grooves', 1.5, {scale: 1.08, ease:Power2.easeOut, yoyo: true, repeat: -1}, 0)
-  }
-  hoverAlbum() {
-    const tl = new TimelineLite()
-    tl
-      .to('.cd-disc', .5, {y: '20px', ease:Power2.easeInOut})
-  }
-  unhoverAlbum() {
-    const tl = new TimelineLite()
-    tl
-      .to('.cd-disc', .5, {y: 0, ease:Power2.easeInOut})
-  }
-  showMusicDetails() {
-    this.setState({
-      album: !this.state.album,
-    })
   }
 
   //PHOTOS
@@ -287,7 +266,7 @@ export default class App extends Component {
   
 
   render() {
-    const { nav, width, quote, album, audioSource, enhanceImage, subject, email, contactDate, emailButtonValue, contactEventTitle, message, contactButtonMessage, contactSent, clicked, } = this.state
+    const { nav, width, quote, enhanceImage, subject, email, contactDate, emailButtonValue, contactEventTitle, message, contactButtonMessage, contactSent, clicked, } = this.state
 
     return (
       <div className="App">
@@ -305,12 +284,7 @@ export default class App extends Component {
 
         <MailChimpForm />
 
-        <Music 
-          album={album}
-          hoverAlbum={this.hoverAlbum}
-          unhoverAlbum={this.unhoverAlbum}
-          showMusicDetails={this.showMusicDetails}
-          audioSource={audioSource} />
+        <Music />
 
         <Video />
 

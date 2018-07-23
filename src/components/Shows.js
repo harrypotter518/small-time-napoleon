@@ -23,9 +23,9 @@ const Shows = (props) => {
         </div>
 
         <div className="calendar-links">
-          <p>Check back often as our calendar is updated regularly.</p>
+          <p>Check back often as our calendar is updated regularly or check out the full calendar below.</p>
           <a target="_blank" rel="noopener noreferrer" href="https://calendar.google.com/calendar/embed?src=smalltimenapoleonband%40gmail.com&ctz=America%2FNew_York">
-            Check out the full calendar
+            full calendar
           </a>
         </div>
 
