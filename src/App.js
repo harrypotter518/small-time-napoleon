@@ -7,6 +7,7 @@ import Main from './components/Main'
 import Music from './components/Music'
 import Video from './components/Video'
 import Pictures from './components/Pictures'
+import About from './components/About'
 import Shows from './components/Shows'
 import Contact from './components/Contact'
 // import ContactSuccess from './components/ContactSuccess'
@@ -292,6 +293,8 @@ export default class App extends Component {
           enhanceImage={enhanceImage}
           expandPhoto={this.expandPhoto} />
 
+        <About />
+        
         <Shows />
 
         <Contact 
