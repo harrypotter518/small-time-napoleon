@@ -3,6 +3,31 @@
 
   .content
     +section()
+    padding: 0 5%
 
     h1
       +section-header()
+
+    .band-photo
+      height: 50vw
+      max-height: 300px
+      margin: 37.5px auto
+
+    .members
+      text-align: center
+      padding-bottom: 37.5px
+      h3
+        margin: 0
+      ul
+        padding: 0
+        margin: 0
+        li
+          list-style: none
+
+    @media (min-width: $midBreak)
+      .bio
+        .band-photo
+          margin: 10px
+          float: right
+          width: 45vw
+          height: calc(45vw * .5625)

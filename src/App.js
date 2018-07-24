@@ -283,7 +283,7 @@ export default class App extends Component {
           decreaseQuote={this.decreaseQuote}
           handleSwipe={this.handleSwipe} />
 
-        <MailChimpForm />
+        {/* <MailChimpForm /> */}
 
         <Music />
 
@@ -294,7 +294,7 @@ export default class App extends Component {
           expandPhoto={this.expandPhoto} />
 
         <About />
-        
+
         <Shows />
 
         <Contact 

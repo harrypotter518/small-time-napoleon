@@ -224,13 +224,20 @@ button {
     display: grid;
     grid-template-columns: 1fr 75px;
     width: 90vw;
+    max-width: 550px;
     margin: 37.5px auto; }
   .main .socials {
     flex-direction: column;
     height: 225px;
     width: 37.5px;
     margin: auto 0;
-    justify-self: end; } }
+    justify-self: end; }
+  .main .mailchimp {
+    grid-column: span 2; } }
+
+@media (min-width: 750px) {
+  .main .hero-image {
+    height: 425px; } }
 
 .socials {
   height: 150px;
@@ -437,7 +444,8 @@ button {
     background: white;
     border-radius: 2px;
     border-top: 10px solid #ffa340;
-    box-shadow: 0px 5px 10px -4px rgba(38, 35, 85, 0.5); }
+    box-shadow: 0px 5px 10px -4px rgba(38, 35, 85, 0.5);
+    padding: 0 5%; }
     .about .content h1 {
       font-size: 30px;
       margin: 22.5px auto;
@@ -448,6 +456,26 @@ button {
       text-transform: uppercase;
       letter-spacing: 2px;
       text-align: center; }
+    .about .content .band-photo {
+      height: 50vw;
+      max-height: 300px;
+      margin: 37.5px auto; }
+    .about .content .members {
+      text-align: center;
+      padding-bottom: 37.5px; }
+      .about .content .members h3 {
+        margin: 0; }
+      .about .content .members ul {
+        padding: 0;
+        margin: 0; }
+        .about .content .members ul li {
+          list-style: none; }
+    @media (min-width: 550px) {
+      .about .content .bio .band-photo {
+        margin: 10px;
+        float: right;
+        width: 45vw;
+        height: calc(45vw * .5625); } }
 
 .album-details {
   position: relative;
