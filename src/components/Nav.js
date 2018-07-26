@@ -15,7 +15,12 @@ import VideoIcon from '../assets/navIcons/VideoIcon'
 
 export default class Nav extends Component {
   render() {
-    const { toggleNav, nav, closeNav, width } = this.props
+    const { 
+      toggleNav, 
+      nav, 
+      closeNav, 
+      width 
+    } = this.props
 
     let hamburger = <button onClick={toggleNav}><Hamburger /></button>
 

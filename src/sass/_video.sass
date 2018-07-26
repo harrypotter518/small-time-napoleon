@@ -37,8 +37,8 @@
         // box-shadow: inset $float-shadow
 
         .video-thumbnail
-          width: 25vw
-          height: calc(25vw * .5625)
+          width: 100px
+          height: calc(100px * .5625)
           transition: all .3s ease
           &:hover
             transform: scale(1.1)
@@ -61,7 +61,7 @@
             // box-shadow: $shadow
             box-shadow: $float-shadow
 
-  @media (min-width: $midBreak)
+  @media (min-width: $midBreak) and (max-width: $largeBreak)
     .content
       .iframe-container
         // width: 75%

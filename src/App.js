@@ -20,6 +20,7 @@ const encode = (data) => {
       .join("&");
 }
 
+
 export default class App extends Component {
   constructor(props) {
     super(props)
@@ -283,37 +284,38 @@ export default class App extends Component {
           decreaseQuote={this.decreaseQuote}
           handleSwipe={this.handleSwipe} />
 
-        {/* <MailChimpForm /> */}
+        <div className="grid-container">
+          <Music />
 
-        <Music />
+          <Video />
 
-        <Video />
+          <Pictures 
+            enhanceImage={enhanceImage}
+            expandPhoto={this.expandPhoto} />
 
-        <Pictures 
-          enhanceImage={enhanceImage}
-          expandPhoto={this.expandPhoto} />
+          <About />
 
-        <About />
+          <Shows />
 
-        <Shows />
-
-        <Contact 
-          subject={subject}
-          contactDate={contactDate}
-          changesubject={this.changesubject}
-          changecontactDate={this.changecontactDate}
-          emailButtonValue={emailButtonValue}
-          contactEventTitle={contactEventTitle} 
-          email={email}
-          message={message}
-          handleContactChange={this.handleContactChange}
-          submitContactForm={this.submitContactForm} 
-          updateContactButton={this.updateContactButton}
-          contactButtonMessage={contactButtonMessage}
-          contactSent={contactSent}
-          clicked={clicked} 
-          touchStart={this.touchStart}
-          touchEnd={this.touchEnd} />
+          <Contact 
+            subject={subject}
+            contactDate={contactDate}
+            changesubject={this.changesubject}
+            changecontactDate={this.changecontactDate}
+            emailButtonValue={emailButtonValue}
+            contactEventTitle={contactEventTitle} 
+            email={email}
+            message={message}
+            handleContactChange={this.handleContactChange}
+            submitContactForm={this.submitContactForm} 
+            updateContactButton={this.updateContactButton}
+            contactButtonMessage={contactButtonMessage}
+            contactSent={contactSent}
+            clicked={clicked} 
+            touchStart={this.touchStart}
+            touchEnd={this.touchEnd} />
+        
+        </div>
 
         <MailChimpForm />
 

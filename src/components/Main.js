@@ -4,12 +4,12 @@ import Socials from './Socials'
 import Quotes from './Quotes'
 
 import NameLogo from '../assets/NameLogo'
-import weddingPhoto from '../assets/photoSection/wedding2.jpg';
+import weddingPhoto from '../assets/photoSection/wedding1.jpg';
 import MailChimpForm from './MailChimpForm';
 
 const outdoorPhotoStyle = {
   background: 'url(' + weddingPhoto + ') #262355',
-  backgroundPosition: 'bottom',
+  backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
 }
@@ -33,6 +33,7 @@ const Main = (props) => {
           handleSwipe={props.handleSwipe} />
 
         <Socials />
+        
         <MailChimpForm />    
       </div>  
 

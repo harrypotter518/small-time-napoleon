@@ -39,8 +39,8 @@
 
     .too-big-to-fail
       margin: 0 auto
-      width: 90vw
-      height: 90vw
+      width: 300px
+      height: 300px
       border-radius: 3px
       position: relative
       z-index: 1
@@ -49,11 +49,11 @@
       
   
     .cd
-      margin-top: -45vw
+      margin-top: -150px
       #cd
         display: block
-        width: 85vw
-        height: 85vw
+        width: 290px
+        height: 290px
         margin: 0 auto
     
   .streamers
@@ -62,16 +62,16 @@
   @media (min-width: 440px)
     .content
       .cd-and-case
-        .too-big-to-fail
-          width: 75vw
-          height: 75vw
-        .cd
-          margin-top: -40vw
-          #cd
-            width: 70vw
-            height: 70vw
+        // .too-big-to-fail
+        //   width: 75vw
+        //   height: 75vw
+        // .cd
+        //   margin-top: -40vw
+        //   #cd
+        //     width: 70vw
+        //     height: 70vw
 
-  @media (min-width: $midBreak)
+  @media (min-width: $midBreak) and (max-width: $largeBreak)
     .content
       display: grid
       grid-template-columns: repeat(1fr, 2)
@@ -96,14 +96,14 @@
       .cd-and-case
         margin-bottom: 20px
         grid-row: span 2
-        .too-big-to-fail
-          width: 45vw
-          height: 45vw
-        .cd
-          margin-top: -20vw
-          #cd
-            width: 40vw
-            height: 40vw
+        // .too-big-to-fail
+        //   width: 45vw
+        //   height: 45vw
+        // .cd
+        //   margin-top: -20vw
+        //   #cd
+        //     width: 40vw
+        //     height: 40vw
           
       .streamers
         grid-column: 2
