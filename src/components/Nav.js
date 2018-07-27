@@ -47,6 +47,10 @@ export default class Nav extends Component {
             <PhotoIcon />
             <h4>pictures</h4>
           </a>
+          <a href="#about" onClick={closeNav}>
+            <PhotoIcon />
+            <h4>about</h4>
+          </a>
           <a href="#shows" onClick={closeNav}>
             <CalendarIcon />
             <h4>shows</h4>

@@ -8,7 +8,7 @@ import InstagramIcon from '../assets/InstagramIcon'
 
 const backgroundStyle = {
   background: 'url(' + zackBackground + ') #262355',
-  backgroundPosition: 'center',
+  backgroundPosition: 'top',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
 }
@@ -27,15 +27,16 @@ const Pictures = (props) => {
         <PhotoAlbum 
           expandPhoto={props.expandPhoto}
           enhanceImage={props.enhanceImage} />
+      
+        <div className="for-more-photos">
+          {/* <h4>Check out our facebook and instagram for more photos</h4> */}
+          <div className="socials">
+            <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/smalltimenapoleonband" ><FacebookIcon /></a>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/smalltime_napoleon/" ><InstagramIcon /></a>
+          </div>    
+        </div>
       </div>
 
-      <div className="for-more-photos">
-        {/* <h4>Check out our facebook and instagram for more photos</h4> */}
-        <div className="socials">
-          <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/smalltimenapoleonband" ><FacebookIcon /></a>
-          <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/smalltime_napoleon/" ><InstagramIcon /></a>
-        </div>    
-      </div>
 
 
 
