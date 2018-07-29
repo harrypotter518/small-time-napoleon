@@ -1,33 +1,42 @@
 .about
-  margin-bottom: 75px
+  .band-photo
+    height: 50vw
+    max-height: 300px
+    // margin: 37.5px auto
+  
+  .more-bio
+    max-height: 0
+    overflow: hidden
+    transition: max-height .3s ease
+    &.full
+      max-height: 1000px
 
-  .content
-    +section()
-    padding: 0 5%
+  .members
+    max-height: 0
+    overflow: hidden
+    text-align: center
+    h3
+      margin: 0
+    ul
+      padding: 0
+      margin: 0
+      li
+        list-style: none
+    &.full
+      max-height: 1000px
+    
+  .bio-button
+    +button(rgba($monoPrimary, .5))
+    margin-top: 37.5px
+    transition: background .3s ease
+    &:hover
+      background: $monoFifth
 
-    h1
-      +section-header()
 
-    .band-photo
-      height: 50vw
-      max-height: 300px
-      margin: 37.5px auto
-
-    .members
-      text-align: center
-      padding-bottom: 37.5px
-      h3
-        margin: 0
-      ul
-        padding: 0
-        margin: 0
-        li
-          list-style: none
-
-    @media (min-width: $midBreak) and (max-width: $largeBreak)
-      .bio
-        .band-photo
-          margin: 10px
-          float: right
-          width: 45vw
-          height: calc(45vw * .5625)
+  @media (min-width: $midBreak) and (max-width: 899px)
+    .bio
+      // .band-photo.float
+      //   margin: 10px
+      //   float: right
+      //   width: 45vw
+      //   height: calc(45vw * .5625)

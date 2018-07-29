@@ -1,25 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import { TimelineLite, Power2, Power0 } from 'gsap'
+import { TimelineLite, Power2 } from 'gsap'
 
 import Nav from './components/Nav'
 import Main from './components/Main'
-import Music from './components/Music'
-import Video from './components/Video'
-import Pictures from './components/Pictures'
-import About from './components/About'
-import Shows from './components/Shows'
-import Contact from './components/Contact'
-// import ContactSuccess from './components/ContactSuccess'
 import Footer from './components/Footer'
 import MailChimpForm from './components/MailChimpForm';
+import Section from './components/Section'
 
-const encode = (data) => {
-  return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
-}
-
+import sectionsData from './data/sectionsData';
 
 export default class App extends Component {
   constructor(props) {
@@ -32,18 +21,6 @@ export default class App extends Component {
       nav: false,
       // main
       quote: 1,
-      // photos
-      enhanceImage: false,
-      // contact
-      contactDate: null,
-      name: '',
-      email: '',
-      contactButtonMessage: 'Send',
-      contactEventTitle: '',
-      subject: '',
-      message: '',
-      clicked: true,
-      contactSent: false,
     }
     // window dimensions
     this.updateDimensions = this.updateDimensions.bind(this)
@@ -53,12 +30,6 @@ export default class App extends Component {
     // main
     this.increaseQuote = this.increaseQuote.bind(this)
     this.decreaseQuote = this.decreaseQuote.bind(this)
-    // photos
-    this.expandPhoto = this.expandPhoto.bind(this)
-    // contact
-    this.handleContactChange = this.handleContactChange.bind(this)
-    this.updateContactButton = this.updateContactButton.bind(this)
-    this.submitContactForm = this.submitContactForm.bind(this)
     
     // ? What are those ! V
     this.touchStart = this.touchStart.bind(this)
@@ -147,65 +118,6 @@ export default class App extends Component {
       .to("#bottom", .3, {y: 0}, .3)
       .to("#middle", .5, {autoAlpha: 1}, .2)
   }
-  
-
-  //MUSIC
-  rotateDisc() {
-    const tl = new TimelineLite()
-    tl
-    .to('#label-and-grooves', 5, {rotation: 360, transformOrigin: 'center', ease:Power0.easeNone, repeat: -1})
-    .to('#shine', 30, {rotation: -360, transformOrigin: 'center', ease:Power0.easeNone, repeat: -1}, 0)
-    .to('#grooves', 6.5, {rotation: 360, transformOrigin: 'center', ease:Power0.easeNone, repeat: -1}, 0)
-    .to('#grooves', 1.5, {scale: 1.08, ease:Power2.easeOut, yoyo: true, repeat: -1}, 0)
-  }
-
-  //PHOTOS
-  expandPhoto(e) {
-    this.setState({
-      enhanceImage: !this.state.enhanceImage,
-    })
-    // remove class 'enlarge' if it already has it, add it if not
-    if (e.target.classList.contains('enlarge')) {
-      e.target.classList.remove('enlarge')
-    } else {
-      e.target.classList.add('enlarge')
-    }
-  }
-
-  //CONTACT
-  handleContactChange(e) {
-    this.setState({ 
-      [e.target.name]: e.target.value 
-    });
-  }
-  updateContactButton() {
-    const { name, email, message } = this.state
-    if (name.length !== 0 && email.length !== 0 && message.length !== 0) {
-      this.setState({
-        clicked: false,
-      })
-    } else {
-      this.setState({
-        clicked: true,
-      })
-    }
-
-  }
-  submitContactForm(e) {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...this.state })
-    })
-      .then(this.setState({
-        clicked: true,
-        contactSent: true,
-        contactButtonMessage: 'thanks!',
-      }))
-      .catch(error => alert(error));
-    
-    e.preventDefault()
-  }
 
   // ? not so sure about these touch events
   touchStart(e) {
@@ -248,9 +160,6 @@ export default class App extends Component {
     setInterval(() => {
       this.increaseQuote()
     }, 10000)
-
-    // rotate disc in music section
-    this.rotateDisc()
   }
 
   componentDidUpdate() {
@@ -267,8 +176,13 @@ export default class App extends Component {
   }
   
 
+
   render() {
-    const { nav, width, quote, enhanceImage, subject, email, contactDate, emailButtonValue, contactEventTitle, message, contactButtonMessage, contactSent, clicked, } = this.state
+    const { nav, width, quote } = this.state
+    const sections = sectionsData.map((data, i) => 
+      <Section key={i} sectionId={data.sectionId} backgroundImage={data.backgroundImage} title={data.title}>{data.children}</Section>
+    )
+
 
     return (
       <div className="App">
@@ -285,35 +199,8 @@ export default class App extends Component {
           handleSwipe={this.handleSwipe} />
 
         <div className="grid-container">
-          <Music />
 
-          <Video />
-
-          <Pictures 
-            enhanceImage={enhanceImage}
-            expandPhoto={this.expandPhoto} />
-
-          <About />
-
-          <Shows />
-
-          <Contact 
-            subject={subject}
-            contactDate={contactDate}
-            changesubject={this.changesubject}
-            changecontactDate={this.changecontactDate}
-            emailButtonValue={emailButtonValue}
-            contactEventTitle={contactEventTitle} 
-            email={email}
-            message={message}
-            handleContactChange={this.handleContactChange}
-            submitContactForm={this.submitContactForm} 
-            updateContactButton={this.updateContactButton}
-            contactButtonMessage={contactButtonMessage}
-            contactSent={contactSent}
-            clicked={clicked} 
-            touchStart={this.touchStart}
-            touchEnd={this.touchEnd} />
+          {sections}
         
         </div>
 

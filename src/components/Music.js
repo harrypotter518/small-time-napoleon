@@ -1,22 +1,12 @@
-import React from 'react'
-
-// import AlbumDetails from './AlbumDetails'
+import React, { Component } from 'react'
 import Streamers from './Streamers'
-
 import epCover from '../assets/epCover.png'
-import jeffDave from '../assets/photoSection/jeffDave.jpg'
 import CD from '../assets/CD'
 import bandcampData from '../data/bandcampData';
+import { TimelineLite, Power2, Power0 } from 'gsap'
 
 const epCoverStyle = {
   background: 'url(' + epCover + ') #262355',
-  backgroundPosition: 'center',
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover',
-}
-
-const buildingsBackgroundStyle = {
-  background: 'url(' + jeffDave + ') #262355',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
@@ -26,20 +16,26 @@ const buildingsBackgroundStyle = {
 let randomNumber = Math.floor(Math.random() * 6)
 const bandcampAudio = <iframe title={bandcampData[randomNumber].title} style={{border: 0, width: '90%', height: 120}} src={bandcampData[randomNumber].src} seamless><a href="http://smalltimenapoleon.bandcamp.com/album/too-big-to-fail">{bandcampData[randomNumber].title}</a></iframe>
 
+export default class Music extends Component {
 
-const Music = (props) => {
+  rotateDisc() {
+    const tl = new TimelineLite()
+    tl
+    .to('#label-and-grooves', 5, {rotation: 360, transformOrigin: 'center', ease:Power0.easeNone, repeat: -1})
+    .to('#shine', 30, {rotation: -360, transformOrigin: 'center', ease:Power0.easeNone, repeat: -1}, 0)
+    .to('#grooves', 6.5, {rotation: 360, transformOrigin: 'center', ease:Power0.easeNone, repeat: -1}, 0)
+    .to('#grooves', 1.5, {scale: 1.08, ease:Power2.easeOut, yoyo: true, repeat: -1}, 0)
+  }
 
-  return (
-    <div id="music" className="music">
+  componentDidMount() {
+    this.rotateDisc()
+  }
 
-      <div className="background" style={buildingsBackgroundStyle}>
-        <div className="darken"></div>
-      </div>
-    
-      <div className="content">
-        <h1>Music</h1>
+  render() {
+    return(
+      <div className="music">
         <div className="cd-and-case">
-          <div className="too-big-to-fail" style={epCoverStyle} onClick={props.showMusicDetails}></div>
+          <div className="too-big-to-fail" style={epCoverStyle}></div>
           <div className="cd">
             <CD />    
           </div>
@@ -55,10 +51,7 @@ const Music = (props) => {
         </div>
         
         <Streamers />
-
       </div>
-    </div>
-  )
+    )
+  }
 }
-
-export default Music

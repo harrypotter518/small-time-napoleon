@@ -1,79 +1,70 @@
 .pictures
-  margin-bottom: 75px
-
-  .photos-container
-    +section()
-
-    h1
-      +section-header()
-
-    .photo-album
-      // display: grid
-      // grid-template-columns: repeat(auto-fill, minmax(150px, 1fr))
-      // grid-gap: 5px
-      columns: 2
-      width: 90%
-      margin: 0 auto
-      // margin-top: -100px
-
-      img
-        max-width: 100%
-        height: auto
-        cursor: pointer
-        transition: box-shadow .3s ease
-        &:hover
-          box-shadow: $float-shadow
-      
-      // .image2, .image4, .image7, .image9
-      //   grid-row: span 2
-
-      // .image6
-      //   grid-column: span 2
-
-      .enlarge
-        position: fixed
-        // width: 95vw
-        // height: auto
-        max-height: 95vh
-        max-width: 95vw
-        left: 50vw
-        top: 50vh
-        transform: translate(-50%,-50%)
-        transition: max-width .3s ease-in-out
-        z-index: 101
-
-      .large-image-background
-        position: fixed
-        top: 0
-        bottom: 0
-        left: 0
-        right: 0
-        background: linear-gradient(45deg, darken($monoPrimary, 20%), darken($monoFourth, 20%))
-        z-index: 100
-  
-  .for-more-photos
+  .photo-album
     // display: grid
-    // grid-template-columns: 1fr 2fr
-    width: 90%
-    margin: 37.5px auto 0
-    // background: rgba($monoSecondary,.5)
+    // grid-template-columns: repeat(auto-fill, minmax(150px, 1fr))
+    // grid-gap: 5px
+    columns: 3
+    margin: 0 auto
+    // margin-top: -100px
 
-    // h4
-    //   text-align: center
-
-    .socials
+    img
+      max-width: 100%
       height: auto
-      padding: 15px 0
-      // width: 50%
-      // flex-direction: column
-      // box-shadow: inset $float-shadow
-      a
-        height: 50px
-      svg
-        height: 50px
-        width: 50px
+      cursor: pointer
+      transition: box-shadow .3s ease
+      &:hover
+        box-shadow: $float-shadow
+    
+    // .image2, .image4, .image7, .image9
+    //   grid-row: span 2
 
-  @media (min-width: $midBreak)
-    .photos-container
-      .photo-album
-        columns: 3
+    // .image6
+    //   grid-column: span 2
+
+    .enlarge
+      position: fixed
+      // width: 95vw
+      // height: auto
+      max-height: 95vh
+      max-width: 95vw
+      left: 50vw
+      top: 50vh
+      transform: translate(-50%,-50%)
+      transition: max-width .3s ease-in-out
+      z-index: 101
+
+    .large-image-background
+      position: fixed
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      background: linear-gradient(45deg, darken($monoPrimary, 20%), darken($monoFourth, 20%))
+      z-index: 100
+  
+    .for-more-photos
+      // display: grid
+      // grid-template-columns: 1fr 2fr
+      width: 90%
+      margin: 37.5px auto 0
+      // background: rgba($monoSecondary,.5)
+
+      // h4
+      //   text-align: center
+
+      .socials
+        height: auto
+        padding: 15px 0
+        // width: 50%
+        // flex-direction: column
+        // box-shadow: inset $float-shadow
+        a
+          height: 50px
+        svg
+          height: 50px
+          width: 50px
+
+  // @media (min-width: $midBreak)
+  //   .photos-container
+  //     .photo-album
+  //       columns: 3

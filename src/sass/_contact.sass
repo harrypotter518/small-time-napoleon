@@ -1,130 +1,112 @@
 .contact
-  margin-bottom: 75px
-
-  .form
-    +section()
-
-    h1
-      +section-header()
-
-    // .tagline
-    //   width: 90%
-    //   margin: 37.5px auto
-    //   text-align: center
-
-    form
-      width: 90%
+  form
+    margin: 0 auto
+    .inputs
+      // box-shadow: $float-shadow
+      border-radius: 2px
       margin: 0 auto
+      margin-bottom: 22.5px
+      display: grid
+      grid-auto-rows: 100%
+      grid-gap: 18.75px
+      max-height: 500px
+      max-width: 1000px
+      transition: all .5s cubic-bezier(0.36,-0.32, 0.23, 1.17)
+      &:hover
+        // box-shadow: $shadow
+      &.sent
+        border: 1px $monoPrimary solid
+        overflow: hidden
+        max-height: 0
+        padding: 0
+        max-width: 75px
+        // border: none
+      
+      label
+        input
+          +input(left)
 
-      .inputs
-        // box-shadow: $float-shadow
-        border-radius: 2px
-        padding: 10px
-        margin: 0 auto
-        margin-bottom: 22.5px
-        display: grid
-        grid-auto-rows: 100%
-        grid-gap: 18.75px
-        max-height: 500px
-        max-width: 1000px
-        transition: all .5s cubic-bezier(0.36,-0.32, 0.23, 1.17)
-        &:hover
-          // box-shadow: $shadow
-        &.sent
-          border: 1px $monoPrimary solid
-          overflow: hidden
-          max-height: 0
-          padding: 0
-          max-width: 75px
-          // border: none
-        
-        label
-          input
-            +input(left)
+    textarea
+      +input(left)
+      height: 112.5px
+      line-height: 1.25rem
+      padding: 10px
 
-      textarea
-        +input(left)
-        height: 112.5px
-        line-height: 1.25rem
-        padding: 10px
-
-      .contact-button
-        +button($monoFifth)
-        width: 90%
-        &.disabled
-          color: lighten($monoFourth, 40%)
-          background: rgba($monoPrimary,.5)
-          pointer-events: none
-        &.btn-sent
-          color: white
-          background: $slantGrade
-
-    .contact-icons
+    .contact-button
+      +button($monoFifth)
       width: 90%
-      max-width: 450px
-      margin: 75px auto 0
-      display: flex
-      flex-direction: row
-      justify-content: space-around
-      background: rgba($monoPrimary,.05)
-      box-shadow: inset $float-shadow
-      // background: pink
-      // display: grid
-      // grid-template-columns: 1fr 1fr
-      // grid-gap: 20px
+      &.disabled
+        color: lighten($monoFourth, 40%)
+        background: rgba($monoPrimary,.5)
+        pointer-events: none
+      &.btn-sent
+        color: white
+        background: $slantGrade
 
-      a
-        text-decoration: none
-        color: rgba($monoPrimary,.5)
-        // transition: .5s all cubic-bezier(0.36,-0.32, 0.23, 1.17)
-        &:hover
-          color: $monoFifth
-          .icon-set
-            .contact-icon
-              // transition: all .5s cubic-bezier(0.36,-0.32, 0.23, 1.17)
-              *
-                fill: $monoFifth
-          svg
-            #background
+  .contact-icons
+    max-width: 450px
+    margin: 75px auto 0
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    background: rgba($monoPrimary,.05)
+    box-shadow: inset $float-shadow
+    // background: pink
+    // display: grid
+    // grid-template-columns: 1fr 1fr
+    // grid-gap: 20px
+
+    a
+      text-decoration: none
+      color: rgba($monoPrimary,.5)
+      // transition: .5s all cubic-bezier(0.36,-0.32, 0.23, 1.17)
+      &:hover
+        color: $monoFifth
+        .icon-set
+          .contact-icon
+            // transition: all .5s cubic-bezier(0.36,-0.32, 0.23, 1.17)
+            *
               fill: $monoFifth
-        &:last-of-type
+        svg
+          #background
+            fill: $monoFifth
+      &:last-of-type
+        grid-column: span 2
+
+    .icon-set
+      // margin: 0 auto
+      // border: 1px solid $monoPrimary
+      padding: 10px 0
+      border-radius: 2px
+      // width: 90%
+      // box-shadow: $float-shadow
+      &:hover
+        // box-shadow: $shadow
+      a
+        display: block
+
+      .contact-icon
+        max-width: 50px
+        // max-height: 50px
+        display: block
+        margin: 0 auto
+        *
+          fill: rgba($monoPrimary,.5)
+
+      h4, p
+        text-align: center
+        margin: 0
+        padding: 0
+      h4
+        text-transform: uppercase
+
+  @media (min-width: $midBreak)
+    form
+      .contact-button
+        width: 50%
+      .inputs
+        grid-template-columns: 1fr 1fr
+        label:last-of-type
           grid-column: span 2
-
-      .icon-set
-        // margin: 0 auto
-        // border: 1px solid $monoPrimary
-        padding: 10px 0
-        border-radius: 2px
-        // width: 90%
-        // box-shadow: $float-shadow
-        &:hover
-          // box-shadow: $shadow
-        a
-          display: block
-
-        .contact-icon
-          max-width: 50px
-          // max-height: 50px
-          display: block
-          margin: 0 auto
-          *
-            fill: rgba($monoPrimary,.5)
-
-        h4, p
-          text-align: center
-          margin: 0
-          padding: 0
-        h4
-          text-transform: uppercase
-
-  @media (min-width: $midBreak) and (max-width: $largeBreak)
-    .form
-      form
-        .contact-button
-          width: 50%
-        .inputs
-          grid-template-columns: 1fr 1fr
-          label:last-of-type
-            grid-column: span 2
-          textarea
-            grid-column: span 2
+        textarea
+          grid-column: span 2

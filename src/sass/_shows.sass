@@ -1,34 +1,24 @@
 .shows
-  margin-bottom: 75px
+  .calendar-container
+    margin: 0 auto
 
-  .content
-    +section()
-
-    h1
-      +section-header()
-
-    .calendar-container
-      margin: 0 auto
-      width: 90%
-      // border: 1px solid pink
-
-    p
-      width: 90%
-      margin: 18.75px auto
-      text-align: center
-    
-    a
-      text-decoration: none
-      display: block
-      +button($gold)
-      text-align: center
-      width: 70%
-      max-width: 225px
-      height: auto
-      transition: all .3s ease
-      &:hover
-        background: darken($gold,20%)
-        box-shadow: $float-shadow
+  p
+    width: 90%
+    margin: 18.75px auto
+    text-align: center
+  
+  a
+    text-decoration: none
+    display: block
+    +button($gold)
+    text-align: center
+    width: 70%
+    max-width: 225px
+    height: auto
+    transition: all .3s ease
+    &:hover
+      background: darken($gold,20%)
+      box-shadow: $float-shadow
 
   @media (min-width: $midBreak) and (max-width: $largeBreak)
     .calendar-links
