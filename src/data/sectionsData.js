@@ -7,22 +7,24 @@ import About from '../components/About';
 import Pictures from '../components/Pictures';
 import Contact from '../components/Contact';
 
+import dan from '../assets/photoSection/dan.jpg'
 import jeffDave from '../assets/photoSection/jeffDave.jpg'
 import daveJeff from '../assets/photoSection/daveJeff.jpg'
 import zack from '../assets/photoSection/zack.jpg'
 import jeff from '../assets/photoSection/jeffSings.jpg'
+import trio from '../assets/photoSection/newTrio.jpg'
 
 const sectionsData = [
   {
     title: 'Music',
     sectionId: 'music',
-    backgroundImage: jeffDave,
+    backgroundImage: dan,
     children: <Music />,
   },
   {
     title: 'Videos',
     sectionId: 'video',
-    backgroundImage: zack,
+    backgroundImage: jeff,
     children: <Video />,
   },
   {
@@ -46,7 +48,7 @@ const sectionsData = [
   {
     title: 'Contact us',
     sectionId: 'contact',
-    backgroundImage: jeff,
+    backgroundImage: trio,
     children: <Contact />,
   },
 ]
