@@ -10,14 +10,14 @@
   a
     text-decoration: none
     display: block
-    +button($gold)
+    +button(rgba($monoPrimary, .5))
     text-align: center
     width: 70%
     max-width: 225px
     height: auto
     transition: all .3s ease
     &:hover
-      background: darken($gold,20%)
+      background: $monoFifth
       box-shadow: $float-shadow
 
   @media (min-width: $midBreak) and (max-width: $largeBreak)

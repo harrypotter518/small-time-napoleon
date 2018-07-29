@@ -20,22 +20,22 @@ const sectionsData = [
     children: <Music />,
   },
   {
-    title: 'Video',
+    title: 'Videos',
     sectionId: 'video',
     backgroundImage: zack,
     children: <Video />,
-  },
-  {
-    title: 'Shows',
-    sectionId: 'shows',
-    backgroundImage: daveJeff,
-    children: <Shows />,
   },
   {
     title: 'Photos',
     sectionId: 'pictures',
     backgroundImage: zack,
     children: <Pictures />,
+  },
+  {
+    title: 'Shows',
+    sectionId: 'shows',
+    backgroundImage: daveJeff,
+    children: <Shows />,
   },
   {
     title: 'About',
