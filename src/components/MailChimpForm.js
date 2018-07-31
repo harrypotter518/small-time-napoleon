@@ -15,7 +15,7 @@ export default class MailChimpForm extends Component {
       <div className="mailchimp">
         <h3>Sign up for our mailing list</h3>
         
-        <form action="https://smalltimenapoleon.us18.list-manage.com/subscribe/post" method="POST" noValidate>
+        <form action="https://smalltimenapoleon.us18.list-manage.com/subscribe/post?u=7c33c3e77efd6946e75d92b3a&amp;id=0c40709758" method="POST" target="_blank" noValidate>
           <input type="hidden" name="u" value="7c33c3e77efd6946e75d92b3a" />
           <input type="hidden" name="id" value="0c40709758" />
           <div className='inputs'>

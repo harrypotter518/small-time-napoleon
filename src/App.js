@@ -44,7 +44,7 @@ export default class App extends Component {
     })
   }
   closeNav() {
-    if (this.state.width < 550) {
+    if (this.state.width < 1000) {
       this.setState({
         nav: false,
       })
@@ -133,20 +133,19 @@ export default class App extends Component {
       width: window.innerWidth,
       height: window.innerHeight,
     })
-    // expand nav is window is larger that 550px
-    if (this.state.width >= 550) {
+    // expand nav is window is larger that 1000px
+    if (this.state.width >= 1000) {
       this.setState({
         nav: true,
       })
     }
-    // close nav if window width shrinks below 550px
-    if (this.state.width < 550) {
+    // close nav if window width shrinks below 1000px
+    if (this.state.width < 1000) {
       this.setState({
         nav: false,
       })
     }
   }
-
 
   componentWillMount() {
     this.updateDimensions()

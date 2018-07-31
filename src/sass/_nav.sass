@@ -56,7 +56,6 @@
         display: none
         border-radius: 3px
         
-
     h4
       color: white
       margin: 5px
@@ -65,44 +64,20 @@
       letter-spacing: 10px
       // background: pink
 
-  @media (min-width: $midBreak)
-    // background: pink
+  @media (min-width: 1000px)
     &.full
-      // width: 90vw
-      padding: 9.375px 5vw 0
       height: 56.25px
-      // right: 5vw
-      // left: 5vw
       display: flex
       flex-direction: row
-      background: rgba($monoSecondary, .5)
+      background: rgba($monoPrimary, .5)
     .nav-bar
-      width: 25vw
-      height: 37.5px
-      flex-direction: row
-      // margin-left: 5vw
-      // background: lightgreen
-      &.open
-        #blimp-icon
-          *
-            fill: $monoPrimary
+      display: none
     .nav-buttons
-      // height: 250px
+      width: 95vw
+      margin: 0 auto
       flex-direction: row
-      justify-content: flex-end
-      width: 65vw
+      justify-content: space-around
+      align-items: center
       height: auto
-      // margin-right: 5vw
-      a
-        margin: 0
-        width: auto
-        margin-left: 37.5px
-        .nav-icon, .icon
-          display: block
-          *
-            fill: $monoPrimary
-        h4
-          display: none
-
-
-    
+      a:hover
+        text-shadow: 1px 3px 5px black
