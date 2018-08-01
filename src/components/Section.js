@@ -16,8 +16,16 @@ export default class Sections extends Component {
   }
 
   render() {
-    const { sectionId, backgroundImage, title, children } = this.props
+    const { sectionId, backgroundImage, title, children, width } = this.props
     const { show } = this.state
+
+    const coverToggle = 
+      <div className={`cover-container ${!show ? "all" : ""}`}>
+        <div className="cover"></div>
+        <button className="toggle-button" onClick={this.toggleShow}>{`show ${show ? 'less' : 'more'}`}</button>
+      </div>
+    
+
 
     return(
       <div className="section" id={sectionId}>
@@ -34,10 +42,12 @@ export default class Sections extends Component {
           <h1>{title}</h1>
           {children}
 
-          <div className={`cover-container ${!show ? "all" : ""}`}>
+          {/* <div className={`cover-container ${!show ? "all" : ""}`}>
             <div className="cover"></div>
             <button className="toggle-button" onClick={this.toggleShow}>{`Show ${show ? 'less' : 'more'}`}</button>
-          </div>
+          </div> */}
+
+          {width >= 1100 ? coverToggle : null}
 
         </div>
       </div>

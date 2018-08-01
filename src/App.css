@@ -128,7 +128,7 @@ button {
   max-width: 850px;
   max-height: 2000px;
   overflow: hidden;
-  padding: 0 5%;
+  padding: 0 5% 75px;
   margin: 0 auto;
   margin-top: -150px;
   margin-bottom: 75px;
@@ -147,37 +147,37 @@ button {
     text-transform: uppercase;
     letter-spacing: 2px;
     text-align: center; }
-  @media (min-width: 550px) {
-    .content.all {
-      max-height: 550px; }
-    .content .cover-container {
-      padding: 75px 0; }
+  @media (min-width: 1100px) {
+    .content {
+      padding: 0 5%; }
+      .content.all {
+        max-height: 550px; }
       .content .cover-container.all {
         position: absolute;
         bottom: 0;
         left: 0;
         right: 0;
         z-index: 2;
-        background: linear-gradient(to top, white 75%, rgba(255, 255, 255, 0));
-        padding-bottom: 37.5px;
-        padding-top: 0; }
+        background: linear-gradient(to top, white 75%, rgba(255, 255, 255, 0)); }
         .content .cover-container.all .cover {
-          height: 37.5px; }
-    .content .toggle-button {
-      background: rgba(38, 35, 85, 0.5);
-      position: relative;
-      width: 187.5px;
-      height: 50px;
-      text-transform: uppercase;
-      color: white;
-      font-size: 1rem;
-      letter-spacing: 2px;
-      border-radius: 2px;
-      left: 50%;
-      transform: translateX(-50%);
-      transition: all .3s ease; }
-      .content .toggle-button:hover {
-        background: #5b54cc; } }
+          height: 15px; }
+      .content .toggle-button {
+        background: rgba(38, 35, 85, 0.5);
+        position: relative;
+        width: 187.5px;
+        height: 50px;
+        text-transform: uppercase;
+        color: white;
+        font-size: 1rem;
+        letter-spacing: 2px;
+        border-radius: 2px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all .3s ease;
+        margin-top: 37.5px;
+        margin-bottom: 37.5px; }
+        .content .toggle-button:hover {
+          background: #5b54cc; } }
 
 .mailchimp {
   margin-bottom: 75px; }

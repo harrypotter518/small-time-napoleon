@@ -13,7 +13,7 @@
   max-width: 850px
   max-height: 2000px
   overflow: hidden
-  padding: 0 5%
+  padding: 0 5% 75px
   margin: 0 auto
   margin-top: -150px
   margin-bottom: 75px
@@ -33,13 +33,12 @@
     letter-spacing: 2px
     text-align: center
 
-  @media (min-width: $midBreak)
+  @media (min-width: 1100px)
+    padding: 0 5%
     &.all
       max-height: 550px
 
     .cover-container
-      padding: 75px 0
-      // padding-bottom: 0
       &.all
         position: absolute
         bottom: 0
@@ -47,11 +46,10 @@
         right: 0
         z-index: 2
         background: $fadeGrade
-        // background: pink
-        padding-bottom: 37.5px
-        padding-top: 0
         .cover
-          height: 37.5px
+          height: 15px
 
     .toggle-button
-      +button()
+      +button() 
+      margin-top: 37.5px
+      margin-bottom: 37.5px

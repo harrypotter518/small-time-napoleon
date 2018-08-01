@@ -179,7 +179,7 @@ export default class App extends Component {
   render() {
     const { nav, width, quote } = this.state
     const sections = sectionsData.map((data, i) => 
-      <Section key={i} sectionId={data.sectionId} backgroundImage={data.backgroundImage} title={data.title}>{data.children}</Section>
+      <Section key={i} sectionId={data.sectionId} backgroundImage={data.backgroundImage} title={data.title} width={width}>{data.children}</Section>
     )
 
 
