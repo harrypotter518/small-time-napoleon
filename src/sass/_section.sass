@@ -8,10 +8,12 @@
   height: 100%
 
 .content
+  position: relative
   width: 95%
   max-width: 850px
-  padding: 0 5% 75px
-  // padding-bottom: 75px
+  max-height: 2000px
+  overflow: hidden
+  padding: 0 5%
   margin: 0 auto
   margin-top: -150px
   margin-bottom: 75px
@@ -19,6 +21,7 @@
   border-radius: 2px
   border-top: 10px solid $gold
   box-shadow: $float-shadow
+  transition: all .2s ease
   h1
     font-size: 30px
     margin: 22.5px auto
@@ -29,3 +32,26 @@
     text-transform: uppercase
     letter-spacing: 2px
     text-align: center
+
+  @media (min-width: $midBreak)
+    &.all
+      max-height: 550px
+
+    .cover-container
+      padding: 75px 0
+      // padding-bottom: 0
+      &.all
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 0
+        z-index: 2
+        background: $fadeGrade
+        // background: pink
+        padding-bottom: 37.5px
+        padding-top: 0
+        .cover
+          height: 37.5px
+
+    .toggle-button
+      +button()

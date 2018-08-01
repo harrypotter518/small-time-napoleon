@@ -123,16 +123,20 @@ button {
   height: 100%; }
 
 .content {
+  position: relative;
   width: 95%;
   max-width: 850px;
-  padding: 0 5% 75px;
+  max-height: 2000px;
+  overflow: hidden;
+  padding: 0 5%;
   margin: 0 auto;
   margin-top: -150px;
   margin-bottom: 75px;
   background: white;
   border-radius: 2px;
   border-top: 10px solid #ffa340;
-  box-shadow: 0px 5px 10px -4px rgba(38, 35, 85, 0.5); }
+  box-shadow: 0px 5px 10px -4px rgba(38, 35, 85, 0.5);
+  transition: all .2s ease; }
   .content h1 {
     font-size: 30px;
     margin: 22.5px auto;
@@ -143,6 +147,37 @@ button {
     text-transform: uppercase;
     letter-spacing: 2px;
     text-align: center; }
+  @media (min-width: 550px) {
+    .content.all {
+      max-height: 550px; }
+    .content .cover-container {
+      padding: 75px 0; }
+      .content .cover-container.all {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        background: linear-gradient(to top, white 75%, rgba(255, 255, 255, 0));
+        padding-bottom: 37.5px;
+        padding-top: 0; }
+        .content .cover-container.all .cover {
+          height: 37.5px; }
+    .content .toggle-button {
+      background: rgba(38, 35, 85, 0.5);
+      position: relative;
+      width: 187.5px;
+      height: 50px;
+      text-transform: uppercase;
+      color: white;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      border-radius: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: all .3s ease; }
+      .content .toggle-button:hover {
+        background: #5b54cc; } }
 
 .mailchimp {
   margin-bottom: 75px; }
@@ -190,16 +225,19 @@ button {
         height: 50px;
         text-transform: uppercase;
         color: white;
-        font-size: 1.25em;
+        font-size: 1rem;
         letter-spacing: 2px;
         border-radius: 2px;
         left: 50%;
         transform: translateX(-50%);
+        transition: all .3s ease;
         height: 37.5px;
         font-size: 1rem;
         cursor: pointer;
         padding: 0;
         transition: background .3s ease; }
+        .mailchimp form .inputs .contact-button:hover {
+          background: #5b54cc; }
         .mailchimp form .inputs .contact-button:hover {
           background: #5b54cc; }
   @media (min-width: 550px) {
@@ -222,7 +260,8 @@ button {
         border-radius: 0 2px 2px 0; } }
 
 .main {
-  position: relative; }
+  position: relative;
+  min-height: 100vh; }
   .main .hero-image {
     height: 300px; }
     .main .hero-image .darken {
@@ -401,16 +440,7 @@ button {
   height: 50vw;
   max-height: 300px; }
 
-.about .more-bio {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .3s ease; }
-  .about .more-bio.full {
-    max-height: 1000px; }
-
 .about .members {
-  max-height: 0;
-  overflow: hidden;
   text-align: center; }
   .about .members h3 {
     margin: 0; }
@@ -419,25 +449,6 @@ button {
     margin: 0; }
     .about .members ul li {
       list-style: none; }
-  .about .members.full {
-    max-height: 1000px; }
-
-.about .bio-button {
-  background: rgba(38, 35, 85, 0.5);
-  position: relative;
-  width: 187.5px;
-  height: 50px;
-  text-transform: uppercase;
-  color: white;
-  font-size: 1.25em;
-  letter-spacing: 2px;
-  border-radius: 2px;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 37.5px;
-  transition: background .3s ease; }
-  .about .bio-button:hover {
-    background: #5b54cc; }
 
 .album-details {
   position: relative;
@@ -533,12 +544,15 @@ button {
     height: 50px;
     text-transform: uppercase;
     color: white;
-    font-size: 1.25em;
+    font-size: 1rem;
     letter-spacing: 2px;
     border-radius: 2px;
     left: 50%;
     transform: translateX(-50%);
+    transition: all .3s ease;
     transition: all .3s ease; }
+    .video .video-links .subscribe .button-red:hover {
+      background: #5b54cc; }
     .video .video-links .subscribe .button-red:hover {
       background: #FF0000;
       box-shadow: 0px 5px 10px -4px rgba(38, 35, 85, 0.5); }
@@ -602,16 +616,19 @@ button {
   height: 50px;
   text-transform: uppercase;
   color: white;
-  font-size: 1.25em;
+  font-size: 1rem;
   letter-spacing: 2px;
   border-radius: 2px;
   left: 50%;
   transform: translateX(-50%);
+  transition: all .3s ease;
   text-align: center;
   width: 70%;
   max-width: 225px;
   height: auto;
   transition: all .3s ease; }
+  .shows a:hover {
+    background: #5b54cc; }
   .shows a:hover {
     background: #5b54cc;
     box-shadow: 0px 5px 10px -4px rgba(38, 35, 85, 0.5); }
@@ -672,12 +689,15 @@ button {
     height: 50px;
     text-transform: uppercase;
     color: white;
-    font-size: 1.25em;
+    font-size: 1rem;
     letter-spacing: 2px;
     border-radius: 2px;
     left: 50%;
     transform: translateX(-50%);
+    transition: all .3s ease;
     width: 90%; }
+    .contact form .contact-button:hover {
+      background: #5b54cc; }
     .contact form .contact-button.disabled {
       color: #cdccda;
       background: rgba(38, 35, 85, 0.5);

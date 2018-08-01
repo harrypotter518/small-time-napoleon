@@ -17,6 +17,7 @@ $monoFifth: #5b54cc
 // gradient
 $slantGrade: linear-gradient(45deg,darken(rgba($monoPrimary,.95),10%),rgba($monoFourth,.75))
 $edgeGrade: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%,rgba(0,0,0,1) 100%)
+$fadeGrade: linear-gradient(to top, white 75%, rgba(white,0))
 
 // media query breaks
 $midBreak: 550px
@@ -60,18 +61,21 @@ $float-shadow: 0px 5px 10px -4px rgba($monoPrimary, .5)
   position: relative
 
 // Buttons
-=button($bg-color)
+=button($bg-color: rgba($monoPrimary,.5))
   background: $bg-color
   position: relative
   width: 187.5px
   height: 50px
   text-transform: uppercase
   color: white
-  font-size: 1.25em
+  font-size: 1rem
   letter-spacing: 2px
   border-radius: 2px
   left: 50%
   transform: translateX(-50%)
+  transition: all .3s ease
+  &:hover
+    background: $monoFifth
 
 // Inputs
 =input($align: center)

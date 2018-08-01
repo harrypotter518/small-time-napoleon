@@ -1,22 +1,46 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const Sections = (props) => (
-  <div className="section" id={props.sectionId}>
-    <div className="background" style={{
-      background: 'url(' + props.backgroundImage + ') #262355',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover',
-    }}>
-      <div className="darken"></div>
-    </div>
+export default class Sections extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      show: false,
+    }
+    this.toggleShow = this.toggleShow.bind(this)
+  }
 
-    <div className="content">
-      <h1>{props.title}</h1>
-      {props.children}
-    </div>
+  toggleShow() {
+    this.setState({
+      show: !this.state.show,
+    })
+  }
 
-  </div>
-)
+  render() {
+    const { sectionId, backgroundImage, title, children } = this.props
+    const { show } = this.state
 
-export default Sections
+    return(
+      <div className="section" id={sectionId}>
+        <div className="background" style={{
+          background: 'url(' + backgroundImage + ') #262355',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+        }}>
+          <div className="darken"></div>
+        </div>
+
+        <div className={`content ${!show ? "all" : ""}`}>
+          <h1>{title}</h1>
+          {children}
+
+          <div className={`cover-container ${!show ? "all" : ""}`}>
+            <div className="cover"></div>
+            <button className="toggle-button" onClick={this.toggleShow}>{`Show ${show ? 'less' : 'more'}`}</button>
+          </div>
+
+        </div>
+      </div>
+    )
+  }
+}
