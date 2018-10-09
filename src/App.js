@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.sass';
 import { TimelineLite, Power2 } from 'gsap'
 
 import Nav from './components/Nav'

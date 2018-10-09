@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import PhoneIcon from '../assets/contactIcons/PhoneIcon';
-import TextIcon from '../assets/contactIcons/TextIcon';
+// import TextIcon from '../assets/contactIcons/TextIcon';
 import MailIcon from '../assets/contactIcons/MailIcon'
 
 const encode = (data) => {
@@ -87,8 +87,6 @@ export default class Contact extends Component {
             <button className={`contact-button ${clicked ? 'disabled': ''} ${contactSent ? 'btn-sent' : ''}`} type="submit" name="submitButton">{contactButtonMessage}</button>
           </form>
 
-          {/* <h4 className="tagline">Feel free to email, call, or text us.</h4> */}
-
           <div className="contact-icons">
             {/* touch events on link populated througout the app on its own? */}
             <a href="tel:+15024391974">
@@ -99,19 +97,18 @@ export default class Contact extends Component {
               </div>
             </a>
 
-            <a href="sms:5024391974">
+            {/* <a href="sms:5024391974">
               <div className="icon-set">
                 <h4>Text</h4>
                 <TextIcon />
-                {/* <p>502-439-1974</p> */}
+                <p>502-439-1974</p> 
               </div>
-            </a>
+            </a> */}
 
             <a href="mailto:smalltimenapoleonband@gmail.com?Subject=Hello%20amazing%20band%20I%20love">
               <div className="icon-set">
                 <h4>Email</h4>
                 <MailIcon />
-                {/* <p>smalltimenapoleonband@gmail.com</p> */}
               </div>
             </a>
           </div>

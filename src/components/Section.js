@@ -1,18 +1,21 @@
 import React, { Component } from 'react'
 
 export default class Sections extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
+  state = {
       show: false,
+      // contentHeight: 550,
     }
-    this.toggleShow = this.toggleShow.bind(this)
-  }
 
-  toggleShow() {
+  toggleShow = () => {
     this.setState({
       show: !this.state.show,
     })
+
+    // if (this.state.show) {
+    //   this.setState({ contentHeight: this.refs.inner.clientHeight })
+    // } else {
+    //   this.setState({ contentHeight: 550 })
+    // }
   }
 
   render() {
@@ -24,8 +27,6 @@ export default class Sections extends Component {
         <div className="cover"></div>
         <button className="toggle-button" onClick={this.toggleShow}>{`show ${show ? 'less' : 'more'}`}</button>
       </div>
-    
-
 
     return(
       <div className="section" id={sectionId}>
@@ -38,17 +39,11 @@ export default class Sections extends Component {
           <div className="darken"></div>
         </div>
 
-        <div className={`content ${!show ? "all" : ""}`}>
+        <div className={`content ${!show ? "all" : ""}`} >
           <h1>{title}</h1>
           {children}
 
-          {/* <div className={`cover-container ${!show ? "all" : ""}`}>
-            <div className="cover"></div>
-            <button className="toggle-button" onClick={this.toggleShow}>{`Show ${show ? 'less' : 'more'}`}</button>
-          </div> */}
-
-          {width >= 1100 ? coverToggle : null}
-
+          {width >= 1100 && coverToggle}
         </div>
       </div>
     )
